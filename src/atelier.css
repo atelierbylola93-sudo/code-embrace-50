@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-beige-bg: #F8F5F0;
+  --color-champagne: #C7A46A;
+  --color-sage: #A8B29A;
+  --color-charcoal: #1E1E1E;
+  --color-secondary-gray: #6A6A6A;
+  
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-signature: "Great Vibes", cursive;
+  
+  --radius-premium: 24px;
+}
+
+@utility font-serif {
+  font-family: var(--font-serif);
+}
+
+@utility font-sans {
+  font-family: var(--font-sans);
+}
+
+@utility font-signature {
+  font-family: var(--font-signature);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #F8F5F0;
+    color: #1E1E1E;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+  }
+  
+  /* Custom elegant scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F8F5F0;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D7C4A5;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C7A46A;
+  }
+}
+
+/* Glassmorphic effect */
+.glass-premium {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-dark {
+  background: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Artistic Flair Theme utilities */
+.glass-header {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(199, 164, 106, 0.12);
+}
+
+.gold-text {
+  color: #C7A46A;
+}
+
+.sage-bg {
+  background-color: #A8B29A;
+}
+
+.card-rounded {
+  border-radius: 24px;
+}
+
+.premium-shadow {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+.btn-primary {
+  background-color: #C7A46A;
+  color: #FFFFFF;
+  border-radius: 100px;
+  padding: 16px 36px;
+  min-height: 54px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px 0 rgba(199, 164, 106, 0.15);
+}
+
+.btn-primary:hover {
+  background-color: #b5925a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px 0 rgba(199, 164, 106, 0.3);
+}
+
+.btn-secondary {
+  border: 1px solid #C7A46A;
+  color: #C7A46A;
+  border-radius: 100px;
+  padding: 16px 36px;
+  min-height: 54px;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.02);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(199, 164, 106, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px 0 rgba(199, 164, 106, 0.1);
+}
+
+/* ============================================================
+   MÜLLER-BROCKMANN & VIGNELLI SWISS GRID SYSTEM OVERLAY
+   ============================================================ */
+:root {
+  --cols: 12;
+  --bl: 8px;                        /* baseline unit */
+  --lh: 24px;                       /* leading = 3 x baseline */
+  --gutter: 24px;
+  --margin: 48px;
+  
+  --g-col: rgba(199, 164, 106, 0.035); /* elegant champagne tint */
+  --g-edge: rgba(199, 164, 106, 0.15);
+  --g-base: rgba(168, 178, 154, 0.08); /* sage major baseline line (24px) */
+  --g-base-min: rgba(168, 178, 154, 0.03); /* sage minor baseline line (8px) */
+}
+
+@media (max-width: 768px) {
+  :root {
+    --margin: 16px;
+    --gutter: 12px;
+  }
+}
+
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 45; /* Sit right below floating action layers and menus but on top of views */
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.grid-on .grid-overlay {
+  opacity: 1;
+}
+
+/* 12 Columns matching exactly the centered container grid boundaries */
+.grid-overlay-cols {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--margin);
+  right: var(--margin);
+  display: grid;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  column-gap: var(--gutter);
+}
+
+.grid-overlay-col {
+  background: var(--g-col);
+  box-shadow: inset 1.5px 0 0 var(--g-edge), inset -1.5px 0 0 var(--g-edge);
+  position: relative;
+  height: 100%;
+}
+
+.grid-overlay-col span {
+  position: absolute;
+  top: 100px; /* Offset from header area */
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: monospace;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  color: #C7A46A;
+  opacity: 0.6;
+}
+
+/* 8px vertical baseline and 24px major horizontal grids for vertical rhythm verification */
+.grid-overlay-rows {
+  position: absolute;
+  left: var(--margin);
+  right: var(--margin);
+  top: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(to bottom, var(--g-base) 0 1px, transparent 1px var(--lh)),
+    repeating-linear-gradient(to bottom, var(--g-base-min) 0 1px, transparent 1px var(--bl));
+}
+
+
