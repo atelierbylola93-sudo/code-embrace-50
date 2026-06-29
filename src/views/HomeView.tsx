@@ -413,14 +413,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               </p>
             </div>
 
-            {/* Feature 3 */}
-            <div className="bg-white p-8 rounded-[24px] border border-[#C7A46A]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] space-y-4 hover:border-[#C7A46A]/35 transition-all duration-500">
-              <div className="font-mono text-5xl font-light tracking-tighter text-[#C7A46A]/30">03</div>
-              <h3 className="font-serif text-lg font-bold text-charcoal tracking-wide">Suivi Micro-Caméra</h3>
-              <p className="text-xs text-secondary-gray leading-relaxed font-light">
-                Chaque rituel s'accompagne d’une séance d'imagerie du cheveu ou d'une analyse d'hydratation de la barrière cutanée. Vos séances sont adaptées à l'état réel de vos cellules en temps réel.
-              </p>
-            </div>
 
             {/* Feature 4 - Offset downwards on desktop */}
             <div className="bg-white p-8 rounded-[24px] border border-[#C7A46A]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] space-y-4 sm:translate-y-8 hover:border-[#C7A46A]/35 transition-all duration-500">
@@ -805,11 +797,6 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   💆‍♂️ Déroulement & Protocole de Séance
                 </h3>
                 <div className="space-y-4">
-                  <div className="relative pl-8 border-l border-[#C7A46A]/20">
-                    <div className="absolute -left-[6px] top-1 w-3 h-3 rounded-full bg-[#C7A46A]" />
-                    <span className="text-xs md:text-sm text-white font-semibold">1. Diagnostic à la Micro-caméra</span>
-                    <p className="text-[11px] text-gray-400">Analyse rigoureuse de la santé cutanée du cuir chevelu pour un soin personnalisé.</p>
-                  </div>
                   <div className="relative pl-8 border-l border-[#C7A46A]/20">
                     <div className="absolute -left-[6px] top-1 w-3 h-3 rounded-full bg-[#A8B29A]" />
                     <span className="text-xs md:text-sm text-white font-semibold">2. Gommage Détox & Bain d'Huiles</span>
@@ -1283,7 +1270,7 @@ function FaqAccordionSection() {
       id: 'hs-1',
       category: 'head-spa',
       question: "Pourquoi le Head Spa de l’Atelier by Lola est-il unique ?",
-      answer: "Lola réalise une vraie thérapie capillaire privatisée. Dans un espace calme baigné d'huiles essentielles bio et de sonorités zen, votre cuir chevelu passe par un examen haute définition à la micro-caméra, un massage d'acupression crâniene japonaise Shiatsu, l'arche d'eau chaude brevetée en massage continu et un dôme de vapeur purifié ionisant."
+      answer: "Lola réalise une vraie thérapie capillaire privatisée. Dans un espace calme baigné d'huiles essentielles bio et de sonorités zen, votre cuir chevelu passe par un examen haute définition personnalisé, un massage d'acupression crâniene japonaise Shiatsu, l'arche d'eau chaude brevetée en massage continu et un dôme de vapeur purifié ionisant."
     },
     {
       id: "hs-2",
