@@ -25,9 +25,9 @@ const RESERVATION_SERVICES: BookingService[] = [
     price: 120,
     duration: "45 min",
     category: "Head Spa",
-    description: "Diagnostic caméra, gommage, massage shiatsu et arche d'eau chaude.",
+    description: "Diagnostic personnalisé, gommage, massage shiatsu et arche d'eau chaude.",
     upsells: [
-      { id: 'h-up-cam', name: "Suivi Micro-caméra 3D", price: 15, description: "Analyse cellulaire post-soin pour mesurer l'amélioration cutanée." },
+      
       { id: 'h-up-brush', name: "Brushing Finition Prestige", price: 20, description: "Séchage structuré avec élixir protecteur pour une sortie éblouissante." },
       { id: 'h-up-amp', name: "Ampoule Active de Kératine pure", price: 10, description: "Infusion sous la vapeur pour fortifier la structure du cheveu." }
     ]

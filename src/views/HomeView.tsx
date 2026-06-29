@@ -37,7 +37,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     {
       title: "Japanese Head Spa",
       tag: "Signature Impériale",
-      description: "Notre fleuron sensoriel d'exception. Diagnostic capillaire par micro-caméra, massage d'acupression Shiatsu royal, arche thermale en pluie de brume et dôme de vapeur holistique.",
+      description: "Notre fleuron sensoriel d'exception. Diagnostic capillaire personnalisé, massage d'acupression Shiatsu royal, arche thermale en pluie de brume et dôme de vapeur holistique.",
       price: "120 €",
       image: LUXURY_IMAGES.headSpa,
       page: 'head-spa' as Page,
@@ -138,7 +138,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     },
     {
       question: "La séance de Head Spa est-elle adaptée pour tous les types de cheveux ?",
-      answer: "Absolument. Qu'ils soient bouclés, lisses, crépus, colorés, naturels ou que votre cuir chevelu soit extrêmement sensible, Lola effectue un examen préalable à la micro-caméra pour adapter sur-mesure nos shampoings bio d'excellence."
+      answer: "Absolument. Qu'ils soient bouclés, lisses, crépus, colorés, naturels ou que votre cuir chevelu soit extrêmement sensible, Lola effectue un examen préalable personnalisé pour adapter sur-mesure nos shampoings bio d'excellence."
     },
     {
       question: "Quelle est la fréquence idéale recommandée pour ce soin thermal ?",
@@ -676,7 +676,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
           <div className="mt-16 text-center bg-white rounded-[24px] p-6 border border-[#C7A46A]/10 max-w-3xl mx-auto shadow-sm">
             <p className="text-xs text-charcoal font-medium">
-              💡 Vous hésitez sur le choix de votre protocole ? Nos diagnostics à la caméra sont entièrement inclus avec chaque soin.
+              💡 Vous hésitez sur le choix de votre protocole ? Nos diagnostics personnalisés sont entièrement inclus avec chaque soin.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
               <button

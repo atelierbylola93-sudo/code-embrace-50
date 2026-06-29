@@ -182,7 +182,7 @@ export const HEAD_SPA_DATA = {
   subtitle: "Le Rituel Thermal Japonais de Relaxation et de Santé du Cuir Chevelu",
   description: "Inspiré des rituels ancestraux japonais, notre Head Spa est une parenthèse sensorielle unique en son genre. Plus qu'un simple shampoing massant, c'est un véritable traitement thérapeutique qui combine micro-circulation crânienne, pureté capillaire et relaxation nerveuse profonde au Pré-Saint-Gervais. Le clou du spectacle : notre célèbre arche d'eau (halo thérapie) qui déverse un flux continu d'eau tiède sur votre front et votre cuir chevelu pour calmer l'esprit.",
   steps: [
-    { title: "1. Diagnostic Personnalisé", text: "Analyse approfondie de votre cuir chevelu à la micro-caméra pour repérer les excès de sébum, pellicules ou zones de sensibilité." },
+    
     { title: "2. Gommage & Bain d'Huiles", text: "Exfoliation douce pour éliminer les toxines et résidus de produits, suivie de l'application d'élixirs botaniques ciblés." },
     { title: "3. Massage Crânien, Nuque & Épaules", text: "Manœuvres d'acupression issues de techniques shiatsu pour relâcher les tensions musculaires et booster la repousse." },
     { title: "4. Arche d'Eau & Bain de Vapeur", text: "Le halo d'eau chaude berce vos sens pendant que le dôme de vapeur ouvre les écailles pour faire pénétrer les nutriments actifs." }
@@ -195,7 +195,7 @@ export const HEAD_SPA_DATA = {
   ],
   faq: [
     { question: "Pourquoi choisir le Head Spa à L'Atelier by Lola au Pré-Saint-Gervais ?", answer: "Contrairement aux salons classiques, L'Atelier by Lola offre une salle de Head Spa privatisée et plongée dans une pénombre apaisante, équipée de la véritable fontaine d'eau japonaise et d'un traitement de vapeur ultra-moderne." },
-    { question: "Le soin convient-il à tous les types de cheveux ?", answer: "Oui absolument ! Que vous ayez des cheveux bouclés, lisses, crépus, colorés, naturels ou un cuir chevelu sensible, nous adaptons chaque produit (shampoings bio, lotions végétales) suite au diagnostic caméra." },
+    { question: "Le soin convient-il à tous les types de cheveux ?", answer: "Oui absolument ! Que vous ayez des cheveux bouclés, lisses, crépus, colorés, naturels ou un cuir chevelu sensible, nous adaptons chaque produit (shampoings bio, lotions végétales) suite au diagnostic personnalisé." },
     { question: "Quelle est la fréquence idéale pour un Head Spa ?", answer: "Pour une santé optimale du cuir chevelu et une détente profonde, nous recommandons une séance par mois, au fil du cycle naturel de régénération cellulaire cutanée." },
     { question: "Est-ce adapté pour les hommes ?", answer: "Oui, les hommes apprécient énormément ce soin pour stimuler la pousse des cheveux et s'offrir un moment de déconnexion total du stress quotidien." }
   ]
