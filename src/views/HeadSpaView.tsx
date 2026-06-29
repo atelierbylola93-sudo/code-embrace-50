@@ -107,7 +107,7 @@ export default function HeadSpaView() {
                 <ShieldCheck className="h-4 w-4" />
                 <span>Régulation & Pureté</span>
               </div>
-              <p>Analysé au microscope (micro-caméra), nous choisissons uniquement des produits hypoallergéniques d'exception aux essences d'Argan bio, menthe japonaise et thym sauvage.</p>
+              <p>Analysé attentivement, nous choisissons uniquement des produits hypoallergéniques d'exception aux essences d'Argan bio, menthe japonaise et thym sauvage.</p>
             </div>
           </div>
 
