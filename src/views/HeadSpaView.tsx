@@ -1,32 +1,36 @@
 import { motion } from 'motion/react';
 import { Calendar, CheckCircle2, Star, ShieldCheck, Sparkles, Clock } from 'lucide-react';
-import { HEAD_SPA_DATA, LUXURY_IMAGES } from '../data';
+import { HEAD_SPA_DATA } from '../data';
 import FaqSection from '../components/FaqSection';
+import headspaHeroAsset from '../assets/headspa-hero.png.asset.json';
 
 export default function HeadSpaView() {
   return (
     <div id="head-spa-view" className="w-full pt-28 pb-10">
-      
+
       {/* Immersive Top Hero */}
-      <section className="relative h-[300px] md:h-[450px] flex items-center justify-center bg-black overflow-hidden rounded-b-[24px]">
+      <section className="relative h-[320px] md:h-[480px] flex items-center justify-center bg-[#EFE7D2] overflow-hidden rounded-b-[24px]">
         <img
-          src={LUXURY_IMAGES.headSpa}
-          alt="Japanese Head Spa Jet Halo L'Atelier by Lola Le Pré-Saint-Gervais"
+          src={headspaHeroAsset.url}
+          alt="Head Spa L'Atelier by Lola Le Pré-Saint-Gervais"
           referrerPolicy="no-referrer"
-          className="absolute inset-0 w-full h-full object-cover opacity-55 scale-102 filter brightness-[0.70]"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#EFE7D2] via-black/10 to-black/40" />
-        
-        <div className="relative z-10 text-center space-y-4 px-4 max-w-3xl">
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-white/95 font-bold bg-[#B88F4D] px-4 py-1 rounded-full border border-white/20">
-            Soin Signature National Japonais
-          </span>
-          <h1 className="font-serif text-4xl md:text-6xl text-white font-light tracking-wide">
-            Head Spa Le Pré-Saint-Gervais
-          </h1>
-          <p className="text-white/90 text-sm md:text-base italic font-serif">
-            Le rituel d'hydro-thérapie et d'aromathérapie suprême pour votre esprit et votre chevelure
-          </p>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#EFE7D2]/85 via-[#EFE7D2]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#EFE7D2] via-transparent to-[#EFE7D2]/30" />
+
+        <div className="relative z-10 text-left px-4 md:px-8 max-w-7xl w-full">
+          <div className="max-w-2xl space-y-5">
+            <span className="inline-block text-[10px] md:text-xs uppercase tracking-[0.3em] text-white font-bold bg-[#B88F4D] px-4 py-1.5 rounded-full shadow-sm">
+              Soin Signature National Japonais
+            </span>
+            <h1 className="font-serif text-4xl md:text-6xl text-charcoal font-light tracking-wide leading-tight">
+              Head Spa<br className="hidden md:block" /> Le Pré-Saint-Gervais
+            </h1>
+            <p className="text-charcoal/80 text-sm md:text-lg italic font-serif max-w-xl">
+              Le rituel d'hydro-thérapie et d'aromathérapie suprême pour votre esprit et votre chevelure
+            </p>
+          </div>
         </div>
       </section>
 
