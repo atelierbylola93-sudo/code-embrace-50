@@ -182,26 +182,26 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           >
             {/* Elegant Star Ranking Banner */}
             <div className="inline-flex flex-col items-center gap-1 select-none">
-              <span className="text-[#B88F4D] text-xs md:text-sm tracking-[0.2em] font-serif drop-shadow-[0_1.5px_2px_rgba(0,0,0,0.8)]">★★★★★</span>
-              <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-white/20 bg-black/45 backdrop-blur-md text-white mt-1">
+              <span className="text-[#B88F4D] text-xs md:text-sm tracking-[0.2em] font-serif">★★★★★</span>
+              <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-[#B88F4D]/30 bg-white/70 backdrop-blur-md text-charcoal mt-1 shadow-sm">
                 <Sparkles className="h-3 w-3 text-[#B88F4D] animate-pulse" />
-                <span className="text-[8px] md:text-xs uppercase tracking-[0.2em] font-semibold text-white/95">
+                <span className="text-[8px] md:text-xs uppercase tracking-[0.2em] font-semibold text-charcoal/90">
                   Beauté & Bien-être Haut de Gamme
                 </span>
               </div>
             </div>
 
             {/* Masterful Display Title with Great Vibes and Playfair mix (Fully Fluid & Clip-safe) */}
-            <h1 className="font-serif text-3.5xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-light text-white tracking-wide leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
-              L'Atelier <span className="font-signature text-5xl sm:text-6xl md:text-8xl lg:text-[7.5rem] text-[#B88F4D] block sm:inline italic ml-1 select-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">by Lola</span>
+            <h1 className="font-serif text-3.5xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-light text-charcoal tracking-wide leading-tight">
+              L'Atelier <span className="font-signature text-5xl sm:text-6xl md:text-8xl lg:text-[7.5rem] text-[#B88F4D] block sm:inline italic ml-1 select-none">by Lola</span>
             </h1>
 
             {/* Luxurious Subtext Subheadings */}
-            <p className="font-serif italic text-base sm:text-lg md:text-2xl text-white/95 font-light max-w-3xl mx-auto tracking-wide drop-shadow-[0_1.5px_2.5px_rgba(0,0,0,0.8)]">
+            <p className="font-serif italic text-base sm:text-lg md:text-2xl text-charcoal/85 font-light max-w-3xl mx-auto tracking-wide">
               Maison d'Esthétique & de Repos Capillaire d'Exception
             </p>
 
-            <p className="text-white/85 text-[9px] md:text-xs tracking-[0.25em] uppercase font-light drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] px-2">
+            <p className="text-[#A17E60] text-[9px] md:text-xs tracking-[0.25em] uppercase font-semibold px-2">
               Le Pré-Saint-Gervais • Séance Sensorielle Exclusive
             </p>
 
