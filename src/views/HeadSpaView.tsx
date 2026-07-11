@@ -9,25 +9,25 @@ export default function HeadSpaView() {
     <div id="head-spa-view" className="w-full pt-28 pb-10">
 
       {/* Immersive Top Hero */}
-      <section className="relative h-[320px] md:h-[480px] flex items-center justify-center bg-[#EFE7D2] overflow-hidden rounded-b-[24px]">
+      <section className="relative h-[360px] md:h-[520px] flex items-center justify-center bg-[#EFE7D2] overflow-hidden rounded-b-[24px]">
         <img
           src={headspaHeroAsset.url}
           alt="Head Spa L'Atelier by Lola Le Pré-Saint-Gervais"
           referrerPolicy="no-referrer"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#EFE7D2]/85 via-[#EFE7D2]/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#EFE7D2] via-transparent to-[#EFE7D2]/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#EFE7D2]/90 via-[#EFE7D2]/50 to-[#EFE7D2]/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#EFE7D2] via-transparent to-[#EFE7D2]/20" />
 
         <div className="relative z-10 text-left px-4 md:px-8 max-w-7xl w-full">
           <div className="max-w-2xl space-y-5">
             <span className="inline-block text-[10px] md:text-xs uppercase tracking-[0.3em] text-white font-bold bg-[#B88F4D] px-4 py-1.5 rounded-full shadow-sm">
               Soin Signature National Japonais
             </span>
-            <h1 className="font-serif text-4xl md:text-6xl text-charcoal font-light tracking-wide leading-tight">
+            <h1 className="font-serif text-4xl md:text-6xl text-[#2A2621] font-light tracking-wide leading-tight drop-shadow-sm">
               Head Spa<br className="hidden md:block" /> Le Pré-Saint-Gervais
             </h1>
-            <p className="text-charcoal/80 text-sm md:text-lg italic font-serif max-w-xl">
+            <p className="text-[#2A2621]/90 text-sm md:text-lg italic font-serif max-w-xl drop-shadow-sm">
               Le rituel d'hydro-thérapie et d'aromathérapie suprême pour votre esprit et votre chevelure
             </p>
           </div>
