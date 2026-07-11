@@ -1,4 +1,5 @@
 import { ServiceGroup, FaqItem, ReviewItem, Page } from './types';
+import iplEpilationImg from './assets/ipl-epilation.jpg';
 
 export const INSTITUT_INFO = {
   name: "L'Atelier by Lola",
