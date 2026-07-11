@@ -61,7 +61,7 @@ export default function SoinsVisageView() {
                 )}
 
                 <div className="space-y-3">
-                  <div className="flex justify-between items-baseline gap-4 pr-16">
+                  <div className="flex justify-between items-baseline gap-4">
                     <h4 className="font-serif text-base md:text-lg font-bold text-charcoal group-hover:text-[#B88F4D] transition-colors">
                       {item.name}
                     </h4>
