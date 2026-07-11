@@ -213,11 +213,6 @@ export const HEAD_SPA_DATA = {
       description: "La quintessence du sur-mesure. Une prestation d'exception entièrement personnalisée selon vos attentes uniques. Le soin est construit sur-mesure suite à un questionnaire (envoyé par mail ou à remplir sur place) et un diagnostic approfondi avec nos équipes pour répondre parfaitement aux besoins de vos cheveux et de votre esprit (séchage naturel inclus)."
     }
   ] as HeadSpaFormula[],
-  steps: [
-    { title: "Gommage & Bain d'Huiles", text: "Exfoliation douce pour éliminer les toxines et résidus de produits, suivie de l'application d'élixirs botaniques ciblés." },
-    { title: "Massage Crânien, Nuque & Épaules", text: "Manœuvres d'acupression issues de techniques shiatsu pour relâcher les tensions musculaires et booster la repousse." },
-    { title: "Arche d'Eau & Bain de Vapeur", text: "Le halo d'eau chaude berce vos sens pendant que le dôme de vapeur ouvre les écailles pour faire pénétrer les nutriments actifs." }
-  ],
   benefits: [
     "Retarde la chute et revitalise les cheveux mous et fatigués.",
     "Régule le sébum et élimine définitivement les démangeaisons ou pellicules.",
