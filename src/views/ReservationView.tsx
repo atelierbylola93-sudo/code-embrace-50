@@ -1068,8 +1068,8 @@ export default function ReservationView() {
 
               </div>
             ) : (
-              <div className="text-center py-8 space-y-1.5">
-                <span className="inline-block text-lg">🌱</span>
+              <div className="text-center py-8 space-y-2 flex flex-col items-center">
+                <Sparkles className="h-6 w-6 text-[#B88F4D]/60" />
                 <p className="text-[10px] text-gray-400 leading-relaxed italic">
                   Aucun rituel sélectionné.
                 </p>
