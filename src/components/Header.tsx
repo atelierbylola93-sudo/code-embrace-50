@@ -46,14 +46,10 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
           onClick={() => handleLinkClick('accueil')}
           className="flex flex-col items-center focus:outline-none cursor-pointer group select-none"
         >
-          <span className={`font-serif text-xl md:text-2xl font-bold tracking-[0.2em] transition-colors duration-300 ${
-            isScrolled ? 'text-charcoal' : 'text-white'
-          } group-hover:text-[#B88F4D]`}>
+          <span className={`font-serif text-xl md:text-2xl font-bold tracking-[0.2em] transition-colors duration-300 text-charcoal group-hover:text-[#B88F4D]`}>
             L'ATELIER
           </span>
-          <span className={`text-[10px] tracking-[0.3em] font-semibold uppercase mt-[-4px] transition-colors duration-300 ${
-            isScrolled ? 'text-[#B88F4D] group-hover:text-charcoal' : 'text-amber-300 group-hover:text-white'
-          }`}>
+          <span className={`text-[10px] tracking-[0.3em] font-semibold uppercase mt-[-4px] transition-colors duration-300 text-[#B88F4D] group-hover:text-[#A17E60]`}>
             by lola
           </span>
         </button>
