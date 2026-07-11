@@ -61,7 +61,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
               <li key={item.page}>
                 <button
                   onClick={() => handleLinkClick(item.page)}
-                  className={`relative py-1 text-xs uppercase tracking-[0.2em] font-medium transition-colors duration-300 cursor-pointer ${
+                  className={`relative py-1 text-[11px] xl:text-xs uppercase tracking-[0.16em] xl:tracking-[0.2em] font-medium whitespace-nowrap transition-colors duration-300 cursor-pointer ${
                     currentPage === item.page
                       ? 'text-[#B88F4D]'
                       : 'text-charcoal hover:text-[#B88F4D]'
