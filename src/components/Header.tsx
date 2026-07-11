@@ -134,9 +134,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
           </motion.button>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`p-2 transition-colors focus:outline-none cursor-pointer ${
-              isScrolled ? 'text-charcoal hover:text-[#B88F4D]' : 'text-white hover:text-amber-200'
-            }`}
+            className="p-2 transition-colors focus:outline-none cursor-pointer text-charcoal hover:text-[#B88F4D]"
             aria-label="Menu principal"
           >
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
