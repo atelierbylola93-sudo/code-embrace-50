@@ -176,12 +176,43 @@ export const COIFFURE_SERVICES: ServiceGroup[] = [
 ];
 
 // HEAD SPA MAIN CONTENT
+export interface HeadSpaFormula {
+  id: string;
+  name: string;
+  duration: string;
+  price: number;
+  description: string;
+  isPopular?: boolean;
+}
+
 export const HEAD_SPA_DATA = {
   seoTitle: "Head Spa Le Pré-Saint-Gervais • L'Atelier by Lola",
-  price: 120,
-  duration: "45 minutes",
   subtitle: "Le Rituel Thermal Japonais de Relaxation et de Santé du Cuir Chevelu",
   description: "Inspiré des rituels ancestraux japonais, notre Head Spa est une parenthèse sensorielle unique en son genre. Plus qu'un simple shampoing massant, c'est un véritable traitement thérapeutique qui combine micro-circulation crânienne, pureté capillaire et relaxation nerveuse profonde au Pré-Saint-Gervais. Le clou du spectacle : notre célèbre arche d'eau (halo thérapie) qui déverse un flux continu d'eau tiède sur votre front et votre cuir chevelu pour calmer l'esprit.",
+  formulas: [
+    {
+      id: "decouverte",
+      name: "Head Spa Découverte",
+      duration: "40 min",
+      price: 85,
+      description: "L'introduction parfaite au lâcher-prise. Offrez-vous une pause sensorielle alliant massage relaxant du cuir chevelu, shampooing, soin profond et aromathérapie. Repartez l'esprit léger (séchage naturel inclus)."
+    },
+    {
+      id: "signature",
+      name: "Head Spa Signature",
+      duration: "1h00",
+      price: 120,
+      description: "Le soin phare pour une harmonie totale du corps et de l'esprit. Plongez dans un environnement entièrement dédié à l'apaisement. Ce rituel combine un nettoyage profond du cuir chevelu, un shampooing et un soin adaptés, de l'aromathérapie, un massage ciblé du cou et des épaules, ainsi que la détente sensorielle absolue procurée par notre arche d'eau et notre dôme de vapeur (séchage naturel inclus).",
+      isPopular: true
+    },
+    {
+      id: "premium",
+      name: "Head Spa Premium",
+      duration: "1h20",
+      price: 145,
+      description: "La quintessence du sur-mesure. Une prestation d'exception entièrement personnalisée selon vos attentes uniques. Le soin est construit sur-mesure suite à un questionnaire (envoyé par mail ou à remplir sur place) et un diagnostic approfondi avec nos équipes pour répondre parfaitement aux besoins de vos cheveux et de votre esprit (séchage naturel inclus)."
+    }
+  ] as HeadSpaFormula[],
   steps: [
     { title: "Gommage & Bain d'Huiles", text: "Exfoliation douce pour éliminer les toxines et résidus de produits, suivie de l'application d'élixirs botaniques ciblés." },
     { title: "Massage Crânien, Nuque & Épaules", text: "Manœuvres d'acupression issues de techniques shiatsu pour relâcher les tensions musculaires et booster la repousse." },
