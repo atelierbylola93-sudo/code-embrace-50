@@ -21,7 +21,6 @@ export default function FloatingActions() {
     };
   }, []);
 
-
   return (
     <div 
       id="floating-actions" 
