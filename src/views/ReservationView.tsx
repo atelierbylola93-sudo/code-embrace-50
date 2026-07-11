@@ -419,7 +419,7 @@ export default function ReservationView() {
                 </div>
 
                 {/* Services List with Checkboxes */}
-                <div className="space-y-3 max-h-[350px] overflow-y-auto pr-1">
+                <div className="space-y-3">
                   {filteredServices.length > 0 ? (
                     filteredServices.map((service) => {
                       const isSelected = selectedServices.some(s => s.id === service.id);
