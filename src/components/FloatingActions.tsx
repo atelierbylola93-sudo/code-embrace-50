@@ -45,10 +45,10 @@ export default function FloatingActions() {
       </motion.a>
 
 
-      {/* Floating Phone Action */}
+      {/* Floating Phone Action - desktop/tablet only */}
       <motion.a
         href={`tel:${INSTITUT_INFO.phoneFormatted}`}
-        className="flex h-12 w-12 items-center justify-center rounded-[24px] bg-[#B88F4D] text-white shadow-xl hover:bg-[#A17E60] border border-[#B88F4D]/40 transition-all duration-300"
+        className="hidden sm:flex h-12 w-12 items-center justify-center rounded-[24px] bg-[#B88F4D] text-white shadow-xl hover:bg-[#A17E60] border border-[#B88F4D]/40 transition-all duration-300"
         aria-label="Appeler l'Atelier"
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.95 }}
@@ -56,6 +56,7 @@ export default function FloatingActions() {
       >
         <Phone className="h-5 w-5" />
       </motion.a>
+
 
       {/* Floating Booking Action */}
       {!isReservationView && (
