@@ -14,7 +14,7 @@ export default function Footer({ onNavigate }: FooterProps) {
   };
 
   return (
-    <footer id="main-footer" className="bg-[#1E1E1E] text-white pt-20 pb-8 mt-24 border-t-2 border-[#B88F4D]/25 relative overflow-hidden">
+    <footer id="main-footer" className="bg-[#3A2F26] text-white pt-20 pb-8 mt-24 border-t-2 border-[#B88F4D]/25 relative overflow-hidden">
       <SchemaLocalBusiness />
       
       {/* Background Subtle Gradient Glow */}
