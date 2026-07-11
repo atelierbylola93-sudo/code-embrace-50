@@ -33,7 +33,28 @@ function LoginPage() {
     const { error } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
     setLoading(false);
     if (error) {
-      setError('Identifiants incorrects.');
+      setError('Identifiants incorrects. Si c\'est votre première connexion, utilisez « Créer le compte ».');
+      return;
+    }
+    navigate({ to: '/admin' });
+  }
+
+  async function onCreate() {
+    setLoading(true);
+    setError(null);
+    const { error } = await supabase.auth.signUp({
+      email: email.trim(),
+      password,
+      options: { emailRedirectTo: `${window.location.origin}/login` },
+    });
+    setLoading(false);
+    if (error) {
+      setError(error.message.includes('registered') ? 'Ce compte existe déjà, connectez-vous.' : 'Création impossible : ' + error.message);
+      return;
+    }
+    const { error: e2 } = await supabase.auth.signInWithPassword({ email: email.trim(), password });
+    if (e2) {
+      setError('Compte créé — vous pouvez maintenant vous connecter.');
       return;
     }
     navigate({ to: '/admin' });
