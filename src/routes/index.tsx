@@ -22,12 +22,12 @@ export const Route = createFileRoute("/")({
       {
         property: "og:title",
         content:
-          "L'Atelier by Lola | Head Spa Japonais & Institut de Beauté d'Exception",
+          "L'Atelier by Lola | Head Spa Japonais & Institut de Beauté au Pré-Saint-Gervais",
       },
       {
         property: "og:description",
         content:
-          "Découvrez notre temple sensoriel au Pré-Saint-Gervais. Head Spa japonais authentique, HydraFacial, techniques de coiffures russes et soins prestigieux.",
+          "Découvrez L'Atelier by Lola au Pré-Saint-Gervais (93). Head Spa japonais, HydraFacial, Browlift, lissages, blanchiment dentaire et épilation définitive IPL dans un boudoir luxueux.",
       },
       {
         property: "og:image",
@@ -39,12 +39,12 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "L'Atelier by Lola | L'Éclat et le Bien-être Absolu",
+        content: "L'Atelier by Lola | Head Spa Japonais & Institut de Beauté au Pré-Saint-Gervais",
       },
       {
         name: "twitter:description",
         content:
-          "Un institut d'exception inspiré de l'ambiance épurée des spas de palaces parisiens. Réservez votre moment sacré de détente.",
+          "Découvrez L'Atelier by Lola au Pré-Saint-Gervais (93). Head Spa japonais, HydraFacial, Browlift, lissages, blanchiment dentaire et épilation définitive IPL dans un boudoir luxueux.",
       },
       {
         name: "twitter:image",
