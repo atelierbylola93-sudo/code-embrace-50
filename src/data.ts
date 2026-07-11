@@ -1,4 +1,5 @@
 import { ServiceGroup, FaqItem, ReviewItem, Page } from './types';
+import iplEpilationImg from './assets/ipl-epilation.jpg';
 
 export const INSTITUT_INFO = {
   name: "L'Atelier by Lola",
@@ -42,7 +43,7 @@ export const LUXURY_IMAGES = {
   hydraFacial: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=1200', // Luxury glowy skin treatment
   aboutOwner: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=1200', // Wellness specialist representation
   beauteRegard: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=1200', // Eyelash and brow macro aesthetic
-  iplEpilation: 'https://images.unsplash.com/photo-1614859324967-bdf461fcf769?auto=format&fit=crop&q=80&w=1200', // Laser therapy/clinical beauty room
+  iplEpilation: iplEpilationImg, // Séance IPL luxe — palette crème/doré
   blanchimentDentaire: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=1200', // Dazzling white smile
   detatouage: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=1200', // Precise cosmetological skincare beauty
   corpsAlgues: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=1200', // Body treatment luxury mud beauty
