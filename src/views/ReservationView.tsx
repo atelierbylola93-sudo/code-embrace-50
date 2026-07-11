@@ -288,6 +288,7 @@ export default function ReservationView() {
       date: selectedDate,
       time: selectedTimeSlot,
       duration: formatDuration(durationMin),
+      durationMin,
       client: clientInfo,
       options: optionsList,
     };
