@@ -105,9 +105,17 @@ function LoginPage() {
           >
             {loading ? 'Connexion…' : 'Se connecter'}
           </button>
+          <button
+            type="button"
+            onClick={onCreate}
+            disabled={loading || !email || password.length < 6}
+            className="w-full h-11 rounded-xl border border-[#DDCCB2] bg-white text-[#2A241C] text-sm hover:bg-[#EFE7D2] transition-colors disabled:opacity-50"
+          >
+            Créer le compte (première connexion)
+          </button>
         </form>
         <p className="mt-6 text-center text-xs text-[#8B7F6E]">
-          Première connexion ? Créez le compte via Lovable Cloud puis confirmez l'email.
+          Accès strictement réservé. Toute tentative est enregistrée.
         </p>
       </div>
     </div>
