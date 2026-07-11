@@ -64,9 +64,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
                   className={`relative py-1 text-xs uppercase tracking-[0.2em] font-medium transition-colors duration-300 cursor-pointer ${
                     currentPage === item.page
                       ? 'text-[#B88F4D]'
-                      : isScrolled
-                        ? 'text-charcoal hover:text-[#B88F4D]'
-                        : 'text-white hover:text-[#B88F4D]'
+                      : 'text-charcoal hover:text-[#B88F4D]'
                   }`}
                 >
                   {item.name}
