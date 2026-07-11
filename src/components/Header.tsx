@@ -113,9 +113,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
           {/* CTA RESERVATION */}
           <motion.button
             onClick={() => handleLinkClick('reservation')}
-            className={`ml-4 btn-primary flex items-center gap-2 !py-3 !px-6 !text-[11px] cursor-pointer ${
-              !isScrolled ? 'bg-[#B88F4D] !text-white hover:bg-white hover:!text-charcoal border border-[#B88F4D]' : ''
-            }`}
+            className="ml-4 btn-primary flex items-center gap-2 !py-3 !px-6 !text-[11px] cursor-pointer"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
           >
