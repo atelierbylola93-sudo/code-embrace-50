@@ -419,7 +419,7 @@ export default function ReservationView() {
                 </div>
 
                 {/* Services List with Checkboxes */}
-                <div className="space-y-3 max-h-[350px] overflow-y-auto pr-1">
+                <div className="space-y-3">
                   {filteredServices.length > 0 ? (
                     filteredServices.map((service) => {
                       const isSelected = selectedServices.some(s => s.id === service.id);
@@ -505,7 +505,7 @@ export default function ReservationView() {
                 </div>
 
                 {/* Nested Service Option Blocks */}
-                <div className="space-y-6 max-h-[350px] overflow-y-auto pr-1">
+                <div className="space-y-6">
                   {selectedServices.map((service) => (
                     <div key={`group-up-${service.id}`} className="space-y-3 bg-[#FCFCFB] p-4 rounded-2xl border border-slate-100">
                       <div className="flex items-center gap-2">
@@ -997,7 +997,7 @@ export default function ReservationView() {
             {selectedServices.length > 0 ? (
               <div className="space-y-3">
                 {/* Core Services Selected list */}
-                <div className="space-y-2.5 max-h-[160px] overflow-y-auto pr-1">
+                <div className="space-y-2.5">
                   {selectedServices.map(service => (
                     <div key={`side-${service.id}`} className="space-y-0.5 group">
                       <div className="flex justify-between text-[10px] text-gray-400">
