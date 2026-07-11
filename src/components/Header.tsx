@@ -82,11 +82,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             {/* SERVICES DROPDOWN SELECTOR FOR LUX NAVIGATION */}
             <li className="relative group">
               <button
-                className={`py-1 text-xs uppercase tracking-[0.2em] font-medium transition-colors duration-300 flex items-center gap-1 cursor-pointer ${
-                  isScrolled
-                    ? 'text-charcoal hover:text-[#B88F4D]'
-                    : 'text-white hover:text-[#B88F4D]'
-                }`}
+                className={`py-1 text-xs uppercase tracking-[0.2em] font-medium transition-colors duration-300 flex items-center gap-1 cursor-pointer text-charcoal hover:text-[#B88F4D]`}
               >
                 Autres Prestations
                 <span className="text-[9px] text-[#B88F4D]">▼</span>
