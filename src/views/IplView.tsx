@@ -59,7 +59,7 @@ export default function IplView() {
                 }`}
               >
                 {item.isPopular && (
-                  <span className="absolute top-4 right-4 bg-[#B88F4D] text-white text-[9px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">
+                  <span className="absolute -top-2 left-4 bg-[#B88F4D] shadow-md text-white text-[9px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">
                     Glow Populaire
                   </span>
                 )}

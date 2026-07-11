@@ -63,13 +63,13 @@ export default function CoiffureView() {
                   }`}
                 >
                   {item.isPopular && (
-                    <span className="absolute top-4 right-4 bg-[#B88F4D] text-white text-[9px] uppercase font-bold tracking-wider px-3 py-1.5 rounded-full">
+                    <span className="absolute -top-2 left-4 bg-[#B88F4D] shadow-md text-white text-[9px] uppercase font-bold tracking-wider px-3 py-1.5 rounded-full">
                       Exclusivité
                     </span>
                   )}
 
                   <div className="space-y-3">
-                    <div className="flex justify-between items-baseline gap-4 pr-12">
+                    <div className="flex justify-between items-baseline gap-4">
                       <h4 className="font-serif text-base md:text-lg font-bold text-charcoal group-hover:text-champagne transition-colors">
                         {item.name}
                       </h4>
