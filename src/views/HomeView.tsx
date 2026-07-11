@@ -164,11 +164,12 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             src={LUXURY_IMAGES.heroBg}
             alt="Intérieur chic L'Atelier by Lola"
             referrerPolicy="no-referrer"
-            className="w-full h-full object-cover filter brightness-[0.45] contrast-105"
+            className="w-full h-full object-cover filter brightness-110 contrast-95 saturate-95"
           />
-          {/* Radial aesthetic vignette and heavy dark-graded overlay for ultra readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/45 to-beige-bg" />
-          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-beige-bg via-beige-bg/45 to-transparent" />
+          {/* Soft cream veil for a light, inviting hero */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#EFE7D2]/70 via-[#EFE7D2]/55 to-[#EFE7D2]" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#DDCCB2]/40 via-transparent to-[#A3A485]/15" />
+          <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-beige-bg via-beige-bg/70 to-transparent" />
         </div>
 
         {/* Content Box */}
@@ -181,45 +182,45 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           >
             {/* Elegant Star Ranking Banner */}
             <div className="inline-flex flex-col items-center gap-1 select-none">
-              <span className="text-[#B88F4D] text-xs md:text-sm tracking-[0.2em] font-serif drop-shadow-[0_1.5px_2px_rgba(0,0,0,0.8)]">★★★★★</span>
-              <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-white/20 bg-black/45 backdrop-blur-md text-white mt-1">
+              <span className="text-[#B88F4D] text-xs md:text-sm tracking-[0.2em] font-serif">★★★★★</span>
+              <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-[#B88F4D]/30 bg-white/70 backdrop-blur-md text-charcoal mt-1 shadow-sm">
                 <Sparkles className="h-3 w-3 text-[#B88F4D] animate-pulse" />
-                <span className="text-[8px] md:text-xs uppercase tracking-[0.2em] font-semibold text-white/95">
+                <span className="text-[8px] md:text-xs uppercase tracking-[0.2em] font-semibold text-charcoal/90">
                   Beauté & Bien-être Haut de Gamme
                 </span>
               </div>
             </div>
 
             {/* Masterful Display Title with Great Vibes and Playfair mix (Fully Fluid & Clip-safe) */}
-            <h1 className="font-serif text-3.5xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-light text-white tracking-wide leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
-              L'Atelier <span className="font-signature text-5xl sm:text-6xl md:text-8xl lg:text-[7.5rem] text-[#B88F4D] block sm:inline italic ml-1 select-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">by Lola</span>
+            <h1 className="font-serif text-3.5xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-light text-charcoal tracking-wide leading-tight">
+              L'Atelier <span className="font-signature text-5xl sm:text-6xl md:text-8xl lg:text-[7.5rem] text-[#B88F4D] block sm:inline italic ml-1 select-none">by Lola</span>
             </h1>
 
             {/* Luxurious Subtext Subheadings */}
-            <p className="font-serif italic text-base sm:text-lg md:text-2xl text-white/95 font-light max-w-3xl mx-auto tracking-wide drop-shadow-[0_1.5px_2.5px_rgba(0,0,0,0.8)]">
+            <p className="font-serif italic text-base sm:text-lg md:text-2xl text-charcoal/85 font-light max-w-3xl mx-auto tracking-wide">
               Maison d'Esthétique & de Repos Capillaire d'Exception
             </p>
 
-            <p className="text-white/85 text-[9px] md:text-xs tracking-[0.25em] uppercase font-light drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] px-2">
+            <p className="text-[#A17E60] text-[9px] md:text-xs tracking-[0.25em] uppercase font-semibold px-2">
               Le Pré-Saint-Gervais • Séance Sensorielle Exclusive
             </p>
 
             {/* Highlights Pillars inside the Hero for premium conversion */}
             <div className="grid grid-cols-3 gap-2 sm:gap-4 max-w-2xl mx-auto pt-1 pb-3">
-              <div className="px-1.5 py-3 sm:px-3 sm:py-4 rounded-[20px] bg-black/35 backdrop-blur-md border border-white/10 text-white transition-all duration-300 hover:bg-black/50 hover:border-[#B88F4D]/60 group">
+              <div className="px-1.5 py-3 sm:px-3 sm:py-4 rounded-[20px] bg-white/75 backdrop-blur-md border border-[#B88F4D]/20 text-charcoal transition-all duration-300 hover:bg-white hover:border-[#B88F4D]/60 hover:shadow-md group">
                 <Compass className="h-3.5 w-3.5 text-[#B88F4D] mx-auto mb-1 duration-300 group-hover:scale-110" />
-                <span className="text-[10px] sm:text-[11px] md:text-xs font-serif uppercase tracking-widest font-semibold text-amber-300 group-hover:text-[#B88F4D] block">Head Spa</span>
-                <span className="text-[8px] sm:text-[9px] text-white/60 tracking-wider block mt-0.5">Rituel Japonais</span>
+                <span className="text-[10px] sm:text-[11px] md:text-xs font-serif uppercase tracking-widest font-semibold text-[#B88F4D] block">Head Spa</span>
+                <span className="text-[8px] sm:text-[9px] text-secondary-gray tracking-wider block mt-0.5">Rituel Japonais</span>
               </div>
-              <div className="px-1.5 py-3 sm:px-3 sm:py-4 rounded-[20px] bg-black/35 backdrop-blur-md border border-white/10 text-white transition-all duration-300 hover:bg-black/50 hover:border-[#B88F4D]/60 group">
+              <div className="px-1.5 py-3 sm:px-3 sm:py-4 rounded-[20px] bg-white/75 backdrop-blur-md border border-[#B88F4D]/20 text-charcoal transition-all duration-300 hover:bg-white hover:border-[#B88F4D]/60 hover:shadow-md group">
                 <Droplet className="h-3.5 w-3.5 text-[#B88F4D] mx-auto mb-1 duration-300 group-hover:scale-110" />
-                <span className="text-[10px] sm:text-[11px] md:text-xs font-serif uppercase tracking-widest font-semibold text-amber-300 group-hover:text-[#B88F4D] block">HydraFacial</span>
-                <span className="text-[8px] sm:text-[9px] text-white/60 tracking-wider block mt-0.5">Vortex Éclat</span>
+                <span className="text-[10px] sm:text-[11px] md:text-xs font-serif uppercase tracking-widest font-semibold text-[#B88F4D] block">HydraFacial</span>
+                <span className="text-[8px] sm:text-[9px] text-secondary-gray tracking-wider block mt-0.5">Vortex Éclat</span>
               </div>
-              <div className="px-1.5 py-3 sm:px-3 sm:py-4 rounded-[20px] bg-black/35 backdrop-blur-md border border-white/10 text-white transition-all duration-300 hover:bg-black/50 hover:border-[#B88F4D]/60 group">
+              <div className="px-1.5 py-3 sm:px-3 sm:py-4 rounded-[20px] bg-white/75 backdrop-blur-md border border-[#B88F4D]/20 text-charcoal transition-all duration-300 hover:bg-white hover:border-[#B88F4D]/60 hover:shadow-md group">
                 <Sparkles className="h-3.5 w-3.5 text-[#B88F4D] mx-auto mb-1 duration-300 group-hover:scale-110" />
-                <span className="text-[10px] sm:text-[11px] md:text-xs font-serif uppercase tracking-widest font-semibold text-amber-300 group-hover:text-[#B88F4D] block">Needling</span>
-                <span className="text-[8px] sm:text-[9px] text-white/60 tracking-wider block mt-0.5">Anti-Âge Pur</span>
+                <span className="text-[10px] sm:text-[11px] md:text-xs font-serif uppercase tracking-widest font-semibold text-[#B88F4D] block">Needling</span>
+                <span className="text-[8px] sm:text-[9px] text-secondary-gray tracking-wider block mt-0.5">Anti-Âge Pur</span>
               </div>
             </div>
 
@@ -243,7 +244,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   const el = document.getElementById('vedettes');
                   el?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="w-full sm:w-auto btn-secondary !border-white/40 !text-white hover:bg-white/15 transition-all duration-300 flex items-center justify-center gap-2 shadow-sm bg-black/20 backdrop-blur-sm"
+                className="w-full sm:w-auto btn-secondary !border-[#B88F4D]/50 !text-charcoal hover:!bg-white/80 transition-all duration-300 flex items-center justify-center gap-2 shadow-sm bg-white/60 backdrop-blur-sm"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -255,7 +256,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/60 pointer-events-none hidden md:flex">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-charcoal/50 pointer-events-none hidden md:flex">
           <span className="text-[9px] uppercase tracking-[0.25em] font-medium opacity-85">Défiler</span>
           <motion.div
             animate={{ y: [0, 6, 0] }}
