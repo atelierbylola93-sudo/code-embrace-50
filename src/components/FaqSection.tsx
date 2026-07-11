@@ -23,7 +23,7 @@ export default function FaqSection({
   return (
     <div className="w-full max-w-4xl mx-auto mt-12 px-2">
       <div className="text-center mb-10">
-        <span className="text-xs uppercase tracking-[0.2em] text-[#C7A46A] font-semibold">Conseils d'Expert</span>
+        <span className="text-xs uppercase tracking-[0.2em] text-[#B88F4D] font-semibold">Conseils d'Expert</span>
         <h3 className="font-serif text-2xl md:text-3xl font-medium text-charcoal mt-1">{title}</h3>
         <p className="text-secondary-gray text-xs md:text-sm mt-2 max-w-lg mx-auto">{subtitle}</p>
       </div>
@@ -34,7 +34,7 @@ export default function FaqSection({
           return (
             <div
               key={`faq-${index}`}
-              className="group rounded-[24px] bg-white border border-[#C7A46A]/10 overflow-hidden transition-all duration-300 hover:border-[#C7A46A]/30"
+              className="group rounded-[24px] bg-white border border-[#B88F4D]/10 overflow-hidden transition-all duration-300 hover:border-[#B88F4D]/30"
             >
               <button
                 onClick={() => toggleAccordion(index)}
@@ -42,8 +42,8 @@ export default function FaqSection({
                 aria-expanded={isOpen}
               >
                 <div className="flex gap-3">
-                  <HelpCircle className="h-5 w-5 text-[#C7A46A] shrink-0 mt-0.5" />
-                  <span className="font-serif font-medium text-charcoal text-sm md:text-base group-hover:text-[#C7A46A] transition-colors duration-300">
+                  <HelpCircle className="h-5 w-5 text-[#B88F4D] shrink-0 mt-0.5" />
+                  <span className="font-serif font-medium text-charcoal text-sm md:text-base group-hover:text-[#B88F4D] transition-colors duration-300">
                     {faq.question}
                   </span>
                 </div>
@@ -64,7 +64,7 @@ export default function FaqSection({
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
-                    <div className="px-6 pb-6 pt-1 text-sm md:text-base leading-relaxed text-secondary-gray border-t border-[#F8F5F0]">
+                    <div className="px-6 pb-6 pt-1 text-sm md:text-base leading-relaxed text-secondary-gray border-t border-[#EFE7D2]">
                       {faq.answer}
                     </div>
                   </motion.div>

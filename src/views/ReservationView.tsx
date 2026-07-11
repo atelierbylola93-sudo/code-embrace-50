@@ -326,7 +326,7 @@ export default function ReservationView() {
       
       {/* Header Info - reduced padding & sizes for premium mobile responsiveness */}
       <div className="text-center space-y-2 mb-8 md:mb-12">
-        <span className="text-[10px] uppercase tracking-[0.3em] text-[#C7A46A] font-bold">L'Art de se Coconner</span>
+        <span className="text-[10px] uppercase tracking-[0.3em] text-[#B88F4D] font-bold">L'Art de se Coconner</span>
         <h1 className="font-serif text-2xl md:text-5xl text-charcoal font-light">Réservation de Prestige</h1>
         <p className="text-secondary-gray text-[11px] md:text-sm max-w-md mx-auto">
           Sélectionnez un ou plusieurs rituels. Lola privatisera l'Atelier en exclusivité pour vous.
@@ -336,15 +336,15 @@ export default function ReservationView() {
       {/* Progress Stepper bar - Highly space-efficient, luxury editorial style */}
       {step < 5 && (
         <div className="max-w-xl mx-auto mb-10 md:mb-14 relative px-4">
-          <div className="absolute top-4 left-6 right-6 h-[1.5px] bg-[#C7A46A]/10 z-0" />
+          <div className="absolute top-4 left-6 right-6 h-[1.5px] bg-[#B88F4D]/10 z-0" />
           <div className="flex items-center justify-between relative z-10">
             {[1, 2, 3, 4].map((s) => (
               <div key={`stepper-${s}`} className="flex flex-col items-center font-sans">
                 <motion.div
                   initial={false}
                   animate={{
-                    backgroundColor: step === s ? "#0A0A0A" : step > s ? "#C7A46A" : "#FFFFFF",
-                    borderColor: step === s ? "#0A0A0A" : step > s ? "#C7A46A" : "#E2E8F0",
+                    backgroundColor: step === s ? "#0A0A0A" : step > s ? "#B88F4D" : "#FFFFFF",
+                    borderColor: step === s ? "#0A0A0A" : step > s ? "#B88F4D" : "#E2E8F0",
                     scale: step === s ? 1.1 : 1,
                   }}
                   transition={{ duration: 0.3 }}
@@ -356,7 +356,7 @@ export default function ReservationView() {
                     <span className={step === s ? 'text-white' : 'text-charcoal'}>0{s}</span>
                   )}
                 </motion.div>
-                <span className={`text-[8.5px] uppercase tracking-[0.25em] mt-2.5 font-semibold transition-all duration-350 ${step === s ? 'text-[#C7A46A]' : 'text-gray-400'}`}>
+                <span className={`text-[8.5px] uppercase tracking-[0.25em] mt-2.5 font-semibold transition-all duration-350 ${step === s ? 'text-[#B88F4D]' : 'text-gray-400'}`}>
                   {s === 1 && "Rituels"}
                   {s === 2 && "Prestige"}
                   {s === 3 && "Instant"}
@@ -372,7 +372,7 @@ export default function ReservationView() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
         
         {/* LEFT COLUMN: Stepper active content */}
-        <div className="lg:col-span-8 bg-white rounded-3xl p-5 md:p-8 border border-[#C7A46A]/10 min-h-[460px] flex flex-col justify-between shadow-[0_4px_30px_rgba(0,0,0,0.02)]">
+        <div className="lg:col-span-8 bg-white rounded-3xl p-5 md:p-8 border border-[#B88F4D]/10 min-h-[460px] flex flex-col justify-between shadow-[0_4px_30px_rgba(0,0,0,0.02)]">
           
           <AnimatePresence mode="wait">
             
@@ -397,7 +397,7 @@ export default function ReservationView() {
                     placeholder="Rechercher un soin..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full sm:w-56 px-4 py-2 text-[11px] border border-gray-100 rounded-full focus:outline-none focus:ring-1 focus:ring-[#C7A46A] focus:border-[#C7A46A] bg-gray-50/50"
+                    className="w-full sm:w-56 px-4 py-2 text-[11px] border border-gray-100 rounded-full focus:outline-none focus:ring-1 focus:ring-[#B88F4D] focus:border-[#B88F4D] bg-gray-50/50"
                   />
                 </div>
 
@@ -409,8 +409,8 @@ export default function ReservationView() {
                       onClick={() => setActiveCategory(cat)}
                       className={`px-3 py-1.5 rounded-full text-[9px] uppercase font-bold tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                         activeCategory === cat
-                          ? 'bg-[#C7A46A] text-white shadow-sm'
-                          : 'bg-[#F8F5F0] text-gray-600 hover:bg-gray-100'
+                          ? 'bg-[#B88F4D] text-white shadow-sm'
+                          : 'bg-[#EFE7D2] text-gray-600 hover:bg-gray-100'
                       }`}
                     >
                       {cat}
@@ -429,13 +429,13 @@ export default function ReservationView() {
                           onClick={() => handleToggleService(service)}
                           className={`p-4 rounded-2xl border transition-all flex justify-between items-center gap-4 cursor-pointer ${
                             isSelected
-                              ? 'border-[#C7A46A] bg-[#C7A46A]/3 shadow-sm'
+                              ? 'border-[#B88F4D] bg-[#B88F4D]/3 shadow-sm'
                               : 'border-slate-50 hover:border-slate-100 bg-[#FCFCFB]'
                           }`}
                         >
                           <div className="space-y-1 select-none">
                             <div className="flex items-center gap-2 flex-wrap">
-                              <span className="text-[8px] uppercase tracking-widest font-extrabold text-[#C7A46A] bg-[#C7A46A]/10 px-2 py-0.5 rounded">
+                              <span className="text-[8px] uppercase tracking-widest font-extrabold text-[#B88F4D] bg-[#B88F4D]/10 px-2 py-0.5 rounded">
                                 {service.category}
                               </span>
                               <span className="inline-flex items-center gap-0.5 text-[9px] text-gray-400">
@@ -449,10 +449,10 @@ export default function ReservationView() {
                           </div>
 
                           <div className="flex items-center gap-3 shrink-0">
-                            <span className="font-serif font-bold text-[#C7A46A] text-sm md:text-base">{service.price} €</span>
+                            <span className="font-serif font-bold text-[#B88F4D] text-sm md:text-base">{service.price} €</span>
                             <div className={`h-6 w-6 rounded-lg flex items-center justify-center border transition-all ${
                               isSelected
-                                ? 'bg-[#C7A46A] border-[#C7A46A] text-white'
+                                ? 'bg-[#B88F4D] border-[#B88F4D] text-white'
                                 : 'border-gray-200 bg-white hover:border-gray-300'
                             }`}>
                               {isSelected ? <Check className="h-3.5 w-3.5" /> : <Plus className="h-3.5 w-3.5 text-gray-400" />}
@@ -479,7 +479,7 @@ export default function ReservationView() {
                   <button
                     disabled={selectedServices.length === 0}
                     onClick={() => setStep(2)}
-                    className="px-6 py-3 bg-[#C7A46A] hover:bg-charcoal text-white text-[11px] uppercase font-bold tracking-wider rounded-xl transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5"
+                    className="px-6 py-3 bg-[#B88F4D] hover:bg-charcoal text-white text-[11px] uppercase font-bold tracking-wider rounded-xl transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5"
                   >
                     Choisir mes options <ArrowRight className="h-3 w-3" />
                   </button>
@@ -497,7 +497,7 @@ export default function ReservationView() {
                 className="space-y-6"
               >
                 <div className="space-y-1">
-                  <span className="text-[9px] uppercase font-bold tracking-widest text-[#C7A46A] block">Sublimer l'Expérience</span>
+                  <span className="text-[9px] uppercase font-bold tracking-widest text-[#B88F4D] block">Sublimer l'Expérience</span>
                   <h2 className="font-serif text-lg md:text-xl text-charcoal font-medium">Recommandations exclusives pour vos soins</h2>
                   <p className="text-[11px] text-gray-400 leading-relaxed font-light">
                     Optimisez l'efficacité des soins grâce aux pépites d'actifs purs intégrées en simultané par Lola.
@@ -509,7 +509,7 @@ export default function ReservationView() {
                   {selectedServices.map((service) => (
                     <div key={`group-up-${service.id}`} className="space-y-3 bg-[#FCFCFB] p-4 rounded-2xl border border-slate-100">
                       <div className="flex items-center gap-2">
-                        <span className="text-[8px] uppercase tracking-widest font-bold text-[#A8B29A] bg-[#A8B29A]/10 px-1.5 py-0.5 rounded">
+                        <span className="text-[8px] uppercase tracking-widest font-bold text-[#A3A485] bg-[#A3A485]/10 px-1.5 py-0.5 rounded">
                           {service.category}
                         </span>
                         <h4 className="font-serif text-xs font-semibold text-charcoal tracking-wide truncate">{service.name}</h4>
@@ -525,12 +525,12 @@ export default function ReservationView() {
                                 onClick={() => handleToggleUpsell(up.id)}
                                 className={`p-3.5 rounded-xl border transition-all flex flex-col justify-between cursor-pointer relative h-full min-h-[90px] ${
                                   isAdded
-                                    ? 'border-[#C7A46A] bg-[#C7A46A]/3 shadow-xs'
+                                    ? 'border-[#B88F4D] bg-[#B88F4D]/3 shadow-xs'
                                     : 'border-slate-100 bg-white hover:border-gray-200'
                                 }`}
                               >
                                 {isAdded && (
-                                  <span className="absolute top-2.5 right-2.5 bg-[#C7A46A] text-white rounded-full p-0.5">
+                                  <span className="absolute top-2.5 right-2.5 bg-[#B88F4D] text-white rounded-full p-0.5">
                                     <Check className="h-2 w-2" />
                                   </span>
                                 )}
@@ -541,7 +541,7 @@ export default function ReservationView() {
                                 </div>
 
                                 <div className="mt-2 pt-2 border-t border-slate-50/50 flex justify-between items-center text-[10px]">
-                                  <span className="text-[#C7A46A] font-extrabold font-serif">+{up.price} €</span>
+                                  <span className="text-[#B88F4D] font-extrabold font-serif">+{up.price} €</span>
                                   <span className="text-[8px] text-gray-400">Simultané</span>
                                 </div>
                               </div>
@@ -565,7 +565,7 @@ export default function ReservationView() {
                   </button>
                   <button
                     onClick={() => setStep(3)}
-                    className="px-6 py-3 bg-[#C7A46A] hover:bg-charcoal text-white text-[11px] uppercase font-bold tracking-wider rounded-xl transition-all flex items-center gap-1.5"
+                    className="px-6 py-3 bg-[#B88F4D] hover:bg-charcoal text-white text-[11px] uppercase font-bold tracking-wider rounded-xl transition-all flex items-center gap-1.5"
                   >
                     Choisir l'heure <ArrowRight className="h-3 w-3" />
                   </button>
@@ -583,7 +583,7 @@ export default function ReservationView() {
                 className="space-y-6"
               >
                 <div>
-                  <span className="text-[8px] uppercase tracking-[0.25em] text-[#C7A46A] font-bold block mb-1">PROGRAMMATION</span>
+                  <span className="text-[8px] uppercase tracking-[0.25em] text-[#B88F4D] font-bold block mb-1">PROGRAMMATION</span>
                   <h2 className="font-serif text-lg md:text-xl text-charcoal font-medium">Votre instant privilégié</h2>
                   <p className="text-[11px] text-gray-400 leading-relaxed font-light">
                     Sélectionnez votre créneau. Notre calendrier intelligent croise vos disponibilités en temps réel.
@@ -591,12 +591,12 @@ export default function ReservationView() {
                 </div>
 
                 {/* GOOGLE CALENDAR SYNC CONTAINER - Premium requested feature! */}
-                <div className="bg-[#F8F5F0]/70 border border-[#C7A46A]/15 p-5 rounded-2xl relative overflow-hidden backdrop-blur-xs">
+                <div className="bg-[#EFE7D2]/70 border border-[#B88F4D]/15 p-5 rounded-2xl relative overflow-hidden backdrop-blur-xs">
                   <div className="flex justify-between items-start gap-4">
                     <div className="space-y-1.5">
-                      <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white border border-[#C7A46A]/10 shadow-[0_1px_5px_rgba(0,0,0,0.01)]">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#A8B29A] animate-pulse" />
-                        <span className="text-[8px] uppercase tracking-wider font-extrabold text-[#C7A46A]">
+                      <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white border border-[#B88F4D]/10 shadow-[0_1px_5px_rgba(0,0,0,0.01)]">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#A3A485] animate-pulse" />
+                        <span className="text-[8px] uppercase tracking-wider font-extrabold text-[#B88F4D]">
                           CONCIERGE INTELLISYNC
                         </span>
                       </div>
@@ -611,7 +611,7 @@ export default function ReservationView() {
                       onClick={handleToggleGoogleCalendarSync}
                       disabled={isSyncingGoogleCalendar}
                       className={`relative inline-flex h-5 w-10 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-300 ease-in-out focus:outline-none ${
-                        isGoogleCalendarConnected ? 'bg-[#A8B29A]' : 'bg-gray-200'
+                        isGoogleCalendarConnected ? 'bg-[#A3A485]' : 'bg-gray-200'
                       }`}
                     >
                       <span
@@ -629,8 +629,8 @@ export default function ReservationView() {
                       animate={{ opacity: 1, y: 0 }}
                       className="flex items-center gap-2 pt-3 mt-3 border-t border-white/60"
                     >
-                      <div className="h-3.5 w-3.5 border-2 border-t-transparent border-[#C7A46A] rounded-full animate-spin" />
-                      <span className="text-[10px] text-[#C7A46A] italic">Analyse sécurisée de vos créneaux en cours...</span>
+                      <div className="h-3.5 w-3.5 border-2 border-t-transparent border-[#B88F4D] rounded-full animate-spin" />
+                      <span className="text-[10px] text-[#B88F4D] italic">Analyse sécurisée de vos créneaux en cours...</span>
                     </motion.div>
                   )}
 
@@ -638,9 +638,9 @@ export default function ReservationView() {
                     <motion.div 
                       initial={{ opacity: 0, y: 4 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="text-[10px] text-[#A8B29A] font-semibold flex items-center gap-1.5 pt-3 mt-3 border-t border-white/60"
+                      className="text-[10px] text-[#A3A485] font-semibold flex items-center gap-1.5 pt-3 mt-3 border-t border-white/60"
                     >
-                      <CheckCircle2 className="h-4 w-4 text-[#A8B29A]" />
+                      <CheckCircle2 className="h-4 w-4 text-[#A3A485]" />
                       <span>Connexion établie avec Google Agenda. 3 horaires indisponibles ont été écartés.</span>
                     </motion.div>
                   )}
@@ -651,7 +651,7 @@ export default function ReservationView() {
                   <div className="flex justify-between items-baseline text-[10px]">
                     <label className="text-gray-400 font-bold uppercase tracking-wider">Sélectionnez la date</label>
                     {selectedDate && (
-                      <span className="text-[10px] text-[#C7A46A] font-serif font-light">
+                      <span className="text-[10px] text-[#B88F4D] font-serif font-light">
                         {new Date(selectedDate).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' })}
                       </span>
                     )}
@@ -669,10 +669,10 @@ export default function ReservationView() {
                           className={`flex flex-col items-center justify-center p-3 rounded-2xl border min-w-[64px] uppercase cursor-pointer transition-all snap-start ${
                             isSelected
                               ? 'border-charcoal bg-charcoal text-white shadow-md'
-                              : 'border-slate-100 bg-white hover:border-[#C7A46A]/40 text-gray-600 hover:bg-[#F8F5F0]'
+                              : 'border-slate-100 bg-white hover:border-[#B88F4D]/40 text-gray-600 hover:bg-[#EFE7D2]'
                           }`}
                         >
-                          <span className={`text-[8px] block font-bold leading-none mb-1 tracking-wider ${isSelected ? 'text-[#C7A46A]' : 'text-gray-400'}`}>
+                          <span className={`text-[8px] block font-bold leading-none mb-1 tracking-wider ${isSelected ? 'text-[#B88F4D]' : 'text-gray-400'}`}>
                             {d.dayName.replace('.', '')}
                           </span>
                           <span className="text-[16px] font-serif font-bold tracking-tight leading-none my-0.5">
@@ -691,14 +691,14 @@ export default function ReservationView() {
                 <div className="space-y-3">
                   <div className="flex justify-between items-center text-[10px]">
                     <label className="text-gray-400 font-bold uppercase tracking-wider">Créneaux d'exception disponibles</label>
-                    <span className="text-[9px] text-[#A8B29A] font-bold flex items-center gap-1">
-                      <Sparkles className="h-3 w-3 animate-pulse text-[#C7A46A]" /> Temps Réel Planity
+                    <span className="text-[9px] text-[#A3A485] font-bold flex items-center gap-1">
+                      <Sparkles className="h-3 w-3 animate-pulse text-[#B88F4D]" /> Temps Réel Planity
                     </span>
                   </div>
 
                   {isSyncingSlots ? (
                     <div className="h-28 flex flex-col items-center justify-center space-y-2 bg-[#FCFCFB] rounded-2.5xl border border-slate-50">
-                      <div className="h-4.5 w-4.5 border-2 border-t-transparent border-[#C7A46A] rounded-full animate-spin" />
+                      <div className="h-4.5 w-4.5 border-2 border-t-transparent border-[#B88F4D] rounded-full animate-spin" />
                       <span className="text-[10px] text-gray-400 italic font-light">Lecture des disponibilités de l'Atelier...</span>
                     </div>
                   ) : selectedDate ? (
@@ -713,8 +713,8 @@ export default function ReservationView() {
                             whileTap={{ scale: 0.97 }}
                             className={`py-3.5 text-xs rounded-xl font-bold border text-center transition-all cursor-pointer ${
                               isSelected
-                                ? 'border-[#C7A46A] bg-[#C7A46A] text-white shadow-sm font-semibold'
-                                : 'border-slate-100 bg-[#FCFCFB] text-charcoal hover:border-[#C7A46A]/20 hover:bg-white'
+                                ? 'border-[#B88F4D] bg-[#B88F4D] text-white shadow-sm font-semibold'
+                                : 'border-slate-100 bg-[#FCFCFB] text-charcoal hover:border-[#B88F4D]/20 hover:bg-white'
                             }`}
                           >
                             {slot}
@@ -723,7 +723,7 @@ export default function ReservationView() {
                       })}
                     </div>
                   ) : (
-                    <div className="border border-dashed border-[#C7A46A]/20 p-8 rounded-2xl text-center text-[11px] text-gray-400 italic bg-[#FCFCFB]">
+                    <div className="border border-dashed border-[#B88F4D]/20 p-8 rounded-2xl text-center text-[11px] text-gray-400 italic bg-[#FCFCFB]">
                       Sélectionnez une date d'élection ci-dessus pour afficher l'agenda de Lola.
                     </div>
                   )}
@@ -740,7 +740,7 @@ export default function ReservationView() {
                   <button
                     disabled={!selectedDate || !selectedTimeSlot}
                     onClick={() => setStep(4)}
-                    className="px-6 py-3 bg-[#C7A46A] hover:bg-charcoal text-white text-[11px] uppercase font-bold tracking-wider rounded-xl transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5 shadow-sm"
+                    className="px-6 py-3 bg-[#B88F4D] hover:bg-charcoal text-white text-[11px] uppercase font-bold tracking-wider rounded-xl transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5 shadow-sm"
                   >
                     Informations de contact <ArrowRight className="h-3 w-3" />
                   </button>
@@ -758,7 +758,7 @@ export default function ReservationView() {
                 className="space-y-6"
               >
                 <div>
-                  <span className="text-[8px] uppercase tracking-[0.25em] text-[#C7A46A] font-bold block mb-1">IDENTIFICATION</span>
+                  <span className="text-[8px] uppercase tracking-[0.25em] text-[#B88F4D] font-bold block mb-1">IDENTIFICATION</span>
                   <h2 className="font-serif text-lg md:text-xl text-charcoal font-medium">Vos Coordonnées Confidentielles</h2>
                   <p className="text-[11px] text-gray-400 leading-relaxed font-light">
                     Veuillez fournir vos accès de contact pour le SMS de rappel et la confirmation de votre parenthèse de soin.
@@ -769,7 +769,7 @@ export default function ReservationView() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
                       <label className="text-[9px] uppercase tracking-[0.2em] text-gray-500 font-bold flex items-center gap-1.5">
-                        <User className="h-3 w-3 text-[#A8B29A]" /> Prénom & Nom *
+                        <User className="h-3 w-3 text-[#A3A485]" /> Prénom & Nom *
                       </label>
                       <input
                         type="text"
@@ -777,13 +777,13 @@ export default function ReservationView() {
                         placeholder="Ex: Sophie Martin"
                         value={clientInfo.name}
                         onChange={(e) => setClientInfo({ ...clientInfo, name: e.target.value })}
-                        className="w-full px-4 py-3 text-xs border border-slate-100 rounded-xl focus:outline-none focus:ring-1 focus:ring-[#C7A46A] bg-[#FCFCFB] focus:bg-white transition-all font-light placeholder:text-gray-300"
+                        className="w-full px-4 py-3 text-xs border border-slate-100 rounded-xl focus:outline-none focus:ring-1 focus:ring-[#B88F4D] bg-[#FCFCFB] focus:bg-white transition-all font-light placeholder:text-gray-300"
                       />
                     </div>
 
                     <div className="space-y-1.5">
                       <label className="text-[9px] uppercase tracking-[0.2em] text-gray-500 font-bold flex items-center gap-1.5">
-                        <Phone className="h-3 w-3 text-[#A8B29A]" /> Portable *
+                        <Phone className="h-3 w-3 text-[#A3A485]" /> Portable *
                       </label>
                       <input
                         type="tel"
@@ -791,14 +791,14 @@ export default function ReservationView() {
                         placeholder="Ex: 06 12 34 56 78"
                         value={clientInfo.phone}
                         onChange={(e) => setClientInfo({ ...clientInfo, phone: e.target.value })}
-                        className="w-full px-4 py-3 text-xs border border-slate-100 rounded-xl focus:outline-none focus:ring-1 focus:ring-[#C7A46A] bg-[#FCFCFB] focus:bg-white transition-all font-light placeholder:text-gray-300"
+                        className="w-full px-4 py-3 text-xs border border-slate-100 rounded-xl focus:outline-none focus:ring-1 focus:ring-[#B88F4D] bg-[#FCFCFB] focus:bg-white transition-all font-light placeholder:text-gray-300"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-1.5">
                     <label className="text-[9px] uppercase tracking-[0.2em] text-gray-500 font-bold flex items-center gap-1.5">
-                      <Mail className="h-3 w-3 text-[#A8B29A]" /> Adresse E-mail *
+                      <Mail className="h-3 w-3 text-[#A3A485]" /> Adresse E-mail *
                     </label>
                     <input
                       type="email"
@@ -806,7 +806,7 @@ export default function ReservationView() {
                       placeholder="Ex: sophie@gmail.com"
                       value={clientInfo.email}
                       onChange={(e) => setClientInfo({ ...clientInfo, email: e.target.value })}
-                      className="w-full px-4 py-3 text-xs border border-slate-100 rounded-xl focus:outline-none focus:ring-1 focus:ring-[#C7A46A] bg-[#FCFCFB] focus:bg-white transition-all font-light placeholder:text-gray-300"
+                      className="w-full px-4 py-3 text-xs border border-slate-100 rounded-xl focus:outline-none focus:ring-1 focus:ring-[#B88F4D] bg-[#FCFCFB] focus:bg-white transition-all font-light placeholder:text-gray-300"
                     />
                   </div>
 
@@ -819,13 +819,13 @@ export default function ReservationView() {
                       placeholder="Détaillez vos souhaits particuliers si nécessaire (ex: pression de massage, sensibilité, etc.)..."
                       value={clientInfo.note}
                       onChange={(e) => setClientInfo({ ...clientInfo, note: e.target.value })}
-                      className="w-full px-4 py-3 text-xs border border-slate-100 rounded-xl focus:outline-none focus:ring-1 focus:ring-[#C7A46A] bg-[#FCFCFB] focus:bg-white transition-all font-light placeholder:text-gray-300 resize-none"
+                      className="w-full px-4 py-3 text-xs border border-slate-100 rounded-xl focus:outline-none focus:ring-1 focus:ring-[#B88F4D] bg-[#FCFCFB] focus:bg-white transition-all font-light placeholder:text-gray-300 resize-none"
                     />
                   </div>
                 </div>
 
-                <div className="p-4 bg-[#F8F5F0]/80 rounded-2xl border border-[#C7A46A]/10 text-[10.5px] text-gray-600 flex items-start gap-4">
-                  <AlertCircle className="h-4.5 w-4.5 shrink-0 mt-0.5 text-[#C7A46A]" />
+                <div className="p-4 bg-[#EFE7D2]/80 rounded-2xl border border-[#B88F4D]/10 text-[10.5px] text-gray-600 flex items-start gap-4">
+                  <AlertCircle className="h-4.5 w-4.5 shrink-0 mt-0.5 text-[#B88F4D]" />
                   <p className="leading-relaxed font-light text-left">
                     <strong>Politique de courtoisie :</strong> Les reports ou modifications sont sans frais jusqu'à 24h avant le soin via Planity ou SMS. Lola s’engage à préparer le linge d’accueil chauffé pour votre venue.
                   </p>
@@ -842,7 +842,7 @@ export default function ReservationView() {
                   <button
                     disabled={!isFormValid || isSubmitting}
                     onClick={handleCompleteBooking}
-                    className="px-6 py-3 text-[11px] font-bold uppercase tracking-wider rounded-xl transition-all text-white bg-charcoal hover:bg-[#C7A46A] disabled:opacity-40 shadow-md flex items-center gap-1.5 cursor-pointer"
+                    className="px-6 py-3 text-[11px] font-bold uppercase tracking-wider rounded-xl transition-all text-white bg-charcoal hover:bg-[#B88F4D] disabled:opacity-40 shadow-md flex items-center gap-1.5 cursor-pointer"
                   >
                     {isSubmitting ? "Initialisation du rituel..." : "Valider mon rendez-vous d'exception"}
                   </button>
@@ -858,12 +858,12 @@ export default function ReservationView() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-4 space-y-5"
               >
-                <div className="mx-auto h-12 w-12 bg-[#A8B29A]/15 text-[#A8B29A] rounded-full flex items-center justify-center animate-bounce">
+                <div className="mx-auto h-12 w-12 bg-[#A3A485]/15 text-[#A3A485] rounded-full flex items-center justify-center animate-bounce">
                   <CheckCircle2 className="h-7 w-7" />
                 </div>
 
                 <div className="space-y-1">
-                  <span className="text-[9px] tracking-[0.25em] uppercase font-bold text-[#C7A46A] bg-[#C7A46A]/10 px-3.5 py-1 rounded-full inline-block">
+                  <span className="text-[9px] tracking-[0.25em] uppercase font-bold text-[#B88F4D] bg-[#B88F4D]/10 px-3.5 py-1 rounded-full inline-block">
                     Rendez-vous Pré-Réservé & Synchronisé
                   </span>
                   <h2 className="font-serif text-xl md:text-2xl text-charcoal font-medium">Splendide, {bookingConfirmedDetails.client.name} !</h2>
@@ -873,10 +873,10 @@ export default function ReservationView() {
                 </div>
 
                 {/* Luxury Digital Ticket */}
-                <div className="max-w-md mx-auto bg-[#F8F5F0] border border-[#C7A46A]/20 rounded-2xl p-5 text-left relative overflow-hidden shadow-xs">
+                <div className="max-w-md mx-auto bg-[#EFE7D2] border border-[#B88F4D]/20 rounded-2xl p-5 text-left relative overflow-hidden shadow-xs">
                   {/* Digital punch holes left & right */}
-                  <div className="absolute -left-3 top-1/2 -translate-y-1/2 h-5 w-5 rounded-full bg-white border-r border-[#C7A46A]/10" />
-                  <div className="absolute -right-3 top-1/2 -translate-y-1/2 h-5 w-5 rounded-full bg-white border-l border-[#C7A46A]/10" />
+                  <div className="absolute -left-3 top-1/2 -translate-y-1/2 h-5 w-5 rounded-full bg-white border-r border-[#B88F4D]/10" />
+                  <div className="absolute -right-3 top-1/2 -translate-y-1/2 h-5 w-5 rounded-full bg-white border-l border-[#B88F4D]/10" />
 
                   <div className="flex justify-between items-start mb-3">
                     <div>
@@ -891,7 +891,7 @@ export default function ReservationView() {
                     </div>
                   </div>
 
-                  <div className="h-[1px] w-full bg-[#C7A46A]/10 my-3" />
+                  <div className="h-[1px] w-full bg-[#B88F4D]/10 my-3" />
 
                   <div className="space-y-2.5">
                     <div>
@@ -904,7 +904,7 @@ export default function ReservationView() {
                         <span className="text-[8px] text-gray-400 uppercase tracking-wider block">Finitions de style</span>
                         <div className="flex flex-wrap gap-1 mt-1">
                           {bookingConfirmedDetails.options.map((option: string, i: number) => (
-                            <span key={`opt-con-${i}`} className="text-[8px] text-[#A8B29A] bg-[#A8B29A]/10 font-bold px-2 py-0.5 rounded">
+                            <span key={`opt-con-${i}`} className="text-[8px] text-[#A3A485] bg-[#A3A485]/10 font-bold px-2 py-0.5 rounded">
                               + {option}
                             </span>
                           ))}
@@ -915,7 +915,7 @@ export default function ReservationView() {
                     <div className="flex justify-between items-end pt-1">
                       <div>
                         <span className="text-[8px] text-gray-400 uppercase tracking-wider block">Heure de soin</span>
-                        <p className="font-serif text-base font-bold text-[#C7A46A]">⏰ {bookingConfirmedDetails.time} ({bookingConfirmedDetails.duration})</p>
+                        <p className="font-serif text-base font-bold text-[#B88F4D]">⏰ {bookingConfirmedDetails.time} ({bookingConfirmedDetails.duration})</p>
                       </div>
                       <div className="text-right">
                         <span className="text-[8px] text-gray-400 uppercase tracking-wider block">Total TTC</span>
@@ -926,9 +926,9 @@ export default function ReservationView() {
                 </div>
 
                 {/* ADD TO CALENDAR INTEGRATION BUTTONS - Dynamic Google Link & .ics generator */}
-                <div className="max-w-md mx-auto bg-white border border-[#A8B29A]/15 rounded-2xl p-4 space-y-3">
+                <div className="max-w-md mx-auto bg-white border border-[#A3A485]/15 rounded-2xl p-4 space-y-3">
                   <div className="text-left">
-                    <h4 className="text-[10px] uppercase tracking-wider font-bold text-[#A8B29A] flex items-center gap-1">
+                    <h4 className="text-[10px] uppercase tracking-wider font-bold text-[#A3A485] flex items-center gap-1">
                       <Calendar className="h-3 w-3" /> Mon Agenda Personnel
                     </h4>
                     <p className="text-[9px] text-gray-400 pt-0.5 leading-normal">
@@ -951,7 +951,7 @@ export default function ReservationView() {
                       download={`atelier_by_lola_${bookingConfirmedDetails.id}.ics`}
                       className="py-2.5 px-3 bg-[#FCFCFB] hover:bg-slate-100 text-charcoal text-[10px] uppercase font-bold tracking-wider rounded-xl transition-all border border-slate-100 flex items-center justify-center gap-1.5"
                     >
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#C7A46A]" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#B88F4D]" />
                       Siri / iCal (.ics)
                     </a>
                   </div>
@@ -962,7 +962,7 @@ export default function ReservationView() {
                     href="https://www.planity.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 py-3 bg-charcoal hover:bg-[#C7A46A] text-white text-[11px] uppercase font-bold tracking-wider rounded-xl transition-all text-center"
+                    className="flex-1 py-3 bg-charcoal hover:bg-[#B88F4D] text-white text-[11px] uppercase font-bold tracking-wider rounded-xl transition-all text-center"
                   >
                     Confirmer sur Planity
                   </a>
@@ -974,7 +974,7 @@ export default function ReservationView() {
                       setSelectedDate('');
                       setSelectedTimeSlot('');
                     }}
-                    className="flex-1 py-3 text-[#C7A46A] hover:bg-[#C7A46A]/5 text-[11px] uppercase font-bold tracking-wider rounded-xl transition-all"
+                    className="flex-1 py-3 text-[#B88F4D] hover:bg-[#B88F4D]/5 text-[11px] uppercase font-bold tracking-wider rounded-xl transition-all"
                   >
                     Prendre un autre rendez-vous
                   </button>
@@ -988,10 +988,10 @@ export default function ReservationView() {
 
         {/* RIGHT COLUMN: Recapitulative Summary Box (Hidden on mobile dynamically, replaced with the Sticky Bottom thumb actions) */}
         <div className="lg:col-span-4 space-y-4">
-          <div className="bg-white rounded-3xl p-5 border border-[#C7A46A]/10 space-y-4 shadow-[0_4px_30px_rgba(0,0,0,0.02)]">
+          <div className="bg-white rounded-3xl p-5 border border-[#B88F4D]/10 space-y-4 shadow-[0_4px_30px_rgba(0,0,0,0.02)]">
             <h3 className="font-serif text-sm text-charcoal font-medium border-b border-slate-50 pb-2.5 flex items-center justify-between">
               <span>Votre Panier de Soins</span>
-              <Sparkles className="h-3.5 w-3.5 text-[#C7A46A]" />
+              <Sparkles className="h-3.5 w-3.5 text-[#B88F4D]" />
             </h3>
 
             {selectedServices.length > 0 ? (
@@ -1032,9 +1032,9 @@ export default function ReservationView() {
                       .map((u) => (
                         <div key={`summary-up-${u.id}`} className="flex justify-between items-start text-[10px]">
                           <span className="text-secondary-gray flex items-center gap-1 max-w-[180px] truncate">
-                            <span className="h-1 w-1 bg-[#C7A46A] rounded-full inline-block shrink-0" /> {u.name}
+                            <span className="h-1 w-1 bg-[#B88F4D] rounded-full inline-block shrink-0" /> {u.name}
                           </span>
-                          <span className="font-serif font-bold text-[#C7A46A] shrink-0">+{u.price} €</span>
+                          <span className="font-serif font-bold text-[#B88F4D] shrink-0">+{u.price} €</span>
                         </div>
                       ))}
                   </div>
@@ -1044,12 +1044,12 @@ export default function ReservationView() {
                 {(selectedDate || selectedTimeSlot) && (
                   <div className="pt-2.5 border-t border-dashed border-slate-100 text-[10px] space-y-1">
                     <span className="text-[9px] text-gray-400 uppercase tracking-wider block">Créneau choisi</span>
-                    <div className="bg-[#F8F5F0] p-2.5 rounded-xl text-charcoal font-semibold space-y-0.5">
+                    <div className="bg-[#EFE7D2] p-2.5 rounded-xl text-charcoal font-semibold space-y-0.5">
                       {selectedDate && (
                         <div>📅 {new Date(selectedDate).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' })}</div>
                       )}
                       {selectedTimeSlot && (
-                        <div className="text-[#C7A46A]">⏰ {selectedTimeSlot} (Lola privatisera l'espace)</div>
+                        <div className="text-[#B88F4D]">⏰ {selectedTimeSlot} (Lola privatisera l'espace)</div>
                       )}
                     </div>
                   </div>
@@ -1060,7 +1060,7 @@ export default function ReservationView() {
                   <span className="text-[10px] uppercase tracking-wider text-charcoal font-bold">Total estimé</span>
                   <div className="text-right">
                     <span className="text-[9px] text-gray-400 block leading-none mb-1">⏱️ {getTotalDuration()}</span>
-                    <span className="font-serif text-xl font-bold text-[#C7A46A]">
+                    <span className="font-serif text-xl font-bold text-[#B88F4D]">
                       {getSubtotal()} €
                     </span>
                   </div>
@@ -1078,8 +1078,8 @@ export default function ReservationView() {
           </div>
 
           {/* Secure transaction disclaimer */}
-          <div className="p-4 bg-[#F8F5F0]/50 rounded-2xl border border-slate-50 flex items-start gap-2.5">
-            <CheckCircle2 className="h-4 w-4 text-[#A8B29A] shrink-0 mt-0.5" />
+          <div className="p-4 bg-[#EFE7D2]/50 rounded-2xl border border-slate-50 flex items-start gap-2.5">
+            <CheckCircle2 className="h-4 w-4 text-[#A3A485] shrink-0 mt-0.5" />
             <div className="text-[9.5px] text-gray-450 leading-relaxed">
               <strong>Réservation sans engagement :</strong> Aucun paiement en ligne, le règlement s'effectue directement avec Lola en fin de soin.
             </div>
@@ -1090,10 +1090,10 @@ export default function ReservationView() {
 
       {/* THUMB-FRIENDLY STICKY BOTTOM BAR ON MOBILE (CRITICAL FOR CONVERSION) */}
       {step < 5 && selectedServices.length > 0 && (
-        <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-[#C7A46A]/15 px-4.5 py-3 z-50 flex items-center justify-between shadow-[0_-8px_30px_rgba(0,0,0,0.08)]">
+        <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-[#B88F4D]/15 px-4.5 py-3 z-50 flex items-center justify-between shadow-[0_-8px_30px_rgba(0,0,0,0.08)]">
           <div className="flex flex-col">
             <span className="text-[8px] uppercase tracking-wider text-gray-400">Panier ({selectedServices.length})</span>
-            <span className="font-serif font-extrabold text-[15px] text-[#C7A46A]">{getSubtotal()} €</span>
+            <span className="font-serif font-extrabold text-[15px] text-[#B88F4D]">{getSubtotal()} €</span>
           </div>
           <button
             onClick={() => {
@@ -1104,7 +1104,7 @@ export default function ReservationView() {
               }
             }}
             disabled={step === 3 ? (!selectedDate || !selectedTimeSlot) : (step === 4 ? !isFormValidByThumb() : false)}
-            className="px-5 py-2.5 bg-charcoal hover:bg-[#C7A46A] text-white text-[10px] uppercase font-bold tracking-widest rounded-lg transition-all flex items-center gap-1.5 disabled:opacity-40"
+            className="px-5 py-2.5 bg-charcoal hover:bg-[#B88F4D] text-white text-[10px] uppercase font-bold tracking-widest rounded-lg transition-all flex items-center gap-1.5 disabled:opacity-40"
           >
             <span>
               {step === 1 && "Choisir les options"}

@@ -15,10 +15,10 @@ export default function IplView() {
           referrerPolicy="no-referrer"
           className="absolute inset-0 w-full h-full object-cover opacity-60 scale-102 filter brightness-[0.75]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#F8F5F0] via-black/10 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#EFE7D2] via-black/10 to-black/30" />
         
         <div className="relative z-10 text-center space-y-3 px-4">
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.25em] text-white/95 font-bold bg-[#A8B29A] px-4 py-1.5 rounded-full border border-white/20">
+          <span className="text-[10px] md:text-xs uppercase tracking-[0.25em] text-white/95 font-bold bg-[#A3A485] px-4 py-1.5 rounded-full border border-white/20">
             Dermotechnologie Épilation Définitive
           </span>
           <h1 className="font-serif text-3xl md:text-5xl text-white font-light tracking-wide">
@@ -44,7 +44,7 @@ export default function IplView() {
         {/* Left column: Priced table of IPL treatments */}
         <div className="lg:col-span-8 space-y-8">
           <div className="space-y-2">
-            <span className="text-xs uppercase tracking-[0.2em] text-[#C7A46A] font-bold">Menu des Zones</span>
+            <span className="text-xs uppercase tracking-[0.2em] text-[#B88F4D] font-bold">Menu des Zones</span>
             <h3 className="font-serif text-xl md:text-2xl text-charcoal font-semibold">Tarifs Épilation IPL (Lumière Pulsée)</h3>
           </div>
 
@@ -54,12 +54,12 @@ export default function IplView() {
                 key={`ipl-item-${idx}`}
                 className={`bg-white rounded-[24px] p-6 border transition-all duration-300 flex flex-col justify-between group h-full shadow-sm ${
                   item.isPopular
-                    ? 'border-[#C7A46A] shadow-md relative'
-                    : 'border-[#C7A46A]/10 hover:border-[#C7A46A]/20'
+                    ? 'border-[#B88F4D] shadow-md relative'
+                    : 'border-[#B88F4D]/10 hover:border-[#B88F4D]/20'
                 }`}
               >
                 {item.isPopular && (
-                  <span className="absolute top-4 right-4 bg-[#C7A46A] text-white text-[9px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">
+                  <span className="absolute top-4 right-4 bg-[#B88F4D] text-white text-[9px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">
                     Glow Populaire
                   </span>
                 )}
@@ -69,13 +69,13 @@ export default function IplView() {
                     <h4 className="font-serif text-sm md:text-base font-bold text-charcoal group-hover:text-champagne transition-colors">
                       {item.name}
                     </h4>
-                    <span className="font-serif text-sm md:text-base font-bold text-[#C7A46A] shrink-0">
+                    <span className="font-serif text-sm md:text-base font-bold text-[#B88F4D] shrink-0">
                       {item.price} € <span className="text-[10px] text-gray-500 font-normal">/ séance</span>
                     </span>
                   </div>
 
                   {item.duration && (
-                    <span className="inline-block text-[9px] text-secondary-gray bg-[#F8F5F0] px-2 py-0.5 rounded-[8px] font-semibold">
+                    <span className="inline-block text-[9px] text-secondary-gray bg-[#EFE7D2] px-2 py-0.5 rounded-[8px] font-semibold">
                       ⏱️ {item.duration}
                     </span>
                   )}
@@ -87,13 +87,13 @@ export default function IplView() {
                   )}
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-[#F8F5F0] flex items-center justify-between text-[11px]">
+                <div className="mt-4 pt-3 border-t border-[#EFE7D2] flex items-center justify-between text-[11px]">
                   <span className="text-secondary-gray">Peau protégée & douce</span>
                   <a
                     href={INSTITUT_INFO.planityUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#C7A46A] font-semibold group-hover:underline"
+                    className="text-[#B88F4D] font-semibold group-hover:underline"
                   >
                     Réserver
                   </a>
@@ -106,10 +106,10 @@ export default function IplView() {
         {/* Right column: Benefits with safe clinical notes */}
         <div className="lg:col-span-4 space-y-8">
           
-          <div className="bg-[#1E1E1E] text-white p-8 rounded-[24px] shadow-lg border-t-4 border-[#C7A46A] space-y-6 relative overflow-hidden">
+          <div className="bg-[#1E1E1E] text-white p-8 rounded-[24px] shadow-lg border-t-4 border-[#B88F4D] space-y-6 relative overflow-hidden">
             <div className="absolute top-0 right-0 h-40 w-40 rounded-full bg-white/[0.02] filter blur-xl pointer-events-none" />
             
-            <span className="text-[10px] uppercase tracking-[0.2em] text-[#C7A46A] font-bold block">Sécurisé & Garanti</span>
+            <span className="text-[10px] uppercase tracking-[0.2em] text-[#B88F4D] font-bold block">Sécurisé & Garanti</span>
             <h3 className="font-serif text-xl text-white font-medium">Bénéfices de l'IPL</h3>
             
             <div className="h-[1px] w-full bg-white/10" />
@@ -117,7 +117,7 @@ export default function IplView() {
             <ul className="space-y-4">
               {IPL_DATA.benefits.map((benefit, idx) => (
                 <li key={`ipl-ben-${idx}`} className="flex items-start gap-3.5 text-xs md:text-sm text-gray-300">
-                  <CheckCircle2 className="h-5 w-5 text-[#C7A46A] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="h-5 w-5 text-[#B88F4D] shrink-0 mt-0.5" />
                   <span>{benefit}</span>
                 </li>
               ))}
@@ -133,7 +133,7 @@ export default function IplView() {
           </div>
 
           {/* Simple book box */}
-          <div className="bg-white border border-[#C7A46A]/20 p-8 rounded-[24px] shadow-sm text-center space-y-4">
+          <div className="bg-white border border-[#B88F4D]/20 p-8 rounded-[24px] shadow-sm text-center space-y-4">
             <h4 className="font-serif text-lg text-charcoal">Prendre RDV</h4>
             <p className="text-secondary-gray text-xs leading-relaxed">
               Consultez les disponibilités de Lola pour vos séances d'épilation définitive sur Planity.
@@ -142,7 +142,7 @@ export default function IplView() {
               href={INSTITUT_INFO.planityUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 rounded-[24px] bg-[#C7A46A] tracking-[0.1em] py-4 text-xs font-semibold uppercase text-white shadow-md hover:bg-[#b5925a]"
+              className="w-full flex items-center justify-center gap-2 rounded-[24px] bg-[#B88F4D] tracking-[0.1em] py-4 text-xs font-semibold uppercase text-white shadow-md hover:bg-[#A17E60]"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -156,7 +156,7 @@ export default function IplView() {
       </section>
 
       {/* Accordion FAQs */}
-      <section className="bg-white py-16 border-t border-[#C7A46A]/10">
+      <section className="bg-white py-16 border-t border-[#B88F4D]/10">
         <FaqSection
           faqItems={IPL_DATA.faq}
           title="FAQ Épilation IPL • Le Pré-Saint-Gervais"

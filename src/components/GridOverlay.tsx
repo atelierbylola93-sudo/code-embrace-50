@@ -171,7 +171,7 @@ export default function GridOverlay() {
           onClick={() => toggleGrid(!isGridOn)}
           className={`flex items-center gap-2.5 rounded-[24px] px-4.5 py-3.5 text-[10px] tracking-[0.2em] font-medium uppercase shadow-xl transition-all duration-400 cursor-pointer border ${
             isGridOn 
-              ? 'bg-[#C7A46A] text-white border-[#C7A46A]/20' 
+              ? 'bg-[#B88F4D] text-white border-[#B88F4D]/20' 
               : 'bg-charcoal text-white hover:bg-black border-white/10'
           }`}
           whileHover={{ y: -2 }}
@@ -192,13 +192,13 @@ export default function GridOverlay() {
               className="hidden md:flex flex-col bg-charcoal/95 border border-white/10 p-3 rounded-2xl text-[9px] font-mono text-white/90 gap-1.5 shadow-2xl backdrop-blur-md"
             >
               <div className="flex items-center gap-1.5 border-b border-white/10 pb-1.5 mb-0.5">
-                <Cpu className="h-3 w-3 text-[#C7A46A] animate-pulse" />
+                <Cpu className="h-3 w-3 text-[#B88F4D] animate-pulse" />
                 <span className="font-semibold text-white tracking-widest uppercase">AUDIT SÉMANTIQUE SUISSE</span>
                 <span className="text-emerald-400 font-bold ml-auto animate-pulse">● PASSED</span>
               </div>
               
               <div className="grid grid-cols-2 gap-x-4 gap-y-1">
-                <div>COLONNES : <span className="text-[#C7A46A]">12 (Müller-Brockmann)</span></div>
+                <div>COLONNES : <span className="text-[#B88F4D]">12 (Müller-Brockmann)</span></div>
                 <div>BASE FONT : <span className="text-secondary-gray">{alignmentMetrics.activeFont}</span></div>
                 <div>ÉCART DE GRILLE : <span className="text-secondary-gray">{alignmentMetrics.colError}</span></div>
                 <div>ALIGN. OPTIQUE : <span className="text-amber-400">{alignmentMetrics.opticalOffset}</span></div>
