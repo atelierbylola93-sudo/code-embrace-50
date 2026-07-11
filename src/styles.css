@@ -3,9 +3,9 @@
 
 
 @theme {
-  --color-beige-bg: #F8F5F0;
-  --color-champagne: #C7A46A;
-  --color-sage: #A8B29A;
+  --color-beige-bg: #EFE7D2;
+  --color-champagne: #B88F4D;
+  --color-sage: #A3A485;
   --color-charcoal: #1E1E1E;
   --color-secondary-gray: #6A6A6A;
   
@@ -33,7 +33,7 @@
     scroll-behavior: smooth;
   }
   body {
-    background-color: #F8F5F0;
+    background-color: #EFE7D2;
     color: #1E1E1E;
     font-family: "Inter", system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
@@ -52,14 +52,14 @@
     width: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #F8F5F0;
+    background: #EFE7D2;
   }
   ::-webkit-scrollbar-thumb {
-    background: #D7C4A5;
+    background: #DDCCB2;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #C7A46A;
+    background: #B88F4D;
   }
 }
 
@@ -87,11 +87,11 @@
 }
 
 .gold-text {
-  color: #C7A46A;
+  color: #B88F4D;
 }
 
 .sage-bg {
-  background-color: #A8B29A;
+  background-color: #A3A485;
 }
 
 .card-rounded {
@@ -111,7 +111,7 @@
 }
 
 .btn-primary {
-  background-color: #C7A46A;
+  background-color: #B88F4D;
   color: #FFFFFF;
   border-radius: 100px;
   padding: 16px 36px;
@@ -129,14 +129,14 @@
 }
 
 .btn-primary:hover {
-  background-color: #b5925a;
+  background-color: #A17E60;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px 0 rgba(199, 164, 106, 0.3);
 }
 
 .btn-secondary {
-  border: 1px solid #C7A46A;
-  color: #C7A46A;
+  border: 1px solid #B88F4D;
+  color: #B88F4D;
   border-radius: 100px;
   padding: 16px 36px;
   min-height: 54px;
@@ -224,7 +224,7 @@ body.grid-on .grid-overlay {
   font-size: 8px;
   letter-spacing: 0.1em;
   font-weight: bold;
-  color: #C7A46A;
+  color: #B88F4D;
   opacity: 0.6;
 }
 

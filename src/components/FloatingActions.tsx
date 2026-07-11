@@ -54,12 +54,12 @@ export default function FloatingActions() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 10 }}
             onClick={scrollToTop}
-            className="flex h-11 w-11 items-center justify-center rounded-[24px] bg-white text-charcoal shadow-lg hover:bg-beige-bg transition-all duration-300 border border-[#C7A46A]/20"
+            className="flex h-11 w-11 items-center justify-center rounded-[24px] bg-white text-charcoal shadow-lg hover:bg-beige-bg transition-all duration-300 border border-[#B88F4D]/20"
             aria-label="Retour en haut"
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.95 }}
           >
-            <ArrowUp className="h-4 w-4 text-[#C7A46A]" />
+            <ArrowUp className="h-4 w-4 text-[#B88F4D]" />
           </motion.button>
         )}
       </AnimatePresence>
@@ -69,7 +69,7 @@ export default function FloatingActions() {
         href={INSTITUT_INFO.instagramUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex h-12 w-12 items-center justify-center rounded-[24px] bg-[#2E2E2E] text-[#C7A46A] shadow-xl hover:bg-black border border-[#C7A46A]/20 transition-all duration-300"
+        className="flex h-12 w-12 items-center justify-center rounded-[24px] bg-[#2E2E2E] text-[#B88F4D] shadow-xl hover:bg-black border border-[#B88F4D]/20 transition-all duration-300"
         aria-label="Voir notre Instagram"
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.95 }}
@@ -81,7 +81,7 @@ export default function FloatingActions() {
       {/* Floating Phone Action */}
       <motion.a
         href={`tel:${INSTITUT_INFO.phoneFormatted}`}
-        className="flex h-12 w-12 items-center justify-center rounded-[24px] bg-[#A8B29A] text-white shadow-xl hover:bg-[#97a188] transition-all duration-300 animate-pulse hover:animate-none"
+        className="flex h-12 w-12 items-center justify-center rounded-[24px] bg-[#A3A485] text-white shadow-xl hover:bg-[#97a188] transition-all duration-300 animate-pulse hover:animate-none"
         aria-label="Appeler l'Atelier"
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.95 }}
@@ -97,7 +97,7 @@ export default function FloatingActions() {
             window.location.hash = '#/reservation';
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          className="flex items-center gap-2 rounded-[24px] bg-[#C7A46A] tracking-wider px-4.5 py-3.5 text-[10px] md:text-xs font-semibold uppercase text-white shadow-xl hover:bg-[#b5925a] transition-all duration-300 cursor-pointer border border-[#C7A46A]/10"
+          className="flex items-center gap-2 rounded-[24px] bg-[#B88F4D] tracking-wider px-4.5 py-3.5 text-[10px] md:text-xs font-semibold uppercase text-white shadow-xl hover:bg-[#A17E60] transition-all duration-300 cursor-pointer border border-[#B88F4D]/10"
           whileHover={{ scale: 1.05, y: -2 }}
           whileTap={{ scale: 0.95 }}
         >

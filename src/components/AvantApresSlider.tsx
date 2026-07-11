@@ -40,10 +40,10 @@ export default function AvantApresSlider() {
   };
 
   return (
-    <div id="avant-apres-slider" className="w-full max-w-4xl mx-auto rounded-[24px] overflow-hidden bg-white p-6 border border-[#C7A46A]/15 shadow-sm">
+    <div id="avant-apres-slider" className="w-full max-w-4xl mx-auto rounded-[24px] overflow-hidden bg-white p-6 border border-[#B88F4D]/15 shadow-sm">
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
         <div>
-          <span className="text-xs uppercase tracking-[0.2em] text-[#C7A46A] font-semibold">Preuves Réelles</span>
+          <span className="text-xs uppercase tracking-[0.2em] text-[#B88F4D] font-semibold">Preuves Réelles</span>
           <h3 className="font-serif text-3xl font-medium text-charcoal mt-1">Résultats Avant / Après</h3>
           <p className="text-secondary-gray text-sm mt-1">Glissez le curseur pour contempler la transformation instantanée.</p>
         </div>
@@ -59,8 +59,8 @@ export default function AvantApresSlider() {
               }}
               className={`px-4 py-2 text-xs uppercase tracking-wider rounded-[24px] font-medium transition-all duration-300 ${
                 activeItemIndex === idx
-                  ? 'bg-[#C7A46A] text-white'
-                  : 'bg-[#F8F5F0] text-secondary-gray hover:bg-[#A8B29A]/10 hover:text-[#1E1E1E]'
+                  ? 'bg-[#B88F4D] text-white'
+                  : 'bg-[#EFE7D2] text-secondary-gray hover:bg-[#A3A485]/10 hover:text-[#1E1E1E]'
               }`}
             >
               {item.category}
@@ -79,7 +79,7 @@ export default function AvantApresSlider() {
         onTouchStart={handlePointerDown}
         onTouchEnd={handlePointerUp}
         onMouseLeave={handlePointerUp}
-        className="relative h-[320px] md:h-[450px] w-full rounded-[24px] overflow-hidden select-none cursor-ew-resize border border-[#F8F5F0] shadow-inner"
+        className="relative h-[320px] md:h-[450px] w-full rounded-[24px] overflow-hidden select-none cursor-ew-resize border border-[#EFE7D2] shadow-inner"
       >
         {/* BEFORE IMAGE (Full-sized background) */}
         <img
@@ -104,7 +104,7 @@ export default function AvantApresSlider() {
             className="absolute inset-0 h-[320px] md:h-[450px] w-full max-w-none object-cover"
             style={{ width: containerRef.current?.getBoundingClientRect().width || '100vw' }}
           />
-          <div className="absolute top-4 left-4 z-10 bg-[#C7A46A] text-white text-[10px] font-semibold uppercase tracking-widest px-3 py-1.5 rounded-[24px]">
+          <div className="absolute top-4 left-4 z-10 bg-[#B88F4D] text-white text-[10px] font-semibold uppercase tracking-widest px-3 py-1.5 rounded-[24px]">
             Après
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function AvantApresSlider() {
           className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-20 shadow-[0_0_10px_rgba(0,0,0,0.3)]"
           style={{ left: `${sliderPosition}%` }}
         >
-          <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 h-10 w-10 rounded-full bg-[#C7A46A] border-4 border-white shadow-lg flex items-center justify-center text-white">
+          <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 h-10 w-10 rounded-full bg-[#B88F4D] border-4 border-white shadow-lg flex items-center justify-center text-white">
             <ArrowLeftRight className="h-4 w-4" />
           </div>
         </div>

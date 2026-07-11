@@ -94,7 +94,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-beige-bg flex flex-col justify-between selection:bg-[#C7A46A]/20 selection:text-[#C7A46A]">
+    <div className="min-h-screen bg-beige-bg flex flex-col justify-between selection:bg-[#B88F4D]/20 selection:text-[#B88F4D]">
       <div>
         {/* Header Navigation Grid */}
         <Header currentPage={currentPage} onNavigate={handleNavigate} />
