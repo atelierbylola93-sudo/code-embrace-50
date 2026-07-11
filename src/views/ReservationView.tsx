@@ -323,12 +323,20 @@ export default function ReservationView() {
     setStep(4);
   };
 
+  const computeEndHHMM = (time: string, durationMin: number) => {
+    const [h, m] = time.split(':').map(Number);
+    const total = h * 60 + m + (durationMin || 60);
+    const endH = Math.floor(total / 60) % 24;
+    const endM = total % 60;
+    return `${String(endH).padStart(2, '0')}${String(endM).padStart(2, '0')}`;
+  };
+
   const getGoogleCalendarUrl = (booking: any) => {
     const title = encodeURIComponent(`L'Atelier by Lola - ${booking.serviceName}`);
     const cleanedDate = booking.date.replace(/-/g, '');
     const cleanedTime = booking.time.replace(/:/g, '');
-    const endHour = String(Number(cleanedTime.substring(0, 2)) + 1).padStart(2, '0');
-    const startAndEnd = `${cleanedDate}T${cleanedTime}00/${cleanedDate}T${endHour}${cleanedTime.substring(2, 4)}00`;
+    const endTime = computeEndHHMM(booking.time, booking.durationMin);
+    const startAndEnd = `${cleanedDate}T${cleanedTime}00/${cleanedDate}T${endTime}00`;
     const details = encodeURIComponent(
       `Rendez-vous à L'Atelier by Lola.\n\nPrestation(s) : ${booking.serviceName}\nOptions : ${booking.options.join(', ') || 'Aucune'}\nDurée : ${booking.duration}\nTotal : ${booking.price} €`
     );
@@ -339,8 +347,7 @@ export default function ReservationView() {
   const getIcsFileUrl = (booking: any) => {
     const cleanedDate = booking.date.replace(/-/g, '');
     const cleanedTime = booking.time.replace(/:/g, '');
-    const endHour = String(Number(cleanedTime.substring(0, 2)) + 1).padStart(2, '0');
-    const endTime = `${endHour}${cleanedTime.substring(2, 4)}`;
+    const endTime = computeEndHHMM(booking.time, booking.durationMin);
     const icsText = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
