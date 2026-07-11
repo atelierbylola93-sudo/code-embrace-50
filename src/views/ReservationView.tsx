@@ -997,7 +997,7 @@ export default function ReservationView() {
             {selectedServices.length > 0 ? (
               <div className="space-y-3">
                 {/* Core Services Selected list */}
-                <div className="space-y-2.5 max-h-[160px] overflow-y-auto pr-1">
+                <div className="space-y-2.5">
                   {selectedServices.map(service => (
                     <div key={`side-${service.id}`} className="space-y-0.5 group">
                       <div className="flex justify-between text-[10px] text-gray-400">
