@@ -207,20 +207,20 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
             {/* Highlights Pillars inside the Hero for premium conversion */}
             <div className="grid grid-cols-3 gap-2 sm:gap-4 max-w-2xl mx-auto pt-1 pb-3">
-              <div className="px-1.5 py-3 sm:px-3 sm:py-4 rounded-[20px] bg-black/35 backdrop-blur-md border border-white/10 text-white transition-all duration-300 hover:bg-black/50 hover:border-[#B88F4D]/60 group">
+              <div className="px-1.5 py-3 sm:px-3 sm:py-4 rounded-[20px] bg-white/75 backdrop-blur-md border border-[#B88F4D]/20 text-charcoal transition-all duration-300 hover:bg-white hover:border-[#B88F4D]/60 hover:shadow-md group">
                 <Compass className="h-3.5 w-3.5 text-[#B88F4D] mx-auto mb-1 duration-300 group-hover:scale-110" />
-                <span className="text-[10px] sm:text-[11px] md:text-xs font-serif uppercase tracking-widest font-semibold text-amber-300 group-hover:text-[#B88F4D] block">Head Spa</span>
-                <span className="text-[8px] sm:text-[9px] text-white/60 tracking-wider block mt-0.5">Rituel Japonais</span>
+                <span className="text-[10px] sm:text-[11px] md:text-xs font-serif uppercase tracking-widest font-semibold text-[#B88F4D] block">Head Spa</span>
+                <span className="text-[8px] sm:text-[9px] text-secondary-gray tracking-wider block mt-0.5">Rituel Japonais</span>
               </div>
-              <div className="px-1.5 py-3 sm:px-3 sm:py-4 rounded-[20px] bg-black/35 backdrop-blur-md border border-white/10 text-white transition-all duration-300 hover:bg-black/50 hover:border-[#B88F4D]/60 group">
+              <div className="px-1.5 py-3 sm:px-3 sm:py-4 rounded-[20px] bg-white/75 backdrop-blur-md border border-[#B88F4D]/20 text-charcoal transition-all duration-300 hover:bg-white hover:border-[#B88F4D]/60 hover:shadow-md group">
                 <Droplet className="h-3.5 w-3.5 text-[#B88F4D] mx-auto mb-1 duration-300 group-hover:scale-110" />
-                <span className="text-[10px] sm:text-[11px] md:text-xs font-serif uppercase tracking-widest font-semibold text-amber-300 group-hover:text-[#B88F4D] block">HydraFacial</span>
-                <span className="text-[8px] sm:text-[9px] text-white/60 tracking-wider block mt-0.5">Vortex Éclat</span>
+                <span className="text-[10px] sm:text-[11px] md:text-xs font-serif uppercase tracking-widest font-semibold text-[#B88F4D] block">HydraFacial</span>
+                <span className="text-[8px] sm:text-[9px] text-secondary-gray tracking-wider block mt-0.5">Vortex Éclat</span>
               </div>
-              <div className="px-1.5 py-3 sm:px-3 sm:py-4 rounded-[20px] bg-black/35 backdrop-blur-md border border-white/10 text-white transition-all duration-300 hover:bg-black/50 hover:border-[#B88F4D]/60 group">
+              <div className="px-1.5 py-3 sm:px-3 sm:py-4 rounded-[20px] bg-white/75 backdrop-blur-md border border-[#B88F4D]/20 text-charcoal transition-all duration-300 hover:bg-white hover:border-[#B88F4D]/60 hover:shadow-md group">
                 <Sparkles className="h-3.5 w-3.5 text-[#B88F4D] mx-auto mb-1 duration-300 group-hover:scale-110" />
-                <span className="text-[10px] sm:text-[11px] md:text-xs font-serif uppercase tracking-widest font-semibold text-amber-300 group-hover:text-[#B88F4D] block">Needling</span>
-                <span className="text-[8px] sm:text-[9px] text-white/60 tracking-wider block mt-0.5">Anti-Âge Pur</span>
+                <span className="text-[10px] sm:text-[11px] md:text-xs font-serif uppercase tracking-widest font-semibold text-[#B88F4D] block">Needling</span>
+                <span className="text-[8px] sm:text-[9px] text-secondary-gray tracking-wider block mt-0.5">Anti-Âge Pur</span>
               </div>
             </div>
 
