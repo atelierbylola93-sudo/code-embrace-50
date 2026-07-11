@@ -59,7 +59,7 @@ export default function HeadSpaView() {
 
           {/* Step-by-step description with icons */}
           <div className="space-y-6">
-            <h3 className="font-serif text-lg md:text-2xl font-semibold text-charcoal">Les 4 Étapes de la Renaissance :</h3>
+            <h3 className="font-serif text-lg md:text-2xl font-semibold text-charcoal">Les 3 Étapes de la Renaissance :</h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {HEAD_SPA_DATA.steps.map((step, idx) => (
