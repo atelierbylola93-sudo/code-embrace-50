@@ -83,27 +83,27 @@ export default function HeadSpaView() {
         <div className="lg:col-span-5 space-y-8">
           
           {/* Benefits Bullet Points */}
-          <div className="bg-[#1E1E1E] text-white p-8 rounded-[24px] shadow-lg border-t-4 border-[#B88F4D] space-y-6 relative overflow-hidden">
-            <div className="absolute top-0 right-0 h-40 w-40 rounded-full bg-white/[0.02] filter blur-xl pointer-events-none" />
+          <div className="bg-[#EFE7D2] text-charcoal p-8 rounded-[24px] shadow-sm border border-[#B88F4D]/30 border-t-4 border-t-[#B88F4D] space-y-6 relative overflow-hidden">
+            <div className="absolute top-0 right-0 h-40 w-40 rounded-full bg-[#B88F4D]/8 filter blur-xl pointer-events-none" />
             
-            <div className="space-y-2">
+            <div className="space-y-2 relative">
               <span className="text-[10px] uppercase tracking-[0.2em] text-[#B88F4D] font-bold block">Clinique & Bien-être</span>
-              <h3 className="font-serif text-xl md:text-2xl text-white font-medium">Bienfaits Scientifiques</h3>
+              <h3 className="font-serif text-xl md:text-2xl text-charcoal font-medium">Bienfaits Scientifiques</h3>
             </div>
             
-            <div className="h-[1px] w-full bg-white/10" />
+            <div className="h-[1px] w-full bg-[#B88F4D]/20" />
 
-            <ul className="space-y-4">
+            <ul className="space-y-4 relative">
               {HEAD_SPA_DATA.benefits.map((benefit, idx) => (
-                <li key={`benefit-${idx}`} className="flex items-start gap-3.5 text-xs md:text-sm text-gray-300">
+                <li key={`benefit-${idx}`} className="flex items-start gap-3.5 text-xs md:text-sm text-charcoal/80">
                   <CheckCircle2 className="h-5 w-5 text-[#B88F4D] shrink-0 mt-0.5" />
                   <span>{benefit}</span>
                 </li>
               ))}
             </ul>
 
-            <div className="p-4 bg-white/5 rounded-lg border border-white/10 text-xs text-gray-400 space-y-2">
-              <div className="flex items-center gap-2 text-[#A3A485] font-bold">
+            <div className="p-4 bg-white/70 rounded-lg border border-[#B88F4D]/15 text-xs text-charcoal/70 space-y-2 relative">
+              <div className="flex items-center gap-2 text-[#A17E60] font-bold">
                 <ShieldCheck className="h-4 w-4" />
                 <span>Régulation & Pureté</span>
               </div>
