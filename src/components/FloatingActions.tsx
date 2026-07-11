@@ -47,7 +47,7 @@ export default function FloatingActions() {
       {/* Floating Phone Action */}
       <motion.a
         href={`tel:${INSTITUT_INFO.phoneFormatted}`}
-        className="flex h-12 w-12 items-center justify-center rounded-[24px] bg-[#A3A485] text-white shadow-xl hover:bg-[#97a188] transition-all duration-300 animate-pulse hover:animate-none"
+        className="flex h-12 w-12 items-center justify-center rounded-[24px] bg-[#B88F4D] text-white shadow-xl hover:bg-[#A17E60] border border-[#B88F4D]/40 transition-all duration-300"
         aria-label="Appeler l'Atelier"
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.95 }}

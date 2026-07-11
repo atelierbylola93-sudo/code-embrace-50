@@ -479,7 +479,7 @@ export default function ReservationView() {
                   <button
                     disabled={selectedServices.length === 0}
                     onClick={() => setStep(2)}
-                    className="px-6 py-3 bg-[#B88F4D] hover:bg-charcoal text-white text-[11px] uppercase font-bold tracking-wider rounded-xl transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5"
+                    className="px-6 py-3 bg-[#B88F4D] hover:bg-charcoal text-white text-[11px] uppercase font-bold tracking-wider rounded-xl transition-all disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-200 flex items-center gap-1.5"
                   >
                     Choisir mes options <ArrowRight className="h-3 w-3" />
                   </button>
@@ -1068,8 +1068,8 @@ export default function ReservationView() {
 
               </div>
             ) : (
-              <div className="text-center py-8 space-y-1.5">
-                <span className="inline-block text-lg">🌱</span>
+              <div className="text-center py-8 space-y-2 flex flex-col items-center">
+                <Sparkles className="h-6 w-6 text-[#B88F4D]/60" />
                 <p className="text-[10px] text-gray-400 leading-relaxed italic">
                   Aucun rituel sélectionné.
                 </p>

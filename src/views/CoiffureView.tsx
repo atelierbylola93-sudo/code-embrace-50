@@ -7,23 +7,24 @@ export default function CoiffureView() {
     <div id="coiffure-view" className="w-full pt-28 pb-10">
       
       {/* Visual Ambient Banner */}
-      <section className="relative h-[250px] md:h-[350px] flex items-center justify-center bg-black overflow-hidden rounded-b-[24px]">
+      <section className="relative h-[250px] md:h-[350px] flex items-center justify-center bg-[#EFE7D2] overflow-hidden rounded-b-[24px]">
         <img
           src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=1200"
           alt="Brushing de Luxe L'Atelier Lola"
           referrerPolicy="no-referrer"
-          className="absolute inset-0 w-full h-full object-cover opacity-60 scale-102 filter brightness-95"
+          className="absolute inset-0 w-full h-full object-cover scale-102 filter brightness-110 contrast-95 saturate-95"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#EFE7D2] via-black/10 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#EFE7D2]/70 via-[#EFE7D2]/55 to-[#EFE7D2]" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#DDCCB2]/40 via-transparent to-[#A3A485]/15" />
         
         <div className="relative z-10 text-center space-y-3 px-4">
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.25em] text-white/90 font-bold bg-white/10 px-4 py-1.5 rounded-full border border-white/20">
+          <span className="text-[10px] md:text-xs uppercase tracking-[0.25em] text-charcoal font-bold bg-white/70 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#B88F4D]/30 shadow-sm">
             Coiffeur Le Pré-Saint-Gervais
           </span>
-          <h1 className="font-serif text-3xl md:text-5xl text-white font-light tracking-wider">
+          <h1 className="font-serif text-3xl md:text-5xl text-charcoal font-light tracking-wider">
             Haute Coiffure & Lissages
           </h1>
-          <p className="text-white/80 text-xs md:text-sm italic font-serif">
+          <p className="text-charcoal/70 text-xs md:text-sm italic font-serif">
             Coupes, couleurs créatrices et soins lissants moléculaires d'exception
           </p>
         </div>

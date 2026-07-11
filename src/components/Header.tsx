@@ -55,13 +55,13 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
         </button>
 
         {/* DESKTOP NAV */}
-        <nav className="hidden lg:flex items-center gap-7">
-          <ul className="flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-7 flex-nowrap">
+          <ul className="flex items-center gap-5 xl:gap-6 flex-nowrap whitespace-nowrap">
             {NAV_ITEMS.slice(0, 5).map((item) => (
               <li key={item.page}>
                 <button
                   onClick={() => handleLinkClick(item.page)}
-                  className={`relative py-1 text-xs uppercase tracking-[0.2em] font-medium transition-colors duration-300 cursor-pointer ${
+                  className={`relative py-1 text-[11px] xl:text-xs uppercase tracking-[0.16em] xl:tracking-[0.2em] font-medium whitespace-nowrap transition-colors duration-300 cursor-pointer ${
                     currentPage === item.page
                       ? 'text-[#B88F4D]'
                       : 'text-charcoal hover:text-[#B88F4D]'
@@ -82,7 +82,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             {/* SERVICES DROPDOWN SELECTOR FOR LUX NAVIGATION */}
             <li className="relative group">
               <button
-                className={`py-1 text-xs uppercase tracking-[0.2em] font-medium transition-colors duration-300 flex items-center gap-1 cursor-pointer text-charcoal hover:text-[#B88F4D]`}
+                className={`py-1 text-[11px] xl:text-xs uppercase tracking-[0.16em] xl:tracking-[0.2em] font-medium whitespace-nowrap transition-colors duration-300 flex items-center gap-1 cursor-pointer text-charcoal hover:text-[#B88F4D]`}
               >
                 Autres Prestations
                 <span className="text-[9px] text-[#B88F4D]">▼</span>
