@@ -479,7 +479,7 @@ export default function ReservationView() {
                   <button
                     disabled={selectedServices.length === 0}
                     onClick={() => setStep(2)}
-                    className="px-6 py-3 bg-[#B88F4D] hover:bg-charcoal text-white text-[11px] uppercase font-bold tracking-wider rounded-xl transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5"
+                    className="px-6 py-3 bg-[#B88F4D] hover:bg-charcoal text-white text-[11px] uppercase font-bold tracking-wider rounded-xl transition-all disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed disabled:hover:bg-gray-200 flex items-center gap-1.5"
                   >
                     Choisir mes options <ArrowRight className="h-3 w-3" />
                   </button>
