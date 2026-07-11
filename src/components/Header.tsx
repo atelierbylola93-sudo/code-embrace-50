@@ -55,8 +55,8 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
         </button>
 
         {/* DESKTOP NAV */}
-        <nav className="hidden lg:flex items-center gap-7">
-          <ul className="flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-7 flex-nowrap">
+          <ul className="flex items-center gap-5 xl:gap-6 flex-nowrap whitespace-nowrap">
             {NAV_ITEMS.slice(0, 5).map((item) => (
               <li key={item.page}>
                 <button
