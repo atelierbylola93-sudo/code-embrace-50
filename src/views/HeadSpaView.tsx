@@ -45,26 +45,6 @@ export default function HeadSpaView() {
             </p>
           </div>
 
-          {/* Step-by-step description with icons */}
-          <div className="space-y-6">
-            <h3 className="font-serif text-lg md:text-2xl font-semibold text-charcoal">Les 3 Étapes de la Renaissance :</h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {HEAD_SPA_DATA.steps.map((step, idx) => (
-                <div key={`step-${idx}`} className="bg-white p-6 card-rounded premium-shadow border border-[#B88F4D]/5 space-y-2 hover-lift">
-                  <h4 className="font-serif font-bold text-base text-charcoal flex items-center gap-2">
-                    <span className="h-6 w-6 rounded-full bg-[#A3A485]/15 text-[#A3A485] text-xs font-bold flex items-center justify-center">
-                      {idx + 1}
-                    </span>
-                    {step.title}
-                  </h4>
-                  <p className="text-secondary-gray text-xs md:text-sm leading-relaxed pl-8">
-                    {step.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Right Side: CTA Box */}
