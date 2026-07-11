@@ -7,33 +7,20 @@ export default function FloatingActions() {
   const [isReservationView, setIsReservationView] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 400) {
-        setShowBackToTop(true);
-      } else {
-        setShowBackToTop(false);
-      }
-    };
-
     const handleHashChange = () => {
       setIsReservationView(window.location.hash.includes('/reservation'));
     };
 
-    window.addEventListener('scroll', handleScroll);
     window.addEventListener('hashchange', handleHashChange);
-    
+
     // Initial check
     handleHashChange();
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('hashchange', handleHashChange);
     };
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <div 
