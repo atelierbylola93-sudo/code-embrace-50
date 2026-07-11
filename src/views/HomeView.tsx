@@ -269,7 +269,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       {/* 2. STATS BANNER SECTION */}
       <section className="relative z-20 -mt-10 max-w-5xl mx-auto px-4">
         <div className="bg-white rounded-[28px] border border-[#B88F4D]/15 shadow-xl py-6 px-4 md:px-8 grid grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 text-center divide-y xl:divide-y-0 xl:divide-x divide-[#B88F4D]/10">
-          <div className="pt-0 flex flex-col justify-center space-y-1">
+          <div className="pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1">
             <span className="font-serif text-3xl md:text-4xl font-bold text-charcoal tracking-tight block">
               +500
             </span>
@@ -278,7 +278,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </span>
           </div>
 
-          <div className="pt-4 lg:pt-0 flex flex-col justify-center space-y-1">
+          <div className="pt-3 xl:pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1 min-w-0 px-1">
             <span className="font-serif text-3xl md:text-4xl font-bold text-[#B88F4D] tracking-tight block flex items-center justify-center gap-1">
               4.9<span className="text-sm text-yellow-500">★</span>
             </span>
@@ -287,7 +287,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </span>
           </div>
 
-          <div className="pt-4 lg:pt-0 flex flex-col justify-center space-y-1">
+          <div className="pt-3 xl:pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1 min-w-0 px-1">
             <span className="font-serif text-3.5xl md:text-4xl font-bold text-charcoal tracking-tight block">
               100%
             </span>
@@ -296,7 +296,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </span>
           </div>
 
-          <div className="pt-4 lg:pt-0 flex flex-col justify-center space-y-1">
+          <div className="pt-3 xl:pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1 min-w-0 px-1">
             <span className="font-serif text-3.5xl md:text-4xl font-bold text-[#A3A485] tracking-tight block">
               Planity
             </span>
