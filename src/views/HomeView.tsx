@@ -164,11 +164,12 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             src={LUXURY_IMAGES.heroBg}
             alt="Intérieur chic L'Atelier by Lola"
             referrerPolicy="no-referrer"
-            className="w-full h-full object-cover filter brightness-[0.45] contrast-105"
+            className="w-full h-full object-cover filter brightness-110 contrast-95 saturate-95"
           />
-          {/* Radial aesthetic vignette and heavy dark-graded overlay for ultra readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/45 to-beige-bg" />
-          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-beige-bg via-beige-bg/45 to-transparent" />
+          {/* Soft cream veil for a light, inviting hero */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#EFE7D2]/70 via-[#EFE7D2]/55 to-[#EFE7D2]" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#DDCCB2]/40 via-transparent to-[#A3A485]/15" />
+          <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-beige-bg via-beige-bg/70 to-transparent" />
         </div>
 
         {/* Content Box */}
