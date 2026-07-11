@@ -31,25 +31,6 @@ export default function FloatingActions() {
         right: 'calc(1rem + env(safe-area-inset-right, 0px))'
       }}
     >
-      <AnimatePresence>
-        {/* Back to top button */}
-        {showBackToTop && (
-          <motion.button
-            key="back-to-top"
-            initial={{ opacity: 0, scale: 0.8, y: 10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: 10 }}
-            onClick={scrollToTop}
-            className="flex h-11 w-11 items-center justify-center rounded-[24px] bg-white text-charcoal shadow-lg hover:bg-beige-bg transition-all duration-300 border border-[#B88F4D]/20"
-            aria-label="Retour en haut"
-            whileHover={{ y: -3 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <ArrowUp className="h-4 w-4 text-[#B88F4D]" />
-          </motion.button>
-        )}
-      </AnimatePresence>
-
       {/* Floating Instagram Action */}
       <motion.a
         href={INSTITUT_INFO.instagramUrl}
