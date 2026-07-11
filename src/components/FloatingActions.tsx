@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Phone, Calendar, ArrowUp, Instagram } from 'lucide-react';
+import { Phone, Calendar, Instagram } from 'lucide-react';
 import { INSTITUT_INFO } from '../data';
 
 export default function FloatingActions() {
-  const [showBackToTop, setShowBackToTop] = useState(false);
   const [isReservationView, setIsReservationView] = useState(false);
 
   useEffect(() => {
