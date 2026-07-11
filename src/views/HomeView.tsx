@@ -21,6 +21,7 @@ import {
 import { INSTITUT_INFO, LUXURY_IMAGES, REVIEWS, INSTAGRAM_FEED } from '../data';
 import { Page } from '../types';
 import AvantApresSlider from '../components/AvantApresSlider';
+import heroSpaWellnessAsset from '../assets/hero-spa-wellness.png.asset.json';
 
 interface HomeViewProps {
   onNavigate: (page: Page) => void;
@@ -161,8 +162,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             initial={{ scale: 1.08 }}
             animate={{ scale: 1.02 }}
             transition={{ duration: 12, ease: "easeOut" }}
-            src={LUXURY_IMAGES.heroBg}
-            alt="Intérieur chic L'Atelier by Lola"
+            src={heroSpaWellnessAsset.url}
+            alt="Ambiance spa zen avec bougies, pierres chaudes et huiles essentielles"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover filter brightness-110 contrast-95 saturate-95"
           />
