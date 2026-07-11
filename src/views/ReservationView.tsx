@@ -505,7 +505,7 @@ export default function ReservationView() {
                 </div>
 
                 {/* Nested Service Option Blocks */}
-                <div className="space-y-6 max-h-[350px] overflow-y-auto pr-1">
+                <div className="space-y-6">
                   {selectedServices.map((service) => (
                     <div key={`group-up-${service.id}`} className="space-y-3 bg-[#FCFCFB] p-4 rounded-2xl border border-slate-100">
                       <div className="flex items-center gap-2">
