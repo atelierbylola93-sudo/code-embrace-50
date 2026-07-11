@@ -182,10 +182,9 @@ export const HEAD_SPA_DATA = {
   subtitle: "Le Rituel Thermal Japonais de Relaxation et de Santé du Cuir Chevelu",
   description: "Inspiré des rituels ancestraux japonais, notre Head Spa est une parenthèse sensorielle unique en son genre. Plus qu'un simple shampoing massant, c'est un véritable traitement thérapeutique qui combine micro-circulation crânienne, pureté capillaire et relaxation nerveuse profonde au Pré-Saint-Gervais. Le clou du spectacle : notre célèbre arche d'eau (halo thérapie) qui déverse un flux continu d'eau tiède sur votre front et votre cuir chevelu pour calmer l'esprit.",
   steps: [
-    
-    { title: "2. Gommage & Bain d'Huiles", text: "Exfoliation douce pour éliminer les toxines et résidus de produits, suivie de l'application d'élixirs botaniques ciblés." },
-    { title: "3. Massage Crânien, Nuque & Épaules", text: "Manœuvres d'acupression issues de techniques shiatsu pour relâcher les tensions musculaires et booster la repousse." },
-    { title: "4. Arche d'Eau & Bain de Vapeur", text: "Le halo d'eau chaude berce vos sens pendant que le dôme de vapeur ouvre les écailles pour faire pénétrer les nutriments actifs." }
+    { title: "Gommage & Bain d'Huiles", text: "Exfoliation douce pour éliminer les toxines et résidus de produits, suivie de l'application d'élixirs botaniques ciblés." },
+    { title: "Massage Crânien, Nuque & Épaules", text: "Manœuvres d'acupression issues de techniques shiatsu pour relâcher les tensions musculaires et booster la repousse." },
+    { title: "Arche d'Eau & Bain de Vapeur", text: "Le halo d'eau chaude berce vos sens pendant que le dôme de vapeur ouvre les écailles pour faire pénétrer les nutriments actifs." }
   ],
   benefits: [
     "Retarde la chute et revitalise les cheveux mous et fatigués.",
