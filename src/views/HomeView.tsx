@@ -244,7 +244,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   const el = document.getElementById('vedettes');
                   el?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="w-full sm:w-auto btn-secondary !border-white/40 !text-white hover:bg-white/15 transition-all duration-300 flex items-center justify-center gap-2 shadow-sm bg-black/20 backdrop-blur-sm"
+                className="w-full sm:w-auto btn-secondary !border-[#B88F4D]/50 !text-charcoal hover:!bg-white/80 transition-all duration-300 flex items-center justify-center gap-2 shadow-sm bg-white/60 backdrop-blur-sm"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
               >
