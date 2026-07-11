@@ -61,10 +61,11 @@ export default function SoinsCorpsAlguesView() {
                 }`}
               >
                 {item.isPopular && (
-                  <span className="absolute -top-2 left-4 bg-[#B88F4D] shadow-md text-white text-[9px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">
+                  <span className="inline-block self-start mb-3 bg-[#B88F4D] shadow-sm text-white text-[9px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">
                     Soin Signature
                   </span>
                 )}
+
 
                 <div className="space-y-3">
                   <div className="flex justify-between items-baseline gap-4">
