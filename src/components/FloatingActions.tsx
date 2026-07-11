@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { Phone, Calendar, Instagram } from 'lucide-react';
 import { INSTITUT_INFO } from '../data';
 
