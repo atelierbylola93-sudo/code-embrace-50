@@ -271,32 +271,55 @@ export default function ReservationView() {
     setStep(target);
   };
 
-  const handleCompleteBooking = () => {
+  const handleCompleteBooking = async () => {
     if (selectedServices.length === 0 || !selectedDate || !selectedTimeSlot || !isFormValid) return;
     setIsSubmitting(true);
-    setTimeout(() => {
-      const finalBooking = {
-        id: `BK-${Math.floor(1000 + Math.random() * 9000)}`,
-        serviceName: selectedServices.map(s => s.name).join(' + '),
-        price: getSubtotal(),
-        date: selectedDate,
-        time: selectedTimeSlot,
-        duration: formatDuration(getTotalDurationMin()),
-        client: clientInfo,
-        options: selectedServices
-          .flatMap(s => s.upsells)
-          .filter(u => selectedUpsells.includes(u.id))
-          .map(u => u.name),
-      };
-      try {
-        const prev = localStorage.getItem('atelier_bylola_appointments');
-        const list = prev ? JSON.parse(prev) : [];
-        localStorage.setItem('atelier_bylola_appointments', JSON.stringify([finalBooking, ...list]));
-      } catch {}
-      setBookingConfirmedDetails(finalBooking);
-      setIsSubmitting(false);
-      setStep(4);
-    }, 1200);
+    const reference = `BK-${Math.floor(1000 + Math.random() * 9000)}`;
+    const optionsList = selectedServices
+      .flatMap(s => s.upsells)
+      .filter(u => selectedUpsells.includes(u.id))
+      .map(u => u.name);
+    const durationMin = getTotalDurationMin();
+    const totalPrice = getSubtotal();
+    const finalBooking = {
+      id: reference,
+      serviceName: selectedServices.map(s => s.name).join(' + '),
+      price: totalPrice,
+      date: selectedDate,
+      time: selectedTimeSlot,
+      duration: formatDuration(durationMin),
+      client: clientInfo,
+      options: optionsList,
+    };
+    try {
+      await fetch('/api/public/reservations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          reference,
+          client_name: clientInfo.name.trim(),
+          client_email: clientInfo.email.trim(),
+          client_phone: clientInfo.phone.trim(),
+          client_note: clientInfo.note?.trim() || null,
+          services: selectedServices.map(s => ({ id: s.id, name: s.name, price: s.price, duration: s.duration })),
+          options: optionsList,
+          appointment_date: selectedDate,
+          appointment_time: selectedTimeSlot,
+          duration_min: durationMin,
+          total_price: totalPrice,
+        }),
+      });
+    } catch (err) {
+      console.error('reservation save failed', err);
+    }
+    try {
+      const prev = localStorage.getItem('atelier_bylola_appointments');
+      const list = prev ? JSON.parse(prev) : [];
+      localStorage.setItem('atelier_bylola_appointments', JSON.stringify([finalBooking, ...list]));
+    } catch {}
+    setBookingConfirmedDetails(finalBooking);
+    setIsSubmitting(false);
+    setStep(4);
   };
 
   const getGoogleCalendarUrl = (booking: any) => {
