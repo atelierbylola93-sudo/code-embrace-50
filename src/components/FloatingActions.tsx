@@ -30,12 +30,12 @@ export default function FloatingActions() {
         right: 'calc(1rem + env(safe-area-inset-right, 0px))'
       }}
     >
-      {/* Floating Instagram Action */}
+      {/* Floating Instagram Action - desktop/tablet only to avoid covering card prices on mobile */}
       <motion.a
         href={INSTITUT_INFO.instagramUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex h-12 w-12 items-center justify-center rounded-[24px] bg-[#2E2E2E] text-[#B88F4D] shadow-xl hover:bg-black border border-[#B88F4D]/20 transition-all duration-300"
+        className="hidden sm:flex h-12 w-12 items-center justify-center rounded-[24px] bg-[#2E2E2E] text-[#B88F4D] shadow-xl hover:bg-black border border-[#B88F4D]/20 transition-all duration-300"
         aria-label="Voir notre Instagram"
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.95 }}
@@ -43,6 +43,7 @@ export default function FloatingActions() {
       >
         <Instagram className="h-5 w-5" />
       </motion.a>
+
 
       {/* Floating Phone Action */}
       <motion.a
