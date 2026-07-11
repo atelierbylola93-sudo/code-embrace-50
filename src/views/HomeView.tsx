@@ -268,7 +268,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
       {/* 2. STATS BANNER SECTION */}
       <section className="relative z-20 -mt-10 max-w-5xl mx-auto px-4">
-        <div className="bg-white rounded-[28px] border border-[#B88F4D]/15 shadow-xl py-8 px-6 md:px-12 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-y lg:divide-y-0 lg:divide-x divide-[#B88F4D]/10">
+        <div className="bg-white rounded-[28px] border border-[#B88F4D]/15 shadow-xl py-6 px-4 md:px-8 grid grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 text-center divide-y xl:divide-y-0 xl:divide-x divide-[#B88F4D]/10">
           <div className="pt-0 flex flex-col justify-center space-y-1">
             <span className="font-serif text-3xl md:text-4xl font-bold text-charcoal tracking-tight block">
               +500
