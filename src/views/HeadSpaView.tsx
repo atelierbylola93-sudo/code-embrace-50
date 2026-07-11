@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
-import { Calendar, CheckCircle2, Star, ShieldCheck, HeartPulse, Activity } from 'lucide-react';
-import { HEAD_SPA_DATA, INSTITUT_INFO, LUXURY_IMAGES } from '../data';
+import { Calendar, CheckCircle2, Star, ShieldCheck, Sparkles, Clock } from 'lucide-react';
+import { HEAD_SPA_DATA, LUXURY_IMAGES } from '../data';
 import FaqSection from '../components/FaqSection';
 
 export default function HeadSpaView() {
@@ -33,7 +33,7 @@ export default function HeadSpaView() {
       {/* Main Core Detail Panel */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
         
-        {/* Left Side: Summary & Sizing Banner */}
+        {/* Left Side: Summary */}
         <div className="lg:col-span-7 space-y-8">
           <div className="space-y-4">
             <span className="text-xs uppercase tracking-[0.2em] text-[#B88F4D] font-bold">L'Expérience Authentique</span>
@@ -43,18 +43,6 @@ export default function HeadSpaView() {
             <p className="text-secondary-gray text-xs md:text-base leading-relaxed">
               {HEAD_SPA_DATA.description}
             </p>
-          </div>
-
-          {/* Quick Stats: Price & Duration */}
-          <div className="grid grid-cols-2 gap-4 bg-white card-rounded premium-shadow p-6 border border-[#B88F4D]/10 text-center">
-            <div>
-              <span className="text-xs text-secondary-gray uppercase tracking-wider font-semibold block">Tarif de Prestige</span>
-              <span className="font-serif text-3xl font-bold text-[#B88F4D] mt-1 block">{HEAD_SPA_DATA.price} €</span>
-            </div>
-            <div className="border-l border-[#B88F4D]/10">
-              <span className="text-xs text-secondary-gray uppercase tracking-wider font-semibold block">Durée de l'Évasion</span>
-              <span className="font-serif text-3xl font-bold text-charcoal mt-1 block">{HEAD_SPA_DATA.duration}</span>
-            </div>
           </div>
 
           {/* Step-by-step description with icons */}
@@ -79,38 +67,8 @@ export default function HeadSpaView() {
           </div>
         </div>
 
-        {/* Right Side: Benefits Panel & CTA Box */}
+        {/* Right Side: CTA Box */}
         <div className="lg:col-span-5 space-y-8">
-          
-          {/* Benefits Bullet Points */}
-          <div className="bg-[#EFE7D2] text-charcoal p-8 rounded-[24px] shadow-sm border border-[#B88F4D]/30 border-t-4 border-t-[#B88F4D] space-y-6 relative overflow-hidden">
-            <div className="absolute top-0 right-0 h-40 w-40 rounded-full bg-[#B88F4D]/8 filter blur-xl pointer-events-none" />
-            
-            <div className="space-y-2 relative">
-              <span className="text-[10px] uppercase tracking-[0.2em] text-[#B88F4D] font-bold block">Clinique & Bien-être</span>
-              <h3 className="font-serif text-xl md:text-2xl text-charcoal font-medium">Bienfaits Scientifiques</h3>
-            </div>
-            
-            <div className="h-[1px] w-full bg-[#B88F4D]/20" />
-
-            <ul className="space-y-4 relative">
-              {HEAD_SPA_DATA.benefits.map((benefit, idx) => (
-                <li key={`benefit-${idx}`} className="flex items-start gap-3.5 text-xs md:text-sm text-charcoal/80">
-                  <CheckCircle2 className="h-5 w-5 text-[#B88F4D] shrink-0 mt-0.5" />
-                  <span>{benefit}</span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="p-4 bg-white/70 rounded-lg border border-[#B88F4D]/15 text-xs text-charcoal/70 space-y-2 relative">
-              <div className="flex items-center gap-2 text-[#A17E60] font-bold">
-                <ShieldCheck className="h-4 w-4" />
-                <span>Régulation & Pureté</span>
-              </div>
-              <p>Analysé attentivement, nous choisissons uniquement des produits hypoallergéniques d'exception aux essences d'Argan bio, menthe japonaise et thym sauvage.</p>
-            </div>
-          </div>
-
           {/* Quick CTA Box */}
           <div className="bg-white border border-[#B88F4D]/20 p-8 rounded-[24px] shadow-sm text-center space-y-6">
             <p className="text-[#B88F4D] text-xs font-semibold tracking-widest uppercase">
@@ -133,7 +91,127 @@ export default function HeadSpaView() {
               Réserver ma fontaine d'eau
             </motion.button>
           </div>
+        </div>
+      </section>
 
+      {/* Pricing Formulas Section */}
+      <section className="bg-[#EFE7D2]/40 py-16 md:py-24 border-y border-[#B88F4D]/10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-10">
+          <div className="text-center space-y-3 max-w-2xl mx-auto">
+            <span className="text-xs uppercase tracking-[0.2em] text-[#B88F4D] font-bold">Nos Formules</span>
+            <h2 className="font-serif text-2xl md:text-4xl text-charcoal font-medium">
+              Choisissez votre parenthèse de bien-être
+            </h2>
+            <p className="text-secondary-gray text-sm md:text-base leading-relaxed">
+              Trois rituels pensés pour chaque envie : une première découverte, une expérience signature ou un soin premium entièrement personnalisé.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {HEAD_SPA_DATA.formulas.map((formula, idx) => (
+              <motion.div
+                key={formula.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className={`relative bg-white rounded-[24px] p-6 md:p-8 border transition-shadow duration-300 flex flex-col ${
+                  formula.isPopular
+                    ? 'border-[#B88F4D] shadow-[0_8px_30px_-8px_rgba(184,143,77,0.25)] ring-1 ring-[#B88F4D]/20'
+                    : 'border-[#B88F4D]/10 premium-shadow hover:shadow-lg'
+                }`}
+              >
+                {formula.isPopular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="inline-flex items-center gap-1 bg-[#B88F4D] text-white text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full shadow-sm">
+                      <Star className="h-3 w-3 fill-current" />
+                      Le plus demandé
+                    </span>
+                  </div>
+                )}
+
+                <div className="space-y-4 flex-1">
+                  <div className="space-y-1">
+                    <h3 className="font-serif text-xl md:text-2xl text-charcoal font-semibold">
+                      {formula.name}
+                    </h3>
+                    <div className="flex items-center gap-2 text-[#A17E60] text-sm">
+                      <Clock className="h-4 w-4" />
+                      <span>{formula.duration}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-baseline gap-1">
+                    <span className="font-serif text-3xl md:text-4xl font-bold text-[#B88F4D]">
+                      {formula.price}
+                    </span>
+                    <span className="text-charcoal/70 font-medium">€</span>
+                  </div>
+
+                  <p className="text-secondary-gray text-xs md:text-sm leading-relaxed">
+                    {formula.description}
+                  </p>
+                </div>
+
+                <motion.button
+                  onClick={() => {
+                    window.location.hash = '#/reservation';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className={`mt-6 w-full py-3 px-4 rounded-full text-sm font-semibold flex items-center justify-center gap-2 transition-colors cursor-pointer ${
+                    formula.isPopular
+                      ? 'bg-[#B88F4D] text-white hover:bg-[#A17E60]'
+                      : 'bg-[#EFE7D2] text-charcoal hover:bg-[#DDCCB2]'
+                  }`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Calendar className="h-4 w-4" />
+                  Réserver
+                </motion.button>
+              </motion.div>
+            ))}
+          </div>
+
+          <p className="text-center text-secondary-gray text-xs md:text-sm">
+            Séchage naturel inclus dans toutes nos formules. Possibilité d'ajouter un brushing ou un séchage brushing en supplément sur place.
+          </p>
+        </div>
+      </section>
+
+      {/* Scientific Benefits Section — moved lower */}
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
+        <div className="bg-[#EFE7D2] text-charcoal p-8 md:p-12 rounded-[24px] shadow-sm border border-[#B88F4D]/30 border-t-4 border-t-[#B88F4D] space-y-6 relative overflow-hidden">
+          <div className="absolute top-0 right-0 h-40 w-40 rounded-full bg-[#B88F4D]/8 filter blur-xl pointer-events-none" />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 relative">
+            <div className="lg:col-span-4 space-y-3">
+              <span className="text-[10px] uppercase tracking-[0.2em] text-[#B88F4D] font-bold block">Clinique & Bien-être</span>
+              <h3 className="font-serif text-2xl md:text-3xl text-charcoal font-medium">Bienfaits Scientifiques</h3>
+              <p className="text-secondary-gray text-sm leading-relaxed">
+                Au-delà du moment de détente, le Head Spa agit sur l'équilibre du cuir chevelu, la qualité du sommeil et la gestion du stress grâce à des protocoles validés.
+              </p>
+            </div>
+            
+            <div className="lg:col-span-8">
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
+                {HEAD_SPA_DATA.benefits.map((benefit, idx) => (
+                  <li key={`benefit-${idx}`} className="flex items-start gap-3.5 text-sm text-charcoal/80">
+                    <CheckCircle2 className="h-5 w-5 text-[#B88F4D] shrink-0 mt-0.5" />
+                    <span>{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8 p-4 bg-white/70 rounded-lg border border-[#B88F4D]/15 text-sm text-charcoal/70 space-y-2 relative">
+                <div className="flex items-center gap-2 text-[#A17E60] font-bold">
+                  <ShieldCheck className="h-4 w-4" />
+                  <span>Régulation & Pureté</span>
+                </div>
+                <p>Analysé attentivement, nous choisissons uniquement des produits hypoallergéniques d'exception aux essences d'Argan bio, menthe japonaise et thym sauvage.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
