@@ -68,7 +68,7 @@ function AdminPage() {
     setError(null);
     try {
       const { reservations } = await list();
-      setItems(reservations as Reservation[]);
+      setItems(reservations as unknown as Reservation[]);
     } catch (e: any) {
       const msg = String(e?.message ?? e);
       if (msg.includes('Unauthorized') || msg.includes('Forbidden')) {
