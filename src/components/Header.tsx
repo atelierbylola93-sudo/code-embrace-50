@@ -124,14 +124,6 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
  
         {/* MOBILE BURGER TRIGGER */}
         <div className="flex lg:hidden items-center gap-3">
-          <motion.button
-            onClick={() => handleLinkClick('reservation')}
-            className="btn-primary !py-2 !px-4 !text-[10px] flex items-center gap-1.5 cursor-pointer"
-            whileTap={{ scale: 0.95 }}
-          >
-            <Calendar className="h-3 w-3" />
-            RDV
-          </motion.button>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2 transition-colors focus:outline-none cursor-pointer text-charcoal hover:text-[#B88F4D]"
