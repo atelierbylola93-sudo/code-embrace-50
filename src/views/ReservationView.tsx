@@ -169,6 +169,7 @@ export default function ReservationView() {
   const [isSyncingSlots, setIsSyncingSlots] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [bookingConfirmedDetails, setBookingConfirmedDetails] = useState<any | null>(null);
+  const [bookingError, setBookingError] = useState<string | null>(null);
 
   // Mobile: panier tiroir ouvert/fermé
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
@@ -292,8 +293,9 @@ export default function ReservationView() {
       client: clientInfo,
       options: optionsList,
     };
+    setBookingError(null);
     try {
-      await fetch('/api/public/reservations', {
+      const res = await fetch('/api/public/reservations', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -310,8 +312,22 @@ export default function ReservationView() {
           total_price: totalPrice,
         }),
       });
+      if (!res.ok) {
+        let msg = 'Nous n’avons pas pu enregistrer votre réservation. Merci de réessayer dans un instant ou de nous contacter directement.';
+        try {
+          const data = await res.json();
+          if (data?.error && typeof data.error === 'string') msg = data.error;
+        } catch {}
+        console.error('reservation save failed', res.status, msg);
+        setBookingError(msg);
+        setIsSubmitting(false);
+        return;
+      }
     } catch (err) {
       console.error('reservation save failed', err);
+      setBookingError('Connexion interrompue. Vérifiez votre réseau et réessayez.');
+      setIsSubmitting(false);
+      return;
     }
     try {
       const prev = localStorage.getItem('atelier_bylola_appointments');
@@ -322,6 +338,7 @@ export default function ReservationView() {
     setIsSubmitting(false);
     setStep(4);
   };
+
 
   const computeEndHHMM = (time: string, durationMin: number) => {
     const [h, m] = time.split(':').map(Number);
@@ -1106,6 +1123,15 @@ export default function ReservationView() {
               {step === 3 && renderStep3()}
               {isConfirmed && renderConfirmation()}
             </AnimatePresence>
+            {bookingError && step === 3 && !isConfirmed && (
+              <div
+                role="alert"
+                className="mt-5 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+              >
+                <strong className="font-semibold">Réservation non enregistrée.</strong>{' '}
+                {bookingError}
+              </div>
+            )}
 
             {/* Navigation bas de carte (masquée sur mobile car sticky bar en bas) */}
             {!isConfirmed && (
