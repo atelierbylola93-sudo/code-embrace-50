@@ -1,5 +1,6 @@
 import { ServiceGroup, FaqItem, ReviewItem, Page } from './types';
 import iplEpilationImg from './assets/ipl-epilation.jpg';
+import blanchimentHeroAsset from './assets/blanchiment-dentaire-hero.png.asset.json';
 
 export const INSTITUT_INFO = {
   name: "L'Atelier by Lola",
@@ -7,7 +8,7 @@ export const INSTITUT_INFO = {
   address: "10 Rue du 14 Juillet, 93310 Le Pré-Saint-Gervais",
   phone: "09 86 08 42 75",
   phoneFormatted: "+33986084275",
-  planityUrl: "https://www.planity.com", // Dynamic redirection structure representing Planity booking link
+  planityUrl: "#/reservation", // Internal reservation system
   hours: "Du lundi au dimanche sur rendez-vous (9h00 - 20h00)",
   instagram: "@atelier_by.lola",
   instagramUrl: "https://instagram.com/atelier_by.lola",
@@ -44,7 +45,7 @@ export const LUXURY_IMAGES = {
   aboutOwner: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=1200', // Wellness specialist representation
   beauteRegard: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=1200', // Eyelash and brow macro aesthetic
   iplEpilation: iplEpilationImg, // Séance IPL luxe — palette crème/doré
-  blanchimentDentaire: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=1200', // Dazzling white smile
+  blanchimentDentaire: blanchimentHeroAsset.url, // Dazzling white smile — uploaded asset
   detatouage: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=1200', // Precise cosmetological skincare beauty
   corpsAlgues: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=1200', // Body treatment luxury mud beauty
 };
