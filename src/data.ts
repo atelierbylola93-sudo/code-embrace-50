@@ -1,6 +1,7 @@
 import { ServiceGroup, FaqItem, ReviewItem, Page } from './types';
 import iplEpilationImg from './assets/ipl-epilation.jpg';
 import blanchimentHeroAsset from './assets/blanchiment-dentaire-hero.png.asset.json';
+import detatouageHeroAsset from './assets/detatouage-hero.png.asset.json';
 
 export const INSTITUT_INFO = {
   name: "L'Atelier by Lola",
@@ -46,7 +47,7 @@ export const LUXURY_IMAGES = {
   beauteRegard: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=1200', // Eyelash and brow macro aesthetic
   iplEpilation: iplEpilationImg, // Séance IPL luxe — palette crème/doré
   blanchimentDentaire: blanchimentHeroAsset.url, // Dazzling white smile — uploaded asset
-  detatouage: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=1200', // Precise cosmetological skincare beauty
+  detatouage: detatouageHeroAsset.url, // Dermopigmentation corrective sourcils - uploaded asset
   corpsAlgues: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&q=80&w=1200', // Body treatment luxury mud beauty
 };
 
