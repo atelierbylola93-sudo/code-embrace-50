@@ -1123,6 +1123,15 @@ export default function ReservationView() {
               {step === 3 && renderStep3()}
               {isConfirmed && renderConfirmation()}
             </AnimatePresence>
+            {bookingError && step === 3 && !isConfirmed && (
+              <div
+                role="alert"
+                className="mt-5 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+              >
+                <strong className="font-semibold">Réservation non enregistrée.</strong>{' '}
+                {bookingError}
+              </div>
+            )}
 
             {/* Navigation bas de carte (masquée sur mobile car sticky bar en bas) */}
             {!isConfirmed && (
