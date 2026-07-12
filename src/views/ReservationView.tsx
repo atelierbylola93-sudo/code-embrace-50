@@ -169,6 +169,7 @@ export default function ReservationView() {
   const [isSyncingSlots, setIsSyncingSlots] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [bookingConfirmedDetails, setBookingConfirmedDetails] = useState<any | null>(null);
+  const [bookingError, setBookingError] = useState<string | null>(null);
 
   // Mobile: panier tiroir ouvert/fermé
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
