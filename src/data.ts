@@ -1,6 +1,7 @@
 import { ServiceGroup, FaqItem, ReviewItem, Page } from './types';
 import iplEpilationImg from './assets/ipl-epilation.jpg';
 import blanchimentHeroAsset from './assets/blanchiment-dentaire-hero.png.asset.json';
+import detatouageHeroAsset from './assets/detatouage-hero.png.asset.json';
 
 export const INSTITUT_INFO = {
   name: "L'Atelier by Lola",
