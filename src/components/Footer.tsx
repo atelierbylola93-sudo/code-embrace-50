@@ -36,7 +36,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             </div>
             
             <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
-              Maison de prestige dédiée à la beauté d'exception et au ressourcement sensoriel au Pré-Saint-Gervais. Head Spa, HydraFacial, esthetique avancée et techniques capillaires russes.
+              Maison de prestige dédiée à la beauté d'exception et au ressourcement sensoriel au Pré-Saint-Gervais. Head Spa japonais, soins du visage signature, esthétique avancée et techniques capillaires premium.
             </p>
 
             <div className="space-y-3.5 text-xs md:text-sm text-gray-300">
