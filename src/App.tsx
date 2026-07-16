@@ -19,6 +19,8 @@ import DetatouageView from './views/DetatouageView';
 import BlanchimentDentaireView from './views/BlanchimentDentaireView';
 import SoinsCorpsAlguesView from './views/SoinsCorpsAlguesView';
 import ReservationView from './views/ReservationView';
+import MentionsLegalesView from './views/MentionsLegalesView';
+import ConfidentialiteView from './views/ConfidentialiteView';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('accueil');
