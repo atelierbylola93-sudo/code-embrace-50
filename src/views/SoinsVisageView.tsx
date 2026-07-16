@@ -86,16 +86,18 @@ export default function SoinsVisageView() {
 
                 <div className="mt-6 pt-4 border-t border-[#EFE7D2] flex items-center justify-between text-xs">
                   <span className="text-secondary-gray flex items-center gap-1">
-                    <Sparkles className="h-3 w-3 text-[#B88F4D]" /> Peau veloutée de satin
+                    <Sparkles className="h-3 w-3 text-[#B88F4D]" />
+                    {item.isPopular ? 'Éclat immédiat & durable' : 'Peau nette & lumineuse'}
                   </span>
-                  <a
-                    href={INSTITUT_INFO.planityUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#B88F4D] font-semibold group-hover:underline flex items-center gap-1"
+                  <button
+                    onClick={() => {
+                      window.location.hash = '#/reservation';
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="text-[#B88F4D] font-semibold group-hover:underline flex items-center gap-1 cursor-pointer"
                   >
                     Réserver
-                  </a>
+                  </button>
                 </div>
               </div>
             ))}
