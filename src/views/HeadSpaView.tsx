@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Calendar, CheckCircle2, Star, ShieldCheck, Sparkles, Clock } from 'lucide-react';
+import { Calendar, CheckCircle2, Star, ShieldCheck, Sparkles } from 'lucide-react';
 import { HEAD_SPA_DATA } from '../data';
 import FaqSection from '../components/FaqSection';
 import headspaHeroAsset from '../assets/headspa-hero.png.asset.json';
@@ -114,23 +114,21 @@ export default function HeadSpaView() {
                   </div>
                 )}
 
-                <div className="space-y-4 flex-1">
-                  <div className="space-y-1">
-                    <h3 className="font-serif text-xl md:text-2xl text-charcoal font-semibold">
+                <div className="space-y-3 flex-1">
+                  <div className="flex justify-between items-baseline gap-4">
+                    <h3 className="font-serif text-lg md:text-xl text-charcoal font-semibold">
                       {formula.name}
                     </h3>
-                    <div className="flex items-center gap-2 text-[#A17E60] text-sm">
-                      <Clock className="h-4 w-4" />
-                      <span>{formula.duration}</span>
-                    </div>
+                    <span className="font-serif text-lg font-bold text-[#B88F4D] shrink-0 whitespace-nowrap">
+                      {formula.price} €
+                    </span>
                   </div>
 
-                  <div className="flex items-baseline gap-1">
-                    <span className="font-serif text-3xl md:text-4xl font-bold text-[#B88F4D]">
-                      {formula.price}
+                  {formula.duration && (
+                    <span className="inline-flex items-center gap-1 text-sm text-[#8A6A38] bg-[#B88F4D]/10 border border-[#B88F4D]/20 px-3 py-1.5 rounded-full font-semibold tracking-wide">
+                      ⏱️ {formula.duration}
                     </span>
-                    <span className="text-charcoal/70 font-medium">€</span>
-                  </div>
+                  )}
 
                   <p className="text-secondary-gray text-xs md:text-sm leading-relaxed">
                     {formula.description}
