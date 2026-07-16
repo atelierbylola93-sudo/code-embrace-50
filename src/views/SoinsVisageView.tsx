@@ -11,7 +11,7 @@ export default function SoinsVisageView() {
       <section className="relative h-[250px] md:h-[350px] flex items-center justify-center bg-black overflow-hidden rounded-b-[24px]">
         <img
           src={LUXURY_IMAGES.hydraFacial}
-          alt="HydraFacial Le Pré-Saint-Gervais L'Atelier Lola"
+          alt="Soins du visage d'exception Le Pré-Saint-Gervais L'Atelier by Lola"
           referrerPolicy="no-referrer"
           className="absolute inset-0 w-full h-full object-cover opacity-60 scale-102 filter brightness-[0.80]"
         />
