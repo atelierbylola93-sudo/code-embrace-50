@@ -36,7 +36,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             </div>
             
             <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
-              Maison de prestige dédiée à la beauté d'exception et au ressourcement sensoriel au Pré-Saint-Gervais. Head Spa, HydraFacial, esthetique avancée et techniques capillaires russes.
+              Maison de prestige dédiée à la beauté d'exception et au ressourcement sensoriel au Pré-Saint-Gervais. Head Spa japonais, soins du visage signature, esthétique avancée et techniques capillaires premium.
             </p>
 
             <div className="space-y-3.5 text-xs md:text-sm text-gray-300">
@@ -82,8 +82,8 @@ export default function Footer({ onNavigate }: FooterProps) {
                   <a href="#blog-post" onClick={(e) => { e.preventDefault(); handleLinkClick('head-spa'); }} className="hover:text-white transition-colors font-medium">Pourquoi le soin thermal japonais révolutionne le cuir chevelu ?</a>
                 </li>
                 <li className="p-2.5 bg-white/5 rounded-lg border border-white/5 hover:border-[#B88F4D]/20 transition-all duration-300">
-                  <span className="text-[10px] uppercase font-bold text-[#A3A485] block">HydraFacial Glow</span>
-                  <a href="#blog-post" onClick={(e) => { e.preventDefault(); handleLinkClick('soins-visage'); }} className="hover:text-white transition-colors font-medium">Microneedling vs HydraFacial : Quel soin visage choisir au Pré-Saint-Gervais ?</a>
+                  <span className="text-[10px] uppercase font-bold text-[#A3A485] block">Soins du visage</span>
+                  <a href="#blog-post" onClick={(e) => { e.preventDefault(); handleLinkClick('soins-visage'); }} className="hover:text-white transition-colors font-medium">Signature ou régénérant : quel soin du visage choisir au Pré-Saint-Gervais ?</a>
                 </li>
               </ul>
             </div>

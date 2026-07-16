@@ -11,12 +11,12 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Découvrez L'Atelier by Lola au Pré-Saint-Gervais (93). Head Spa japonais, HydraFacial, Browlift, lissages, blanchiment dentaire et épilation définitive IPL dans un boudoir luxueux.",
+          "Découvrez L'Atelier by Lola au Pré-Saint-Gervais (93). Head Spa japonais, soins du visage signature, Browlift, lissages, blanchiment dentaire et épilation définitive IPL dans un boudoir luxueux.",
       },
       {
         name: "keywords",
         content:
-          "Head Spa, Head Spa Paris, Head Spa japonais, HydraFacial, Microneedling, Browlift, Pre-Saint-Gervais coiffeur, épilation définitive IPL, blanchiment dentaire, lissage brésilien",
+          "Head Spa, Head Spa Paris, Head Spa japonais, soin du visage, Browlift, Pre-Saint-Gervais coiffeur, épilation définitive IPL, blanchiment dentaire, lissage brésilien",
       },
       { property: "og:type", content: "website" },
       {
@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Découvrez L'Atelier by Lola au Pré-Saint-Gervais (93). Head Spa japonais, HydraFacial, Browlift, lissages, blanchiment dentaire et épilation définitive IPL dans un boudoir luxueux.",
+          "Découvrez L'Atelier by Lola au Pré-Saint-Gervais (93). Head Spa japonais, soins du visage signature, Browlift, lissages, blanchiment dentaire et épilation définitive IPL dans un boudoir luxueux.",
       },
       {
         property: "og:image",
@@ -44,7 +44,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "Découvrez L'Atelier by Lola au Pré-Saint-Gervais (93). Head Spa japonais, HydraFacial, Browlift, lissages, blanchiment dentaire et épilation définitive IPL dans un boudoir luxueux.",
+          "Découvrez L'Atelier by Lola au Pré-Saint-Gervais (93). Head Spa japonais, soins du visage signature, Browlift, lissages, blanchiment dentaire et épilation définitive IPL dans un boudoir luxueux.",
       },
       {
         name: "twitter:image",

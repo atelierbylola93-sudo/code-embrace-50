@@ -46,7 +46,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       page: 'soins-visage' as Page,
     },
     {
-      title: "Microneedling Glowy",
+      title: "Soin du visage régénérant",
       tag: "Jeunesse Cellulaire",
       description: "Relance instantanément la micro-circulation et l'élastine naturelle. Atténue visiblement les pores, ridules, cicatrices d'acné et insuffle un cocktail exclusif multivitaminé.",
       price: "160 €",
@@ -92,7 +92,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       action: "soins-visage" as Page
     },
     {
-      name: "Microneedling Glowy",
+      name: "Soin du visage régénérant",
       type: "Bio-stimulation Intense",
       target: "Fermeté, Cicatrices, Pores, Rides",
       eviction: "24h (Légères rougeurs)",
@@ -489,10 +489,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               </div>
             </div>
 
-            {/* 2. ALTERNATING COLUMNS: HYDRAFACIAL & MICRONEEDLING */}
+            {/* 2. ALTERNATING COLUMNS: SOINS DU VISAGE */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
               
-              {/* HydraFacial - Image Left Side-by-Side Card */}
+              {/* Soin du visage signature - Image Left Side-by-Side Card */}
               <div className="bg-white rounded-[32px] overflow-hidden border border-[#B88F4D]/10 shadow-[0_10px_35px_rgba(0,0,0,0.02)] flex flex-col justify-between">
                 <div>
                   <div className="relative h-64 sm:h-72 overflow-hidden">
@@ -526,7 +526,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 </div>
               </div>
 
-              {/* Microneedling - Image Right template Style Card */}
+              {/* Soin du visage régénérant - Image Right template Style Card */}
               <div className="bg-white rounded-[32px] overflow-hidden border border-[#B88F4D]/10 shadow-[0_10px_35px_rgba(0,0,0,0.02)] flex flex-col justify-between">
                 <div>
                   <div className="relative h-64 sm:h-72 overflow-hidden">

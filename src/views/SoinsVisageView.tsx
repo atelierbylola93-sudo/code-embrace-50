@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
-import { Calendar, CheckCircle2, Star, Sparkles, Heart } from 'lucide-react';
-import { SOINS_VISAGE_DATA, INSTITUT_INFO, LUXURY_IMAGES } from '../data';
+import { Calendar, CheckCircle2, Sparkles } from 'lucide-react';
+import { SOINS_VISAGE_DATA, LUXURY_IMAGES } from '../data';
 import FaqSection from '../components/FaqSection';
 
 export default function SoinsVisageView() {
@@ -11,7 +11,7 @@ export default function SoinsVisageView() {
       <section className="relative h-[250px] md:h-[350px] flex items-center justify-center bg-black overflow-hidden rounded-b-[24px]">
         <img
           src={LUXURY_IMAGES.hydraFacial}
-          alt="HydraFacial Le Pré-Saint-Gervais L'Atelier Lola"
+          alt="Soins du visage d'exception Le Pré-Saint-Gervais L'Atelier by Lola"
           referrerPolicy="no-referrer"
           className="absolute inset-0 w-full h-full object-cover opacity-60 scale-102 filter brightness-[0.80]"
         />
@@ -19,7 +19,7 @@ export default function SoinsVisageView() {
         
         <div className="relative z-10 text-center space-y-3 px-4">
           <span className="text-[10px] md:text-xs uppercase tracking-[0.25em] text-white/95 font-bold bg-[#A3A485] px-4 py-1.5 rounded-full border border-white/20 animate-pulse">
-            HydraFacial & Microneedling Clinique
+            Soins du visage d'exception
           </span>
           <h1 className="font-serif text-3xl md:text-5xl text-white font-light tracking-wide">
             Soins du Visage d'Exception
@@ -86,16 +86,18 @@ export default function SoinsVisageView() {
 
                 <div className="mt-6 pt-4 border-t border-[#EFE7D2] flex items-center justify-between text-xs">
                   <span className="text-secondary-gray flex items-center gap-1">
-                    <Sparkles className="h-3 w-3 text-[#B88F4D]" /> Peau veloutée de satin
+                    <Sparkles className="h-3 w-3 text-[#B88F4D]" />
+                    {item.isPopular ? 'Éclat immédiat & durable' : 'Peau nette & lumineuse'}
                   </span>
-                  <a
-                    href={INSTITUT_INFO.planityUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#B88F4D] font-semibold group-hover:underline flex items-center gap-1"
+                  <button
+                    onClick={() => {
+                      window.location.hash = '#/reservation';
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className="text-[#B88F4D] font-semibold group-hover:underline flex items-center gap-1 cursor-pointer"
                   >
                     Réserver
-                  </a>
+                  </button>
                 </div>
               </div>
             ))}
@@ -124,7 +126,7 @@ export default function SoinsVisageView() {
 
             <div className="p-4 bg-white/5 rounded-lg border border-white/10 text-xs text-gray-400 space-y-1">
               <span className="text-[#B88F4D] font-semibold block">⚠️ Conseil d'éclat :</span>
-              Nous recommandons l'HydraFacial 4 jours avant un grand événement pour un fini maquillage sublime, ou le Microneedling pour traiter les imperfections en profondeur.
+              Nous recommandons le soin du visage signature 4 jours avant un grand événement pour un fini maquillage sublime, ou le soin régénérant pour traiter les imperfections en profondeur.
             </div>
           </div>
 
@@ -134,17 +136,18 @@ export default function SoinsVisageView() {
             <p className="text-secondary-gray text-xs leading-relaxed">
               Planifiez votre protocole de soin visage de prestige avec Lola sur Planity au Pré-Saint-Gervais.
             </p>
-            <motion.a
-              href={INSTITUT_INFO.planityUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 rounded-[24px] bg-[#B88F4D] tracking-[0.1em] py-4 text-xs font-semibold uppercase text-white shadow-md hover:bg-[#A17E60] transition-colors"
+            <motion.button
+              onClick={() => {
+                window.location.hash = '#/reservation';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="w-full flex items-center justify-center gap-2 rounded-[24px] bg-[#B88F4D] tracking-[0.1em] py-4 text-xs font-semibold uppercase text-white shadow-md hover:bg-[#A17E60] transition-colors cursor-pointer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
               <Calendar className="h-4 w-4" />
               Réserver mon rendez-vous
-            </motion.a>
+            </motion.button>
           </div>
 
         </div>
@@ -155,7 +158,7 @@ export default function SoinsVisageView() {
       <section className="bg-white py-16 border-t border-[#B88F4D]/10">
         <FaqSection
           faqItems={SOINS_VISAGE_DATA.faq}
-          title="FAQ HydraFacial & Soin Visage • Le Pré-Saint-Gervais"
+          title="FAQ Soins du Visage • Le Pré-Saint-Gervais"
           subtitle="Toutes les réponses de notre experte esthétique pour guider l'éclat de votre peau."
         />
       </section>

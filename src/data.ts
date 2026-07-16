@@ -30,7 +30,7 @@ export interface MenuItem {
 export const NAV_ITEMS: MenuItem[] = [
   { name: 'Accueil', page: 'accueil', description: 'Institut de Beauté Premium au Pré-Saint-Gervais' },
   { name: 'Head Spa', page: 'head-spa', description: 'Le soin thermal japonais du cuir chevelu par excellence' },
-  { name: 'Soins Visage', page: 'soins-visage', description: 'HydraFacial, Microneedling et rituels d\'éclat' },
+  { name: 'Soins Visage', page: 'soins-visage', description: 'Soins signature, éclat et rituels d\'exception' },
   { name: 'Coiffure & Lissages', page: 'coiffure', description: 'Brushing, soins profonds, et techniques exclusives' },
   { name: 'Beauté du Regard', page: 'beaute-regard', description: 'Browlift, rehaussement et restructuration' },
   { name: 'Épilation IPL', page: 'ipl', description: 'Épilation définitive à la lumière pulsée haut de gamme' },
@@ -98,7 +98,7 @@ export const REVIEWS: ReviewItem[] = [
     author: "Sarah B.",
     rating: 5,
     date: "Il y a 1 mois",
-    text: "J'ai testé l'HydraFacial et le Browlift. Le résultat est bluffant, ma peau revit et mes sourcils ont une ligne parfaite. Lola est extrêmement minutieuse et le salon est d'une beauté digne d'un hôtel 5 étoiles.",
+    text: "J'ai testé le soin du visage signature et le Browlift. Le résultat est bluffant, ma peau revit et mes sourcils ont une ligne parfaite. Lola est extrêmement minutieuse et le salon est d'une beauté digne d'un hôtel 5 étoiles.",
     avatar: "SB"
   },
   {
@@ -237,13 +237,13 @@ export const HEAD_SPA_DATA = {
 
 // SOINS VISAGE
 export const SOINS_VISAGE_DATA = {
-  seoTitle: "Soin Visage & HydraFacial Le Pré-Saint-Gervais",
+  seoTitle: "Soins du Visage d'Exception au Pré-Saint-Gervais",
   subtitle: "Rituels Esthétiques Avancés pour un Teint Parfait et Lumineux",
   items: [
     { name: "Soin Visage Bio", price: 60, duration: "45 min", description: "Nettoyage en douceur, gommage enzymatique, massage facial relaxant et masque botanique certifié bio adapté aux peaux délicates." },
     { name: "Soin Hydratant Purifiant Vapeur", price: 90, duration: "1h 00 min", description: "Le grand classique de la pureté. Extraction des comédons sous vapeur tiède ionisée, purification cutanée profonde et modelage éclat." },
     { name: "Soin du visage signature", price: 105, duration: "45 min", description: "Notre soin phare à succion hydro-mécanique. Nettoie, exfolie les impuretés en profondeur et infuse des sérums hautement concentrés en antioxydants et acide hyaluronique.", isPopular: true },
-    { name: "Microneedling Visage Glowy", price: 160, duration: "1h 00 min", description: "Technologie de micro-perforations contrôlées pour stimuler naturellement l'élastine et le collagène. Infuse un cocktail de vitamines pour estomper cicatrices, pores dilatés et rides.", isPopular: true },
+    { name: "Soin du visage régénérant", price: 160, duration: "1h 00 min", description: "Technologie de micro-perforations contrôlées pour stimuler naturellement l'élastine et le collagène. Infuse un cocktail de vitamines pour estomper cicatrices, pores dilatés et rides.", isPopular: true },
     { name: "Soin aux Algues Naturel", price: 100, duration: "1h 00 min", description: "Masque plastifiant reminéralisant aux extraits d'algues marines pures pour détoxifier, raffermir et illuminer les peaux fatiguées ou urbaines." }
   ],
   benefits: [
@@ -253,9 +253,9 @@ export const SOINS_VISAGE_DATA = {
     "Formulations saines, hypoallergéniques et ultra performantes."
   ],
   faq: [
-    { question: "Qu'est-ce que l'HydraFacial proposé au Pré-Saint-Gervais ?", answer: "C'est un traitement médico-esthétique non invasif qui utilise une technologie brevetée en trois étapes : nettoyage & peeling, extraction par vortex-succion des points noirs, puis hydratation profonde par infusion de sérums exclusifs." },
-    { question: "Y a-t-il des rougeurs après un Microneedling ?", answer: "Des rougeurs légères et une sensation de chaleur semblable à un coup de soleil modéré peuvent apparaître dans les 24 heures suivant le Microneedling Glowy. C'est le signe que la peau s'active pour fabriquer du nouveau collagène ! Un protocole d'hydratation vous sera fourni." },
-    { question: "Puis-je me maquiller directement après mon soin du visage ?", answer: "Nous vous conseillons de laisser respirer votre peau sans maquillage pendant au moins 12h après un HydraFacial, et 24h à 48h après un Microneedling pour optimiser la pénétration des actifs précieux." }
+    { question: "En quoi consiste le soin du visage signature ?", answer: "C'est un traitement esthétique non invasif en trois étapes : nettoyage & peeling doux, extraction par vortex-succion des impuretés, puis hydratation profonde par infusion de sérums exclusifs. Résultat éclat immédiat, sans éviction sociale." },
+    { question: "Y a-t-il des rougeurs après un soin régénérant ?", answer: "Des rougeurs légères et une sensation de chaleur semblable à un coup de soleil modéré peuvent apparaître dans les 24 heures suivant le soin régénérant. C'est le signe que la peau s'active pour fabriquer du nouveau collagène. Un protocole d'hydratation vous sera fourni." },
+    { question: "Puis-je me maquiller directement après mon soin du visage ?", answer: "Nous vous conseillons de laisser respirer votre peau sans maquillage pendant au moins 12h après un soin signature, et 24h à 48h après un soin régénérant pour optimiser la pénétration des actifs précieux." }
   ]
 };
 
