@@ -833,19 +833,24 @@ export default function ReservationView() {
         <div className="flex gap-2.5 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-none snap-x">
           {datesList.map((d) => {
             const isSelected = selectedDate === d.fullIso;
+            const isClosed = openDates[d.fullIso] === false;
             return (
               <button
                 key={d.fullIso}
                 onClick={() => handleDateClick(d.fullIso)}
+                disabled={isClosed}
+                aria-label={isClosed ? `${d.dayName} ${d.dayNum} ${d.monthName} — fermé` : undefined}
                 className={`flex flex-col items-center justify-center min-w-[68px] h-[80px] rounded-2xl border transition snap-start ${
                   isSelected
                     ? 'border-charcoal bg-charcoal text-white shadow-md'
+                    : isClosed
+                    ? 'border-slate-100 bg-slate-50 text-gray-300 cursor-not-allowed line-through decoration-1'
                     : 'border-slate-200 bg-white hover:border-[#B88F4D]/40 text-gray-700'
                 }`}
               >
                 <span
                   className={`text-xs uppercase font-semibold ${
-                    isSelected ? 'text-[#B88F4D]' : 'text-gray-500'
+                    isSelected ? 'text-[#B88F4D]' : isClosed ? 'text-gray-300' : 'text-gray-500'
                   }`}
                 >
                   {d.dayName}
@@ -873,6 +878,10 @@ export default function ReservationView() {
             <div className="h-5 w-5 border-2 border-t-transparent border-[#B88F4D] rounded-full animate-spin" />
             <span className="text-sm text-gray-500 italic">Lecture des disponibilités…</span>
           </div>
+        ) : availableSlots.length === 0 ? (
+          <div className="border border-dashed border-[#B88F4D]/30 p-6 rounded-2xl text-center text-sm text-gray-500 bg-[#FCFCFB]">
+            Aucun créneau disponible pour cette date. Merci d’en choisir une autre.
+          </div>
         ) : (
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-2.5">
             {availableSlots.map((slot) => {
@@ -896,6 +905,8 @@ export default function ReservationView() {
       </div>
     </motion.div>
   );
+
+
 
   const renderStep3 = () => (
     <motion.div
