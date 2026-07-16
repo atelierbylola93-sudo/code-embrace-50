@@ -886,7 +886,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       </section>
 
       {/* 5. CONCIERGERIE DIGITALE : ADVISOR DE RITUEL SENSORIEL */}
-      <section className="py-24 max-w-7xl mx-auto px-4 md:px-8">
+      <section id="ritual-advisor-section" className="py-24 max-w-7xl mx-auto px-4 md:px-8">
+
         
         {/* Vignelli Swiss Rule major header line */}
         <div className="w-full border-t-2 border-charcoal/10 pt-4 mb-16 flex justify-between items-baseline font-mono text-[9px] tracking-[0.25em] text-secondary-gray uppercase select-none">
