@@ -75,8 +75,14 @@ export default function CoiffureView() {
                         {item.name}
                       </h4>
                       <span className="font-serif text-base md:text-lg font-bold text-[#B88F4D] shrink-0 whitespace-nowrap">
-                        {typeof item.price === 'number' ? `${item.price} €` : item.price}
-                        {item.priceNote && <sup className="ml-0.5 text-[10px] md:text-xs">*</sup>}
+                        {item.price === undefined
+                          ? 'Sur devis'
+                          : typeof item.price === 'number'
+                            ? `${item.price} €`
+                            : item.price}
+                        {item.price !== undefined && item.priceNote && (
+                          <sup className="ml-0.5 text-[10px] md:text-xs">*</sup>
+                        )}
                       </span>
                     </div>
 
