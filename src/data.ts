@@ -343,7 +343,7 @@ export const BLANCHIMENT_DENTAIRE_DATA = {
   items: [
     { name: "Formule SOFT WHITE", price: 60, duration: "30 min", description: "Le coup d'éclat express. Idéal pour rafraîchir un blanchiment antérieur ou pour les dents peu incrustées." },
     { name: "Formule MAX WHITE (Recommandé)", price: 100, duration: "50 min", description: "Le protocole complet. Gagnez de 3 à 6 teintes de blancheur en une seule séance de double exposition LED.", isPopular: true },
-    { name: "Formule EXTRA WHITE", price: 160, duration: "1h 15 min", description: "La perfection absolue. Traitement intensif triple action pour traiter en profondeur le jaunissement structurel sévère." }
+    { name: "Formule EXTRA WHITE", price: 160, duration: "1h 15 min", description: "L'expérience la plus intensive. Traitement en profondeur triple action pour un éclat dentaire maximal, adapté aux dents fortement colorées." }
   ],
   benefits: [
     "Gagnez jusqu'à 8 teintes de blancheur en moins d'une heure de traitement.",
