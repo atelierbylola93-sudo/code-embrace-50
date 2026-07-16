@@ -59,11 +59,10 @@ export default function DetatouageView() {
                     <h4 className="font-serif text-sm md:text-base font-bold text-charcoal group-hover:text-champagne transition-colors">
                       {item.name}
                     </h4>
+                    <span className="font-serif text-lg font-bold text-[#B88F4D] shrink-0 whitespace-nowrap">
+                      {item.price} € <span className="text-[10px] text-gray-500 font-normal">/ séance</span>
+                    </span>
                   </div>
-                  
-                  <span className="font-serif text-2xl font-bold text-[#B88F4D] block">
-                    {item.price} € <span className="text-[10px] text-gray-500 font-normal">/ séance</span>
-                  </span>
 
                   {item.duration && (
                     <span className="inline-flex items-center gap-1 text-sm text-[#8A6A38] bg-[#B88F4D]/10 border border-[#B88F4D]/20 px-3 py-1.5 rounded-full font-semibold tracking-wide">
