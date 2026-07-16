@@ -76,7 +76,7 @@ export default function IplView() {
                   </div>
 
                   {item.duration && (
-                    <span className="inline-block text-[9px] text-secondary-gray bg-[#EFE7D2] px-2 py-0.5 rounded-[8px] font-semibold">
+                    <span className="inline-flex items-center gap-1 text-xs text-[#8A6A38] bg-[#B88F4D]/10 border border-[#B88F4D]/20 px-3 py-1.5 rounded-full font-semibold tracking-wide">
                       ⏱️ {item.duration}
                     </span>
                   )}
