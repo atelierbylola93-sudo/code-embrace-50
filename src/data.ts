@@ -16,8 +16,9 @@ export const INSTITUT_INFO = {
   instagramUrl: "https://instagram.com/atelier_by.lola",
   tiktok: "@latelier.by.lola",
   tiktokUrl: "https://tiktok.com/@latelier.by.lola",
-  snapchat: "l'atelierbylola",
-  snapchatUrl: "https://www.snapchat.com/add/l'atelierbylola",
+  snapchat: "latelierbylola",
+  snapchatUrl: "https://www.snapchat.com/add/latelierbylola",
+
 };
 
 // Nav menu structure with metadata
