@@ -58,14 +58,14 @@ export default function FloatingActions() {
       </motion.a>
 
 
-      {/* Floating Booking Action */}
+      {/* Floating Booking Action - desktop/tablet only to avoid covering card prices on mobile */}
       {!isReservationView && (
         <motion.button
           onClick={() => {
             window.location.hash = '#/reservation';
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          className="flex items-center gap-2 rounded-[24px] bg-[#B88F4D] tracking-wider px-4.5 py-3.5 text-[10px] md:text-xs font-semibold uppercase text-white shadow-xl hover:bg-[#A17E60] transition-all duration-300 cursor-pointer border border-[#B88F4D]/10"
+          className="hidden sm:flex items-center gap-2 rounded-[24px] bg-[#B88F4D] tracking-wider px-4.5 py-3.5 text-[10px] md:text-xs font-semibold uppercase text-white shadow-xl hover:bg-[#A17E60] transition-all duration-300 cursor-pointer border border-[#B88F4D]/10"
           whileHover={{ scale: 1.05, y: -2 }}
           whileTap={{ scale: 0.95 }}
         >

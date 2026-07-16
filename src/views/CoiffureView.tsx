@@ -70,13 +70,13 @@ export default function CoiffureView() {
 
 
                   <div className="space-y-3">
-                    <div className="flex justify-between items-baseline gap-4">
-                      <h4 className="font-serif text-base md:text-lg font-bold text-charcoal group-hover:text-champagne transition-colors">
+                    <div className="flex justify-between items-baseline gap-3">
+                      <h4 className="font-serif text-base md:text-lg font-bold text-charcoal group-hover:text-champagne transition-colors min-w-0">
                         {item.name}
                       </h4>
-                      <span className="font-serif text-base md:text-lg font-bold text-[#B88F4D] shrink-0">
+                      <span className="font-serif text-base md:text-lg font-bold text-[#B88F4D] shrink-0 whitespace-nowrap">
                         {typeof item.price === 'number' ? `${item.price} €` : item.price}
-                        {item.priceNote && <sup className="ml-0.5 text-xs">*</sup>}
+                        {item.priceNote && <sup className="ml-0.5 text-[10px] md:text-xs">*</sup>}
                       </span>
                     </div>
 
