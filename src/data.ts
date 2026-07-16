@@ -7,9 +7,9 @@ import detatouageHeroAsset from './assets/detatouage-hero.png.asset.json';
 export const INSTITUT_INFO = {
   name: "L'Atelier by Lola",
   slogan: "Beauté & Bien-être Haut de Gamme",
-  address: "10 Rue du 14 Juillet, 93310 Le Pré-Saint-Gervais",
-  phone: "09 86 08 42 75",
-  phoneFormatted: "+33986084275",
+  address: "10 rue du 14 juillet 93310 LE PRÉ SAINT GERVAIS",
+  phone: "06 60 10 04 31",
+  phoneFormatted: "+33660100431",
   planityUrl: "#/reservation", // Internal reservation system
   hours: "Du lundi au dimanche sur rendez-vous (9h00 - 20h00)",
   instagram: "@atelier_by.lola",

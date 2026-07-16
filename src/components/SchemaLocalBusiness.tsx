@@ -11,8 +11,8 @@ export default function SchemaLocalBusiness() {
     "priceRange": "$$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "10 Rue du 14 Juillet",
-      "addressLocality": "Le Pré-Saint-Gervais",
+      "streetAddress": "10 rue du 14 juillet",
+      "addressLocality": "LE PRÉ SAINT GERVAIS",
       "postalCode": "93310",
       "addressRegion": "Seine-Saint-Denis",
       "addressCountry": "FR"
