@@ -73,14 +73,13 @@ export default function BlanchimentDentaireView() {
 
                 <div className="space-y-3">
                   <div className="flex justify-between items-baseline gap-4">
-                    <h4 className="font-serif text-base font-bold text-charcoal group-hover:text-[#B88F4D] transition-colors">
+                    <h4 className="font-serif text-base md:text-lg font-bold text-charcoal group-hover:text-[#B88F4D] transition-colors">
                       {item.name}
                     </h4>
+                    <span className="font-serif text-lg font-bold text-[#B88F4D] shrink-0 whitespace-nowrap">
+                      {item.price} €
+                    </span>
                   </div>
-
-                  <span className="font-serif text-3xl font-bold text-[#B88F4D] block">
-                    {item.price} €
-                  </span>
 
                   {item.duration && (
                     <span className="inline-flex items-center gap-1 text-sm text-[#8A6A38] bg-[#B88F4D]/10 border border-[#B88F4D]/20 px-3 py-1.5 rounded-full font-semibold tracking-wide">
