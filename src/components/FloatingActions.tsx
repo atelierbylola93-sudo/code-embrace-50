@@ -5,6 +5,7 @@ import { INSTITUT_INFO } from '../data';
 
 export default function FloatingActions() {
   const [isReservationView, setIsReservationView] = useState(false);
+  const [isRitualSectionVisible, setIsRitualSectionVisible] = useState(false);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -12,14 +13,40 @@ export default function FloatingActions() {
     };
 
     window.addEventListener('hashchange', handleHashChange);
-
-    // Initial check
     handleHashChange();
 
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
     };
   }, []);
+
+  useEffect(() => {
+    let observer: IntersectionObserver | null = null;
+    let rafId: number | null = null;
+
+    const attach = () => {
+      const target = document.getElementById('ritual-advisor-section');
+      if (!target) {
+        rafId = window.requestAnimationFrame(attach);
+        return;
+      }
+      observer = new IntersectionObserver(
+        ([entry]) => setIsRitualSectionVisible(entry.isIntersecting),
+        { threshold: 0, rootMargin: '-10% 0px -10% 0px' }
+      );
+      observer.observe(target);
+    };
+
+    attach();
+
+    return () => {
+      if (rafId) window.cancelAnimationFrame(rafId);
+      observer?.disconnect();
+    };
+  }, []);
+
+  const hideOnDesktop = isRitualSectionVisible;
+
 
   return (
     <div 
