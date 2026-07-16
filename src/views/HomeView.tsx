@@ -392,29 +392,29 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10 sm:pt-12">
             
             {/* Feature 1 */}
-            <div className="bg-white p-8 rounded-[24px] border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] space-y-4 hover:border-[#B88F4D]/35 transition-all duration-500">
+            <div className="bg-white p-8 rounded-2xl border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] space-y-4 hover:border-[#B88F4D]/35 transition-all duration-500">
               <div className="font-mono text-5xl font-light tracking-tighter text-[#B88F4D]/30">01</div>
               <h3 className="font-serif text-lg font-bold text-charcoal tracking-wide">Expertise Certifiée</h3>
-              <p className="text-xs text-secondary-gray leading-relaxed font-light">
-                Lola est facialiste diplômée et praticienne certifiée dans les protocoles de Head Spa russes et japonais originels. Une alliance rare de rigueur scientifique et de gestuelle relaxante millénaire.
+              <p className="text-sm md:text-base text-secondary-gray leading-relaxed font-light">
+                Lola est facialiste diplômée et praticienne certifiée dans les protocoles de Head Spa russes et japonais originels. Une alliance rare de rigueur professionnelle et de gestuelle relaxante millénaire.
               </p>
             </div>
 
-            {/* Feature 2 - Offset downwards on desktop */}
-            <div className="bg-white p-8 rounded-[24px] border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] space-y-4 sm:translate-y-8 hover:border-[#B88F4D]/35 transition-all duration-500">
+            {/* Feature 2 */}
+            <div className="bg-white p-8 rounded-2xl border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] space-y-4 hover:border-[#B88F4D]/35 transition-all duration-500">
               <div className="font-mono text-5xl font-light tracking-tighter text-[#B88F4D]/30">02</div>
               <h3 className="font-serif text-lg font-bold text-charcoal tracking-wide">Produits d'Exception</h3>
-              <p className="text-xs text-secondary-gray leading-relaxed font-light">
-                Sélection stricte d’actifs purs de grade médical et cosmétiques biologiques. Vos cheveux et votre épiderme bénéficient de formulations brevetées préservant la l'équilibre cellulaire profond.
+              <p className="text-sm md:text-base text-secondary-gray leading-relaxed font-light">
+                Sélection stricte d’actifs purs de grade médical et cosmétiques biologiques. Vos cheveux et votre épiderme bénéficient de formulations brevetées préservant l'équilibre cellulaire profond.
               </p>
             </div>
 
 
-            {/* Feature 4 - Offset downwards on desktop */}
-            <div className="bg-white p-8 rounded-[24px] border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] space-y-4 sm:translate-y-8 hover:border-[#B88F4D]/35 transition-all duration-500">
-              <div className="font-mono text-5xl font-light tracking-tighter text-[#B88F4D]/30">04</div>
+            {/* Feature 3 */}
+            <div className="bg-white p-8 rounded-2xl border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] space-y-4 hover:border-[#B88F4D]/35 transition-all duration-500">
+              <div className="font-mono text-5xl font-light tracking-tighter text-[#B88F4D]/30">03</div>
               <h3 className="font-serif text-lg font-bold text-charcoal tracking-wide">Boudoir Privatisé</h3>
-              <p className="text-xs text-secondary-gray leading-relaxed font-light">
+              <p className="text-sm md:text-base text-secondary-gray leading-relaxed font-light">
                 Oubliez les grands salons bruyants. L’institut est entièrement privatisé à chaque séance : literie thermo-ergonomique, pluie sensorielle, dôme ionique, sonorités zen et diffusion d'huiles rares.
               </p>
             </div>
