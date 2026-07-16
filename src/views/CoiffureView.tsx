@@ -76,7 +76,7 @@ export default function CoiffureView() {
                       </h4>
                       <span className="font-serif text-base md:text-lg font-bold text-[#B88F4D] shrink-0 whitespace-nowrap">
                         {item.price === undefined
-                          ? 'Sur devis'
+                          ? 'À consulter au salon ou par téléphone'
                           : typeof item.price === 'number'
                             ? `${item.price} €`
                             : item.price}
