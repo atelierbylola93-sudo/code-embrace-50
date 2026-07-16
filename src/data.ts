@@ -152,11 +152,11 @@ export const COIFFURE_SERVICES: ServiceGroup[] = [
   },
   {
     categoryTitle: "COLORATION",
-    description: "Des pigments d'exception pour une couleur brillante, profonde et respectueuse de la fibre capillaire.",
+    description: "Des pigments d'exception pour une couleur brillante, profonde et respectueuse de la fibre capillaire. Tarif sur mesure selon la longueur et la masse de vos cheveux.",
     items: [
-      { name: "Couleur Racine + Brushing", price: 40, duration: "1h 15 min", description: "Retouche racines parfaite avec notre gamme de colorations sensorielles protectrices." },
-      { name: "Couleur Tête Entière + Brushing", price: 60, duration: "1h 45 min", description: "Application globale pour une brillance miroir et une intensité uniforme sur les longueurs." },
-      { name: "Supplément Cheveux longs/épais", price: 5, description: "Dose de préparation couleur additionnelle pour les masses capillaires denses." }
+      { name: "Couleur Racine + Brushing", duration: "1h 15 min", description: "Retouche racines parfaite avec notre gamme de colorations sensorielles protectrices.", priceNote: "Tarif établi sur diagnostic selon la longueur et la masse capillaire." },
+      { name: "Couleur Tête Entière + Brushing", duration: "1h 45 min", description: "Application globale pour une brillance miroir et une intensité uniforme sur les longueurs.", priceNote: "Tarif établi sur diagnostic selon la longueur et la masse capillaire." },
+      { name: "Supplément Cheveux longs/épais", description: "Dose de préparation couleur additionnelle pour les masses capillaires denses.", priceNote: "Tarif établi sur diagnostic selon la longueur et la masse capillaire." }
     ]
   },
   {
