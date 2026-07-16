@@ -12,7 +12,7 @@ export type Page =
 
 export interface ServiceItem {
   name: string;
-  price: string | number;
+  price?: string | number;
   duration?: string;
   description?: string;
   isPopular?: boolean;
