@@ -70,7 +70,7 @@ export default function IplView() {
                     <h4 className="font-serif text-sm md:text-base font-bold text-charcoal group-hover:text-champagne transition-colors">
                       {item.name}
                     </h4>
-                    <span className="font-serif text-sm md:text-base font-bold text-[#B88F4D] shrink-0">
+                    <span className="font-serif text-lg font-bold text-[#B88F4D] shrink-0 whitespace-nowrap">
                       {item.price} € <span className="text-[10px] text-gray-500 font-normal">/ séance</span>
                     </span>
                   </div>
