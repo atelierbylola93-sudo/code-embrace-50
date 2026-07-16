@@ -92,7 +92,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       action: "soins-visage" as Page
     },
     {
-      name: "Microneedling Glowy",
+      name: "Soin du visage régénérant",
       type: "Bio-stimulation Intense",
       target: "Fermeté, Cicatrices, Pores, Rides",
       eviction: "24h (Légères rougeurs)",
