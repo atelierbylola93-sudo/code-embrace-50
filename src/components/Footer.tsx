@@ -95,11 +95,15 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <a href={INSTITUT_INFO.instagramUrl} target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-[#B88F4D] hover:text-white transition-all duration-300" title="Instagram">
                   <Instagram className="h-4 w-4" />
                 </a>
-                <a href={INSTITUT_INFO.tiktokUrl} target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-full bg-white/5 flex items-center justify-center font-bold text-gray-300 hover:bg-[#A3A485] hover:text-white transition-all duration-300" title="TikTok">
-                  <span className="text-xs">🎵</span>
+                <a href={INSTITUT_INFO.tiktokUrl} target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="h-9 w-9 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-[#A3A485] hover:text-white transition-all duration-300" title="TikTok">
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V9.01a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.44Z" />
+                  </svg>
                 </a>
-                <a href={INSTITUT_INFO.snapchatUrl} target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-yellow-500 hover:text-white transition-all duration-300" title="Snapchat">
-                  <span className="text-xs">👻</span>
+                <a href={INSTITUT_INFO.snapchatUrl} target="_blank" rel="noopener noreferrer" aria-label="Snapchat" className="h-9 w-9 rounded-full bg-white/5 flex items-center justify-center text-gray-300 hover:bg-yellow-500 hover:text-white transition-all duration-300" title="Snapchat">
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2c3.14 0 5.36 2.15 5.36 5.3 0 1.42-.09 3.14-.32 3.83.36.2.86.2 1.35 0 .76-.31 1.09.66.44 1.05-.44.27-1.14.42-1.62.55-.35.09-.36.17-.24.53.22.62 1.36 2.05 3.44 2.4.34.06.6.34.5.72-.19.7-1.9 1.02-2.86 1.16-.09.31-.13.68-.29.94-.09.15-.29.14-.5.11-.5-.08-1.06-.22-1.94-.07-.55.09-1.06.42-1.6.79-.83.55-1.77 1.18-3.18 1.18s-2.31-.62-3.13-1.17c-.55-.37-1.06-.71-1.64-.8-.86-.13-1.42 0-1.94.08-.19.03-.4.05-.5-.11-.16-.26-.2-.63-.29-.94-.96-.14-2.67-.46-2.86-1.16-.1-.38.16-.66.5-.72 2.08-.35 3.22-1.78 3.44-2.4.12-.36.11-.44-.24-.53-.48-.13-1.18-.28-1.62-.55-.65-.39-.32-1.36.44-1.05.49.2.99.2 1.35 0-.23-.69-.32-2.41-.32-3.83C6.64 4.15 8.86 2 12 2Z" />
+                  </svg>
                 </a>
               </div>
             </div>
