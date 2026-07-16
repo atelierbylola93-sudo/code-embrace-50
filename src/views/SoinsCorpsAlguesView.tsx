@@ -72,7 +72,7 @@ export default function SoinsCorpsAlguesView() {
                     <h4 className="font-serif text-base md:text-lg font-bold text-charcoal group-hover:text-[#B88F4D] transition-colors">
                       {item.name}
                     </h4>
-                    <span className="font-serif text-base md:text-lg font-bold text-[#B88F4D] shrink-0">
+                    <span className="font-serif text-lg font-bold text-[#B88F4D] shrink-0 whitespace-nowrap">
                       {item.price} €
                     </span>
                   </div>
