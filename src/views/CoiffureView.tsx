@@ -70,13 +70,18 @@ export default function CoiffureView() {
 
 
                   <div className="space-y-3">
-                    <div className="flex justify-between items-baseline gap-3">
+                    <div className="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1 md:gap-3">
                       <h4 className="font-serif text-base md:text-lg font-bold text-charcoal group-hover:text-champagne transition-colors min-w-0">
                         {item.name}
                       </h4>
-                      <span className="font-serif text-base md:text-lg font-bold text-[#B88F4D] shrink-0 whitespace-nowrap">
+                      <span className="font-serif text-sm md:text-lg font-bold text-[#B88F4D] shrink-0 whitespace-nowrap">
                         {item.price === undefined
-                          ? 'À consulter au salon ou par téléphone'
+                          ? (
+                            <>
+                              <span className="inline md:hidden">À consulter au salon</span>
+                              <span className="hidden md:inline">À consulter au salon ou par téléphone</span>
+                            </>
+                          )
                           : typeof item.price === 'number'
                             ? `${item.price} €`
                             : item.price}
