@@ -49,14 +49,17 @@ export default function FloatingActions() {
 
 
   return (
-    <div 
-      id="floating-actions" 
-      className="fixed z-40 flex flex-col items-center gap-2.5"
+    <div
+      id="floating-actions"
+      className={`fixed z-40 flex flex-col items-center gap-2.5 transition-opacity duration-300 ${
+        hideOnDesktop ? 'sm:opacity-0 sm:pointer-events-none' : 'opacity-100'
+      }`}
       style={{
         bottom: 'calc(1.5rem + env(safe-area-inset-bottom, 0px))',
         right: 'calc(1rem + env(safe-area-inset-right, 0px))'
       }}
     >
+
       {/* Floating Instagram Action - desktop/tablet only to avoid covering card prices on mobile */}
       <motion.a
         href={INSTITUT_INFO.instagramUrl}
