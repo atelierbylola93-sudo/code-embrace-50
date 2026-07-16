@@ -790,23 +790,23 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               {/* Full session protocol step roadmap */}
               <div>
                 <h3 className="font-serif text-lg text-[#B88F4D] tracking-wider mb-4 border-b border-white/10 pb-2">
-                  💆‍♂️ Déroulement & Protocole de Séance
+                  Déroulement & Protocole de Séance
                 </h3>
                 <div className="space-y-4">
                   <div className="relative pl-8 border-l border-[#B88F4D]/20">
                     <div className="absolute -left-[6px] top-1 w-3 h-3 rounded-full bg-[#A3A485]" />
-                    <span className="text-xs md:text-sm text-white font-semibold">2. Gommage Détox & Bain d'Huiles</span>
-                    <p className="text-[11px] text-gray-400">Élimination douce des toxines, peaux mortes et résidus chimiques.</p>
+                    <span className="text-sm text-white font-semibold">1. Gommage Détox & Bain d'Huiles</span>
+                    <p className="text-xs text-gray-400">Élimination douce des toxines, peaux mortes et résidus chimiques.</p>
                   </div>
                   <div className="relative pl-8 border-l border-[#B88F4D]/20">
                     <div className="absolute -left-[6px] top-1 w-3 h-3 rounded-full bg-[#B88F4D]" />
-                    <span className="text-xs md:text-sm text-white font-semibold">3. Massage Shiatsu sous le Halo d'eau</span>
-                    <p className="text-[11px] text-gray-400">Massage crânien profond, nuque et trapèzes pour dénouer l'anxiété.</p>
+                    <span className="text-sm text-white font-semibold">2. Massage Shiatsu sous le Halo d'eau</span>
+                    <p className="text-xs text-gray-400">Massage crânien profond, nuque et trapèzes pour dénouer l'anxiété.</p>
                   </div>
                   <div className="relative pl-8">
                     <div className="absolute -left-[6px] top-1 w-3 h-3 rounded-full bg-[#A3A485]" />
-                    <span className="text-xs md:text-sm text-white font-semibold">4. Dôme de Vapeur & Soin Capillaire</span>
-                    <p className="text-[11px] text-gray-400">Séchage et soin enveloppant réparateur Olaplex ou bio appliqué à chaud.</p>
+                    <span className="text-sm text-white font-semibold">3. Dôme de Vapeur & Soin Capillaire</span>
+                    <p className="text-xs text-gray-400">Séchage et soin enveloppant réparateur Olaplex ou bio appliqué à chaud.</p>
                   </div>
                 </div>
               </div>
