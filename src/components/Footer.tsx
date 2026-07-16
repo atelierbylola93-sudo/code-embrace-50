@@ -145,9 +145,9 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-500">
           <p>© 2026 L'Atelier by Lola. Tous droits réservés.</p>
           <div className="flex gap-4">
-            <a href="#conditions" className="hover:text-white transition-colors">Mentions Légales</a>
+            <button onClick={() => handleLinkClick('mentions-legales')} className="hover:text-white transition-colors cursor-pointer">Mentions Légales</button>
             <span className="text-gray-700">•</span>
-            <a href="#cookies" className="hover:text-white transition-colors">RGPD & Confidentialité</a>
+            <button onClick={() => handleLinkClick('confidentialite')} className="hover:text-white transition-colors cursor-pointer">RGPD & Confidentialité</button>
             <span className="text-gray-700">•</span>
             <button onClick={() => handleLinkClick('accueil')} className="hover:text-white transition-colors cursor-pointer">Accueil</button>
           </div>
