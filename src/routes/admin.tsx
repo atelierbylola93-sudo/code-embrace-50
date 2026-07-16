@@ -179,7 +179,7 @@ function AdminPage() {
             />
           )}
           {tab === 'disponibilites' && <AvailabilityTab />}
-          {tab === 'stats' && <StatsTab reservations={items} />}
+          {tab === 'stats' && <StatsTab />}
         </main>
       </div>
 
