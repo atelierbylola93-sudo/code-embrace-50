@@ -76,6 +76,7 @@ export default function CoiffureView() {
                       </h4>
                       <span className="font-serif text-base md:text-lg font-bold text-[#B88F4D] shrink-0">
                         {typeof item.price === 'number' ? `${item.price} €` : item.price}
+                        {item.priceNote && <sup className="ml-0.5 text-xs">*</sup>}
                       </span>
                     </div>
 
@@ -88,6 +89,12 @@ export default function CoiffureView() {
                     {item.description && (
                       <p className="text-xs md:text-sm text-secondary-gray leading-relaxed">
                         {item.description}
+                      </p>
+                    )}
+
+                    {item.priceNote && (
+                      <p className="text-[10px] md:text-xs text-[#A17E60] italic leading-relaxed border-l-2 border-[#B88F4D]/30 pl-3">
+                        * {item.priceNote}
                       </p>
                     )}
                   </div>
