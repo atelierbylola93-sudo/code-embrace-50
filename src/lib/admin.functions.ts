@@ -381,3 +381,119 @@ export const createManualReservation = createServerFn({ method: 'POST' })
     if (error) throw new Error(error.message);
     return { ok: true, id: inserted.id, reference: inserted.reference };
   });
+
+// ---------- Statistiques ----------
+
+export const getAdminStats = createServerFn({ method: 'GET' })
+  .middleware([requireSupabaseAuth])
+  .inputValidator((d: { start_date: string; end_date: string }) =>
+    z.object({
+      start_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+      end_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+    }).parse(d),
+  )
+  .handler(async ({ data, context }) => {
+    const { data: role } = await context.supabase
+      .from('user_roles').select('role').eq('user_id', context.userId).eq('role', 'admin').maybeSingle();
+    if (!role) throw new Error('Forbidden');
+
+    const { data: rows, error } = await context.supabase
+      .from('reservations')
+      .select('id,reference,client_name,status,source,total_price,appointment_date,appointment_time,services,created_at')
+      .gte('appointment_date', data.start_date)
+      .lte('appointment_date', data.end_date);
+    if (error) throw new Error(error.message);
+
+    type Row = {
+      id: string; reference: string; client_name: string;
+      status: 'pending' | 'confirmed' | 'cancelled' | 'done';
+      source: 'site' | 'telephone' | 'instagram' | 'autre';
+      total_price: number; appointment_date: string; appointment_time: string;
+      services: Array<{ name: string; price: number }>; created_at: string;
+    };
+    const list = (rows ?? []) as unknown as Row[];
+
+    // KPIs — CA réalisé = uniquement 'done'
+    const doneRows = list.filter((r) => r.status === 'done');
+    const confirmedUpcomingRows = list.filter((r) => r.status === 'confirmed');
+    const nonCancelled = list.filter((r) => r.status !== 'cancelled');
+    const cancelled = list.filter((r) => r.status === 'cancelled');
+
+    const revenueDone = doneRows.reduce((s, r) => s + Number(r.total_price || 0), 0);
+    const revenueForecast = confirmedUpcomingRows.reduce((s, r) => s + Number(r.total_price || 0), 0);
+    const totalBookings = nonCancelled.length;
+    const averageBasket = totalBookings > 0
+      ? nonCancelled.reduce((s, r) => s + Number(r.total_price || 0), 0) / totalBookings
+      : 0;
+    const totalIncludingCancelled = list.length;
+    const cancellationRate = totalIncludingCancelled > 0
+      ? (cancelled.length / totalIncludingCancelled) * 100
+      : 0;
+
+    // Série CA par jour (basé sur done)
+    const dailyMap = new Map<string, number>();
+    // Init tous les jours à 0
+    const start = new Date(data.start_date + 'T00:00:00');
+    const end = new Date(data.end_date + 'T00:00:00');
+    for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+      const key = d.toISOString().slice(0, 10);
+      dailyMap.set(key, 0);
+    }
+    doneRows.forEach((r) => {
+      dailyMap.set(r.appointment_date, (dailyMap.get(r.appointment_date) ?? 0) + Number(r.total_price || 0));
+    });
+    const daily = Array.from(dailyMap.entries())
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([date, revenue]) => ({ date, revenue }));
+
+    // Top prestations par CA (réalisé)
+    const serviceMap = new Map<string, { name: string; revenue: number; count: number }>();
+    doneRows.forEach((r) => {
+      (r.services ?? []).forEach((s) => {
+        const name = String(s?.name ?? '—');
+        const cur = serviceMap.get(name) ?? { name, revenue: 0, count: 0 };
+        cur.revenue += Number(s?.price ?? 0);
+        cur.count += 1;
+        serviceMap.set(name, cur);
+      });
+    });
+    const topServices = Array.from(serviceMap.values())
+      .sort((a, b) => b.revenue - a.revenue)
+      .slice(0, 8);
+
+    // Répartition par canal (non annulées)
+    const sourceMap = new Map<string, number>();
+    nonCancelled.forEach((r) => {
+      const key = r.source ?? 'autre';
+      sourceMap.set(key, (sourceMap.get(key) ?? 0) + 1);
+    });
+    const bySource = Array.from(sourceMap.entries()).map(([source, count]) => ({
+      source,
+      count,
+      pct: totalBookings > 0 ? (count / totalBookings) * 100 : 0,
+    }));
+
+    // 10 dernières réservations (créées récemment)
+    const recent = [...list]
+      .sort((a, b) => (b.created_at || '').localeCompare(a.created_at || ''))
+      .slice(0, 10)
+      .map((r) => ({
+        id: r.id, reference: r.reference, client_name: r.client_name,
+        status: r.status, source: r.source, total_price: Number(r.total_price || 0),
+        appointment_date: r.appointment_date, appointment_time: r.appointment_time,
+      }));
+
+    return {
+      kpis: {
+        revenueDone,
+        revenueForecast,
+        totalBookings,
+        averageBasket,
+        cancellationRate,
+      },
+      daily,
+      topServices,
+      bySource,
+      recent,
+    };
+  });
