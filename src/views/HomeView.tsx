@@ -273,7 +273,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </span>
           </div>
 
-          <div className="pt-3 xl:pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1 min-w-0 px-1">
+          <div className="pt-3 xl:pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1">
             <span className="font-serif text-3xl md:text-4xl font-bold text-[#B88F4D] tracking-tight block flex items-center justify-center gap-1">
               4.9<span className="text-sm text-yellow-500">★</span>
             </span>
@@ -282,8 +282,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </span>
           </div>
 
-          <div className="pt-3 xl:pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1 min-w-0 px-1">
-            <span className="font-serif text-3.5xl md:text-4xl font-bold text-charcoal tracking-tight block">
+          <div className="pt-3 xl:pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1">
+            <span className="font-serif text-3xl md:text-4xl font-bold text-charcoal tracking-tight block">
               100%
             </span>
             <span className="text-[10px] md:text-xs text-secondary-gray uppercase tracking-widest font-semibold block">
@@ -291,8 +291,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </span>
           </div>
 
-          <div className="pt-3 xl:pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1 min-w-0 px-1">
-            <span className="font-serif text-3.5xl md:text-4xl font-bold text-[#A3A485] tracking-tight block">
+          <div className="pt-3 xl:pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1">
+            <span className="font-serif text-3xl md:text-4xl font-bold text-[#A3A485] tracking-tight block">
               Planity
             </span>
             <span className="text-[10px] md:text-xs text-secondary-gray uppercase tracking-widest font-semibold block">
