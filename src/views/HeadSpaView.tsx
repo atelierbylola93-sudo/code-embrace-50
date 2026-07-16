@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Calendar, CheckCircle2, Star, ShieldCheck, Sparkles } from 'lucide-react';
+import { Calendar, CheckCircle2, Star, ShieldCheck, Sparkles, Clock } from 'lucide-react';
 import { HEAD_SPA_DATA } from '../data';
 import FaqSection from '../components/FaqSection';
 import headspaHeroAsset from '../assets/headspa-hero.png.asset.json';
@@ -119,13 +119,14 @@ export default function HeadSpaView() {
                     <h3 className="font-serif text-lg md:text-xl text-charcoal font-semibold">
                       {formula.name}
                     </h3>
-                    <span className="font-serif text-lg font-bold text-[#B88F4D] shrink-0 whitespace-nowrap">
+                    <span className="font-serif text-base font-medium text-[#A17E60] shrink-0 whitespace-nowrap">
                       {formula.price} €
                     </span>
                   </div>
 
                   {formula.duration && (
-                    <span className="inline-flex items-center gap-1 text-sm text-[#8A6A38] bg-[#B88F4D]/10 border border-[#B88F4D]/20 px-3 py-1.5 rounded-full font-semibold tracking-wide">
+                    <span className="inline-flex items-center gap-1.5 text-sm font-bold text-[#B88F4D] bg-[#EFE7D2] border border-[#B88F4D]/30 px-3 py-1.5 rounded-full tracking-wide">
+                      <Clock className="h-3.5 w-3.5" />
                       {formula.duration}
                     </span>
                   )}
