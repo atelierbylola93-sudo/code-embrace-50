@@ -664,7 +664,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
           <div className="mt-16 text-center bg-white rounded-[24px] p-6 border border-[#B88F4D]/10 max-w-3xl mx-auto shadow-sm">
             <p className="text-xs text-charcoal font-medium">
-              💡 Vous hésitez sur le choix de votre protocole ? Nos diagnostics personnalisés sont entièrement inclus avec chaque soin.
+              Vous hésitez sur le choix de votre protocole ? Nos diagnostics personnalisés sont entièrement inclus avec chaque soin.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
               <button
