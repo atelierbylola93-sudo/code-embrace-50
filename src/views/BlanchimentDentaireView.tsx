@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Calendar, CheckCircle2, Star, Sparkles } from 'lucide-react';
 import { BLANCHIMENT_DENTAIRE_DATA, INSTITUT_INFO, LUXURY_IMAGES } from '../data';
 import FaqSection from '../components/FaqSection';
+import BlanchimentAvantApres from '../components/BlanchimentAvantApres';
 
 export default function BlanchimentDentaireView() {
   return (
