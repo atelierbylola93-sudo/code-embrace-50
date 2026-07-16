@@ -287,7 +287,7 @@ export const REGARD_DATA = {
 export const IPL_DATA = {
   seoTitle: "Épilation Lumière Pulsée (IPL) Le Pré-Saint-Gervais",
   subtitle: "Débarrassez-vous Définitivement des Poils Grâce à la Haute Technologie IPL",
-  description: "Notre technologie d'épilation définitive par Lumière Pulsée Intense (IPL) cible la mélanine du follicule pileux sous la peau pour détruire la racine du poil en toute sécurité et sans douleur au Pré-Saint-Gervais. Après quelques séances, la repousse est bloquée, la peau devient lisse et douce, débarrassée des irritations quotidiennes ou poils incarnés causés par le rasoir et la cire traditionnelle.",
+  description: "Notre technologie d'épilation longue durée par Lumière Pulsée Intense (IPL) cible la mélanine du follicule pileux sous la peau pour freiner durablement la repousse en toute sécurité et sans douleur au Pré-Saint-Gervais. Après quelques séances, la repousse est fortement réduite, la peau devient lisse et douce, débarrassée des irritations quotidiennes ou poils incarnés causés par le rasoir et la cire traditionnelle.",
   items: [
     { name: "Aisselles (la séance)", price: 50, duration: "15 min", description: "Traitement ultra-rapide et sécurisé pour une peau nette sans ombre." },
     { name: "Maillot Classique (la séance)", price: 50, duration: "25 min", description: "Définition des contours de maillot standard, peau douce garantie." },
