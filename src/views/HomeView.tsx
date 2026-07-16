@@ -975,33 +975,53 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     </div>
                   </div>
 
-                  <div className="lg:col-span-4 lg:col-start-9 bg-[#EFE7D2] p-6 sm:p-8 rounded-[24px] border border-[#B88F4D]/10 space-y-6">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <span className="text-[9px] uppercase tracking-wider text-gray-400 block">Durée</span>
-                        <span className="font-serif text-lg font-bold text-charcoal block mt-0.5">{row.duration}</span>
+                  <div className="lg:col-span-4 lg:col-start-9 bg-[#EFE7D2] p-6 sm:p-8 rounded-[24px] border border-[#B88F4D]/15 shadow-sm flex flex-col gap-5">
+                    {/* Card header */}
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] uppercase tracking-[0.2em] text-[#A17E60] font-bold">Récapitulatif</span>
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/70 border border-[#B88F4D]/20 text-[10px] text-[#B88F4D] font-bold uppercase tracking-wider">
+                        <Sparkles className="h-3 w-3" /> Sur-mesure
+                      </span>
+                    </div>
+
+                    {/* Duration — hero metric */}
+                    <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/60 border border-[#B88F4D]/10">
+                      <div className="h-10 w-10 rounded-full bg-[#B88F4D]/10 flex items-center justify-center shrink-0">
+                        <Clock className="h-5 w-5 text-[#B88F4D]" />
                       </div>
                       <div>
-                        <span className="text-[9px] uppercase tracking-wider text-gray-400 block">Tarif</span>
-                        <span className="font-serif text-lg font-bold text-[#B88F4D] block mt-0.5">{row.price}</span>
-                      </div>
-                      <div className="col-span-2">
-                        <span className="text-[9px] uppercase tracking-wider text-gray-400 block mb-1">Temps d'éviction</span>
-                        <span className={`inline-block px-2.5 py-1 rounded-full text-[9px] font-bold ${
-                          row.eviction === "Aucune (Éclat direct)" || row.eviction.includes("Aucune")
-                            ? 'bg-emerald-50 text-emerald-600'
-                            : 'bg-amber-50 text-amber-600'
-                        }`}>
-                          {row.eviction}
-                        </span>
-                      </div>
-                      <div className="col-span-2">
-                        <span className="text-[9px] uppercase tracking-wider text-gray-400 block mb-0.5">Intensité</span>
-                        <span className="text-xs text-[#B88F4D] tracking-wider block font-serif">{row.effets}</span>
+                        <span className="text-[10px] uppercase tracking-widest text-[#A17E60] block">Durée</span>
+                        <span className="font-serif text-2xl text-charcoal font-light block leading-none mt-1">{row.duration}</span>
                       </div>
                     </div>
 
-                    <div className="pt-2">
+                    {/* Price & intensity */}
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold block mb-1">Tarif</span>
+                        <span className="font-serif text-lg text-[#A17E60] font-medium block">{row.price}</span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold block mb-1">Intensité</span>
+                        <span className="text-sm text-[#B88F4D] font-serif tracking-wider block">{row.effets}</span>
+                      </div>
+                    </div>
+
+                    {/* Eviction badge */}
+                    <div>
+                      <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold block mb-1.5">Temps d'éviction</span>
+                      <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-bold ${
+                        row.eviction === "Aucune (Éclat direct)" || row.eviction.includes("Aucune")
+                          ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                          : 'bg-amber-50 text-amber-700 border border-amber-200'
+                      }`}>
+                        <CheckCircle className="h-3.5 w-3.5" />
+                        {row.eviction}
+                      </span>
+                    </div>
+
+                    {/* Actions */}
+                    <div className="mt-auto pt-2 space-y-3">
                       <button
                         onClick={() => {
                           window.location.hash = '#/reservation';
