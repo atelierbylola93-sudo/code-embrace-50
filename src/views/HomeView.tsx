@@ -767,7 +767,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     <CheckCircle className="h-5 w-5 text-[#A3A485] shrink-0 mt-0.5" />
                     <div>
                       <span className="text-xs md:text-sm text-gray-200 font-medium block">Régule le Sébum</span>
-                      <span className="text-[11px] text-gray-400 leading-snug">Élimine définitivement pellicules et démangeaisons.</span>
+                      <span className="text-[11px] text-gray-400 leading-snug">Aide à réduire pellicules et démangeaisons durablement.</span>
                     </div>
                   </div>
                   <div className="flex gap-3">
