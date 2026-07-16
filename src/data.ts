@@ -299,8 +299,8 @@ export const IPL_DATA = {
     { name: "SIF - Sillon Interfessier (la séance)", price: 30, duration: "15 min", description: "Retouche d'épilation ciblée et respectueuse de l'intimité." }
   ],
   benefits: [
-    "Élimine durablement plus de 85% de la pilosité dès la 5ème séance.",
-    "Résout définitivement les problèmes douloureux de poils incarnés et d'irritations.",
+    "Réduit durablement la pilosité, avec des résultats visibles dès les premières séances.",
+    "Aide à limiter les problèmes récurrents de poils incarnés et d'irritations.",
     "Appareil de dernière génération équipé d'un refroidisseur cutané pour un confort absolu sans douleur.",
     "Rentabilité spectaculaire par rapport à des années d'épilation mensuelle à la cire."
   ],
