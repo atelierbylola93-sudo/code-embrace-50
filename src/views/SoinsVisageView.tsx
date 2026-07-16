@@ -124,7 +124,7 @@ export default function SoinsVisageView() {
 
             <div className="p-4 bg-white/5 rounded-lg border border-white/10 text-xs text-gray-400 space-y-1">
               <span className="text-[#B88F4D] font-semibold block">⚠️ Conseil d'éclat :</span>
-              Nous recommandons l'HydraFacial 4 jours avant un grand événement pour un fini maquillage sublime, ou le Microneedling pour traiter les imperfections en profondeur.
+              Nous recommandons le soin du visage signature 4 jours avant un grand événement pour un fini maquillage sublime, ou le soin régénérant pour traiter les imperfections en profondeur.
             </div>
           </div>
 
