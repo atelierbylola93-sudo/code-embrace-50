@@ -1,5 +1,6 @@
 import { ServiceGroup, FaqItem, ReviewItem, Page } from './types';
 import iplEpilationImg from './assets/ipl-epilation.jpg';
+import headspaHeroAsset from './assets/headspa-hero.png.asset.json';
 import blanchimentHeroAsset from './assets/blanchiment-dentaire-hero.png.asset.json';
 import detatouageHeroAsset from './assets/detatouage-hero.png.asset.json';
 
@@ -41,7 +42,7 @@ export const NAV_ITEMS: MenuItem[] = [
 // Custom Unsplash beauty therapy links for peak aesthetic quality
 export const LUXURY_IMAGES = {
   heroBg: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&q=80&w=1600', // Premium Spa bed with cream and gold vibes
-  headSpa: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=1200', // Beautiful scalp wash and water ring therapy
+  headSpa: headspaHeroAsset.url, // Japanese Head Spa treatment — uploaded asset
   hydraFacial: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=1200', // Luxury glowy skin treatment
   aboutOwner: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=1200', // Wellness specialist representation
   beauteRegard: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=1200', // Eyelash and brow macro aesthetic
