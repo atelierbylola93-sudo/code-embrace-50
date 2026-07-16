@@ -92,6 +92,12 @@ export default function App() {
         return <SoinsCorpsAlguesView />;
       case 'reservation':
         return <ReservationView />;
+      case 'reservation':
+        return <ReservationView />;
+      case 'mentions-legales':
+        return <MentionsLegalesView />;
+      case 'confidentialite':
+        return <ConfidentialiteView />;
       default:
         return <HomeView onNavigate={handleNavigate} />;
     }
