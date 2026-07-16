@@ -239,8 +239,7 @@ export const SOINS_VISAGE_DATA = {
     { name: "Soin Hydratant Purifiant Vapeur", price: 90, duration: "1h 00 min", description: "Le grand classique de la pureté. Extraction des comédons sous vapeur tiède ionisée, purification cutanée profonde et modelage éclat." },
     { name: "Soin du visage signature", price: 105, duration: "45 min", description: "Notre soin phare à succion hydro-mécanique. Nettoie, exfolie les impuretés en profondeur et infuse des sérums hautement concentrés en antioxydants et acide hyaluronique.", isPopular: true },
     { name: "Microneedling Visage Glowy", price: 160, duration: "1h 00 min", description: "Technologie de micro-perforations contrôlées pour stimuler naturellement l'élastine et le collagène. Infuse un cocktail de vitamines pour estomper cicatrices, pores dilatés et rides.", isPopular: true },
-    { name: "Soin aux Algues Naturel", price: 100, duration: "1h 00 min", description: "Masque plastifiant reminéralisant aux extraits d'algues marines pures pour détoxifier, raffermir et illuminer les peaux fatiguées ou urbaines." },
-    { name: "Hydrasun Bronzag' Signature", price: 45, duration: "20 min", description: "Le bronzage esthétique par brumisation sans UV nocif. Formule naturelle à base de DHA végétale pour un hâle uniforme, naturel et éclatant digne d'un retour d'été au Pré-Saint-Gervais." }
+    { name: "Soin aux Algues Naturel", price: 100, duration: "1h 00 min", description: "Masque plastifiant reminéralisant aux extraits d'algues marines pures pour détoxifier, raffermir et illuminer les peaux fatiguées ou urbaines." }
   ],
   benefits: [
     "Hydratation intense et lissage instantané des ridules de déshydratation.",
