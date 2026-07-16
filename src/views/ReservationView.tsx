@@ -175,11 +175,11 @@ export default function ReservationView() {
   // Mobile: panier tiroir ouvert/fermé
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
 
-  // Génère les 8 prochains jours
+  // Génère les 14 prochains jours
   const datesList = useMemo(() => {
     const dates = [];
     const locale = 'fr-FR';
-    for (let i = 1; i <= 8; i++) {
+    for (let i = 1; i <= 14; i++) {
       const d = new Date();
       d.setDate(d.getDate() + i);
       dates.push({
@@ -192,14 +192,74 @@ export default function ReservationView() {
     return dates;
   }, []);
 
-  const availableSlots = ["09:30", "11:00", "12:30", "14:00", "15:30", "17:00", "18:30"];
+  // Availability map (date iso -> open?) sourced from server
+  const [openDates, setOpenDates] = useState<Record<string, boolean>>({});
+  const [availableSlots, setAvailableSlots] = useState<string[]>([]);
+
+  const totalDurationMin = useMemo(() => {
+    return selectedServices.reduce((acc, s) => acc + parseDurationToMin(s.duration), 0);
+  }, [selectedServices]);
+
+  // Fetch availability for each month spanned by datesList
+  useEffect(() => {
+    const months = Array.from(new Set(datesList.map((d) => d.fullIso.slice(0, 7))));
+    let cancelled = false;
+    (async () => {
+      try {
+        const results = await Promise.all(
+          months.map((month) => getAvailability({ data: { month } })),
+        );
+        if (cancelled) return;
+        const map: Record<string, boolean> = {};
+        results.forEach((r) => {
+          r.days.forEach((d) => {
+            map[d.date] = d.open;
+          });
+        });
+        setOpenDates(map);
+      } catch (err) {
+        console.error('availability fetch failed', err);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [datesList]);
+
+  const refreshSlots = useCallback(
+    async (date: string) => {
+      if (!date) {
+        setAvailableSlots([]);
+        return;
+      }
+      setIsSyncingSlots(true);
+      try {
+        const res = await getAvailableSlots({
+          data: { date, duration_min: totalDurationMin || 60 },
+        });
+        setAvailableSlots(res.slots);
+      } catch (err) {
+        console.error('slots fetch failed', err);
+        setAvailableSlots([]);
+      } finally {
+        setIsSyncingSlots(false);
+      }
+    },
+    [totalDurationMin],
+  );
 
   const handleDateClick = (isoString: string) => {
+    if (openDates[isoString] === false) return;
     setSelectedDate(isoString);
     setSelectedTimeSlot('');
-    setIsSyncingSlots(true);
-    setTimeout(() => setIsSyncingSlots(false), 400);
+    void refreshSlots(isoString);
   };
+
+  // Refresh slots when the selected duration changes for an already picked date
+  useEffect(() => {
+    if (selectedDate) void refreshSlots(selectedDate);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [totalDurationMin]);
 
   const isFormValid =
     clientInfo.name.trim().length > 2 &&
