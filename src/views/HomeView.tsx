@@ -64,15 +64,15 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     {
       title: "Épilation IPL",
       tag: "Haute Technologie",
-      description: "Grâce à notre dispositif professionnel de lumière pulsée équipé de la technologie 'Doul-Cooling', éliminez définitivement vos poils dans une fraîcheur et un confort d'exception.",
+      description: "Grâce à notre dispositif professionnel de lumière pulsée équipé de la technologie 'Doul-Cooling', réduisez durablement votre pilosité dans une fraîcheur et un confort d'exception.",
       price: "Dès 30 €",
       image: LUXURY_IMAGES.iplEpilation,
       page: 'ipl' as Page,
     },
     {
       title: "Blanchiment Dentaire",
-      tag: "Sourire Miroir",
-      description: "Éliminez instantanément le jaunissement structurel en une unique séance de double exposition LED douce. Gagnez de nombreuses teintes de blancheur en préservant vos gencives.",
+      tag: "Sourire Éclatant",
+      description: "Retrouvez un sourire lumineux en une seule séance grâce à notre protocole de double exposition LED douce, tout en respectant l'émail et les gencives.",
       price: "Dès 60 €",
       image: LUXURY_IMAGES.blanchimentDentaire,
       page: 'blanchiment-dentaire' as Page,
