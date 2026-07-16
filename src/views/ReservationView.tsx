@@ -565,7 +565,7 @@ export default function ReservationView() {
           placeholder="Rechercher un soin, une technique…"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full h-12 pl-11 pr-4 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#B88F4D]/30 focus:border-[#B88F4D] bg-white placeholder:text-gray-400"
+          className="w-full h-12 pl-11 pr-4 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#B88F4D]/30 focus:border-[#B88F4D] bg-white placeholder:text-gray-500"
         />
       </div>
 
@@ -860,7 +860,7 @@ export default function ReservationView() {
               placeholder="Sophie Martin"
               value={clientInfo.name}
               onChange={(e) => setClientInfo({ ...clientInfo, name: e.target.value })}
-              className="w-full h-12 px-4 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#B88F4D]/30 focus:border-[#B88F4D] bg-white placeholder:text-gray-400"
+              className="w-full h-12 px-4 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#B88F4D]/30 focus:border-[#B88F4D] bg-white placeholder:text-gray-500"
             />
           </div>
 
@@ -874,7 +874,7 @@ export default function ReservationView() {
               placeholder="06 12 34 56 78"
               value={clientInfo.phone}
               onChange={(e) => setClientInfo({ ...clientInfo, phone: e.target.value })}
-              className="w-full h-12 px-4 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#B88F4D]/30 focus:border-[#B88F4D] bg-white placeholder:text-gray-400"
+              className="w-full h-12 px-4 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#B88F4D]/30 focus:border-[#B88F4D] bg-white placeholder:text-gray-500"
             />
           </div>
         </div>
@@ -889,7 +889,7 @@ export default function ReservationView() {
             placeholder="sophie@email.com"
             value={clientInfo.email}
             onChange={(e) => setClientInfo({ ...clientInfo, email: e.target.value })}
-            className="w-full h-12 px-4 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#B88F4D]/30 focus:border-[#B88F4D] bg-white placeholder:text-gray-400"
+            className="w-full h-12 px-4 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#B88F4D]/30 focus:border-[#B88F4D] bg-white placeholder:text-gray-500"
           />
         </div>
 
@@ -902,7 +902,7 @@ export default function ReservationView() {
             placeholder="Sensibilité, pression du massage, souhaits particuliers…"
             value={clientInfo.note}
             onChange={(e) => setClientInfo({ ...clientInfo, note: e.target.value })}
-            className="w-full px-4 py-3 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#B88F4D]/30 focus:border-[#B88F4D] bg-white placeholder:text-gray-400 resize-none"
+            className="w-full px-4 py-3 text-sm border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#B88F4D]/30 focus:border-[#B88F4D] bg-white placeholder:text-gray-500 resize-none"
           />
         </div>
       </div>
