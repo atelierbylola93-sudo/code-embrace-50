@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Calendar, CheckCircle2, Star, ShieldCheck, Sparkles, Clock } from 'lucide-react';
+import { Calendar, CheckCircle2, Star, ShieldCheck, Sparkles } from 'lucide-react';
 import { HEAD_SPA_DATA } from '../data';
 import FaqSection from '../components/FaqSection';
 import headspaHeroAsset from '../assets/headspa-hero.png.asset.json';
