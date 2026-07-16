@@ -46,7 +46,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       page: 'soins-visage' as Page,
     },
     {
-      title: "Microneedling Glowy",
+      title: "Soin du visage régénérant",
       tag: "Jeunesse Cellulaire",
       description: "Relance instantanément la micro-circulation et l'élastine naturelle. Atténue visiblement les pores, ridules, cicatrices d'acné et insuffle un cocktail exclusif multivitaminé.",
       price: "160 €",
