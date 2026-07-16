@@ -71,7 +71,7 @@ export const BEFORE_AFTER_ITEMS: BeforeAfterItem[] = [
   },
   {
     id: 'ba-hydrafacial',
-    category: 'HydraFacial Signature',
+    category: 'Soin du visage signature',
     title: 'Teint terne vs Glow absolu',
     beforeUrl: 'https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&q=80&w=600', // Dull skin
     afterUrl: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&q=80&w=600', // Radiant makeup-free facial skin glow
@@ -237,7 +237,7 @@ export const SOINS_VISAGE_DATA = {
   items: [
     { name: "Soin Visage Bio", price: 60, duration: "45 min", description: "Nettoyage en douceur, gommage enzymatique, massage facial relaxant et masque botanique certifié bio adapté aux peaux délicates." },
     { name: "Soin Hydratant Purifiant Vapeur", price: 90, duration: "1h 00 min", description: "Le grand classique de la pureté. Extraction des comédons sous vapeur tiède ionisée, purification cutanée profonde et modelage éclat." },
-    { name: "HydraFacial Signature", price: 105, duration: "45 min", description: "Notre soin phare à succion hydro-mécanique. Nettoie, exfolie les impuretés en profondeur et infuse des sérums hautement concentrés en antioxydants et acide hyaluronique.", isPopular: true },
+    { name: "Soin du visage signature", price: 105, duration: "45 min", description: "Notre soin phare à succion hydro-mécanique. Nettoie, exfolie les impuretés en profondeur et infuse des sérums hautement concentrés en antioxydants et acide hyaluronique.", isPopular: true },
     { name: "Microneedling Visage Glowy", price: 160, duration: "1h 00 min", description: "Technologie de micro-perforations contrôlées pour stimuler naturellement l'élastine et le collagène. Infuse un cocktail de vitamines pour estomper cicatrices, pores dilatés et rides.", isPopular: true },
     { name: "Soin aux Algues Naturel", price: 100, duration: "1h 00 min", description: "Masque plastifiant reminéralisant aux extraits d'algues marines pures pour détoxifier, raffermir et illuminer les peaux fatiguées ou urbaines." },
     { name: "Hydrasun Bronzag' Signature", price: 45, duration: "20 min", description: "Le bronzage esthétique par brumisation sans UV nocif. Formule naturelle à base de DHA végétale pour un hâle uniforme, naturel et éclatant digne d'un retour d'été au Pré-Saint-Gervais." }

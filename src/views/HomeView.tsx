@@ -38,7 +38,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       page: 'head-spa' as Page,
     },
     {
-      title: "HydraFacial Signature",
+      title: "Soin du visage signature",
       tag: "Éclat Absolu",
       description: "Nettoie en profondeur extrême, extrait les imperfections par aspiration vortex brevetée, exfolie en douceur et gorge la peau de sérums botaniques anti-oxydants d'élite.",
       price: "105 €",
@@ -81,7 +81,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
   const comparisons = [
     {
-      name: "HydraFacial Signature",
+      name: "Soin du visage signature",
       type: "Exfoliation Hydromécanique",
       target: "Toutes peaux, Teint terne, Pores obstrués",
       eviction: "Aucune (Éclat direct)",
