@@ -19,7 +19,7 @@ export default function SoinsVisageView() {
         
         <div className="relative z-10 text-center space-y-3 px-4">
           <span className="text-[10px] md:text-xs uppercase tracking-[0.25em] text-white/95 font-bold bg-[#A3A485] px-4 py-1.5 rounded-full border border-white/20 animate-pulse">
-            HydraFacial & Microneedling Clinique
+            Soins du visage d'exception
           </span>
           <h1 className="font-serif text-3xl md:text-5xl text-white font-light tracking-wide">
             Soins du Visage d'Exception
