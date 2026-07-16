@@ -489,10 +489,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               </div>
             </div>
 
-            {/* 2. ALTERNATING COLUMNS: HYDRAFACIAL & MICRONEEDLING */}
+            {/* 2. ALTERNATING COLUMNS: SOINS DU VISAGE */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
               
-              {/* HydraFacial - Image Left Side-by-Side Card */}
+              {/* Soin du visage signature - Image Left Side-by-Side Card */}
               <div className="bg-white rounded-[32px] overflow-hidden border border-[#B88F4D]/10 shadow-[0_10px_35px_rgba(0,0,0,0.02)] flex flex-col justify-between">
                 <div>
                   <div className="relative h-64 sm:h-72 overflow-hidden">
