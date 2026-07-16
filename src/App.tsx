@@ -19,6 +19,8 @@ import DetatouageView from './views/DetatouageView';
 import BlanchimentDentaireView from './views/BlanchimentDentaireView';
 import SoinsCorpsAlguesView from './views/SoinsCorpsAlguesView';
 import ReservationView from './views/ReservationView';
+import MentionsLegalesView from './views/MentionsLegalesView';
+import ConfidentialiteView from './views/ConfidentialiteView';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('accueil');
@@ -37,7 +39,9 @@ export default function App() {
         'detatouage',
         'blanchiment-dentaire',
         'soins-corps-algues',
-        'reservation'
+        'reservation',
+        'mentions-legales',
+        'confidentialite'
       ];
       
       if (validPages.includes(hash)) {
@@ -88,6 +92,10 @@ export default function App() {
         return <SoinsCorpsAlguesView />;
       case 'reservation':
         return <ReservationView />;
+      case 'mentions-legales':
+        return <MentionsLegalesView />;
+      case 'confidentialite':
+        return <ConfidentialiteView />;
       default:
         return <HomeView onNavigate={handleNavigate} />;
     }

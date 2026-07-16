@@ -8,7 +8,10 @@ export type Page =
   | 'detatouage'
   | 'blanchiment-dentaire'
   | 'soins-corps-algues'
-  | 'reservation';
+  | 'reservation'
+  | 'mentions-legales'
+  | 'confidentialite';
+
 
 export interface ServiceItem {
   name: string;

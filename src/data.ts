@@ -16,8 +16,9 @@ export const INSTITUT_INFO = {
   instagramUrl: "https://instagram.com/atelier_by.lola",
   tiktok: "@latelier.by.lola",
   tiktokUrl: "https://tiktok.com/@latelier.by.lola",
-  snapchat: "l'atelierbylola",
-  snapchatUrl: "https://www.snapchat.com/add/l'atelierbylola",
+  snapchat: "latelierbylola",
+  snapchatUrl: "https://www.snapchat.com/add/latelierbylola",
+
 };
 
 // Nav menu structure with metadata
@@ -223,7 +224,7 @@ export const HEAD_SPA_DATA = {
   ] as HeadSpaFormula[],
   benefits: [
     "Retarde la chute et revitalise les cheveux mous et fatigués.",
-    "Régule le sébum et élimine définitivement les démangeaisons ou pellicules.",
+    "Régule le sébum et aide à réduire durablement les démangeaisons et pellicules.",
     "Soulage instantanément le stress, l'anxiété et les maux de tête chroniques.",
     "Améliore la qualité du sommeil grâce à une sensation de sérénité durable."
   ],
@@ -286,7 +287,7 @@ export const REGARD_DATA = {
 export const IPL_DATA = {
   seoTitle: "Épilation Lumière Pulsée (IPL) Le Pré-Saint-Gervais",
   subtitle: "Débarrassez-vous Définitivement des Poils Grâce à la Haute Technologie IPL",
-  description: "Notre technologie d'épilation définitive par Lumière Pulsée Intense (IPL) cible la mélanine du follicule pileux sous la peau pour détruire la racine du poil en toute sécurité et sans douleur au Pré-Saint-Gervais. Après quelques séances, la repousse est bloquée, la peau devient lisse et douce, débarrassée des irritations quotidiennes ou poils incarnés causés par le rasoir et la cire traditionnelle.",
+  description: "Notre technologie d'épilation longue durée par Lumière Pulsée Intense (IPL) cible la mélanine du follicule pileux sous la peau pour freiner durablement la repousse en toute sécurité et sans douleur au Pré-Saint-Gervais. Après quelques séances, la repousse est fortement réduite, la peau devient lisse et douce, débarrassée des irritations quotidiennes ou poils incarnés causés par le rasoir et la cire traditionnelle.",
   items: [
     { name: "Aisselles (la séance)", price: 50, duration: "15 min", description: "Traitement ultra-rapide et sécurisé pour une peau nette sans ombre." },
     { name: "Maillot Classique (la séance)", price: 50, duration: "25 min", description: "Définition des contours de maillot standard, peau douce garantie." },
@@ -298,8 +299,8 @@ export const IPL_DATA = {
     { name: "SIF - Sillon Interfessier (la séance)", price: 30, duration: "15 min", description: "Retouche d'épilation ciblée et respectueuse de l'intimité." }
   ],
   benefits: [
-    "Élimine durablement plus de 85% de la pilosité dès la 5ème séance.",
-    "Résout définitivement les problèmes douloureux de poils incarnés et d'irritations.",
+    "Réduit durablement la pilosité, avec des résultats visibles dès les premières séances.",
+    "Aide à limiter les problèmes récurrents de poils incarnés et d'irritations.",
     "Appareil de dernière génération équipé d'un refroidisseur cutané pour un confort absolu sans douleur.",
     "Rentabilité spectaculaire par rapport à des années d'épilation mensuelle à la cire."
   ],
@@ -342,7 +343,7 @@ export const BLANCHIMENT_DENTAIRE_DATA = {
   items: [
     { name: "Formule SOFT WHITE", price: 60, duration: "30 min", description: "Le coup d'éclat express. Idéal pour rafraîchir un blanchiment antérieur ou pour les dents peu incrustées." },
     { name: "Formule MAX WHITE (Recommandé)", price: 100, duration: "50 min", description: "Le protocole complet. Gagnez de 3 à 6 teintes de blancheur en une seule séance de double exposition LED.", isPopular: true },
-    { name: "Formule EXTRA WHITE", price: 160, duration: "1h 15 min", description: "La perfection absolue. Traitement intensif triple action pour traiter en profondeur le jaunissement structurel sévère." }
+    { name: "Formule EXTRA WHITE", price: 160, duration: "1h 15 min", description: "L'expérience la plus intensive. Traitement en profondeur triple action pour un éclat dentaire maximal, adapté aux dents fortement colorées." }
   ],
   benefits: [
     "Gagnez jusqu'à 8 teintes de blancheur en moins d'une heure de traitement.",

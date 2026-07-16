@@ -25,7 +25,7 @@ export default function IplView() {
             Épilation IPL Haut de Gamme
           </h1>
           <p className="text-white/80 text-xs md:text-sm italic font-serif">
-            La pureté d'une peau douce et satinée, libérée définitivement des poils au Pré-Saint-Gervais
+            La pureté d'une peau douce et satinée, libérée durablement des poils au Pré-Saint-Gervais
           </p>
         </div>
       </section>
@@ -77,7 +77,7 @@ export default function IplView() {
 
                   {item.duration && (
                     <span className="inline-flex items-center gap-1 text-sm text-[#8A6A38] bg-[#B88F4D]/10 border border-[#B88F4D]/20 px-3 py-1.5 rounded-full font-semibold tracking-wide">
-                      ⏱️ {item.duration}
+                      {item.duration}
                     </span>
                   )}
 
@@ -137,7 +137,7 @@ export default function IplView() {
           <div className="bg-white border border-[#B88F4D]/20 p-8 rounded-[24px] shadow-sm text-center space-y-4">
             <h4 className="font-serif text-lg text-charcoal">Prendre RDV</h4>
             <p className="text-secondary-gray text-xs leading-relaxed">
-              Consultez les disponibilités de Lola pour vos séances d'épilation définitive sur Planity.
+              Consultez les disponibilités de Lola pour vos séances d'épilation longue durée sur Planity.
             </p>
             <motion.a
               href={INSTITUT_INFO.planityUrl}

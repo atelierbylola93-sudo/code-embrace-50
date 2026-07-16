@@ -73,7 +73,7 @@ export default function SoinsVisageView() {
 
                   {item.duration && (
                     <span className="inline-flex items-center gap-1 text-sm text-[#8A6A38] bg-[#B88F4D]/10 border border-[#B88F4D]/20 px-3 py-1.5 rounded-full font-semibold tracking-wide">
-                      ⏱️ {item.duration}
+                      {item.duration}
                     </span>
                   )}
 
@@ -125,7 +125,7 @@ export default function SoinsVisageView() {
             </ul>
 
             <div className="p-4 bg-white/5 rounded-lg border border-white/10 text-xs text-gray-400 space-y-1">
-              <span className="text-[#B88F4D] font-semibold block">⚠️ Conseil d'éclat :</span>
+              <span className="text-[#B88F4D] font-semibold block">Conseil d'éclat :</span>
               Nous recommandons le soin du visage signature 4 jours avant un grand événement pour un fini maquillage sublime, ou le soin régénérant pour traiter les imperfections en profondeur.
             </div>
           </div>

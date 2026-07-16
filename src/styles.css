@@ -19,7 +19,16 @@
   --font-signature: "Great Vibes", cursive;
 
   --radius-premium: 24px;
+
+  /* Custom fluid text sizes used across views (Tailwind v4 auto-generates text-* utilities from --text-*) */
+  --text-2\.5xl: 1.6875rem;   /* 27px */
+  --text-3\.5xl: 2rem;        /* 32px */
+  --text-4\.5xl: 2.5rem;      /* 40px */
+
+  /* Custom spacing steps */
+  --spacing-4\.5: 1.125rem;   /* 18px → py-4.5 */
 }
+
 
 @utility font-serif {
   font-family: var(--font-serif);

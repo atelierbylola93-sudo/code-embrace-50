@@ -64,15 +64,15 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
     {
       title: "Épilation IPL",
       tag: "Haute Technologie",
-      description: "Grâce à notre dispositif professionnel de lumière pulsée équipé de la technologie 'Doul-Cooling', éliminez définitivement vos poils dans une fraîcheur et un confort d'exception.",
+      description: "Grâce à notre dispositif professionnel de lumière pulsée équipé de la technologie 'Doul-Cooling', réduisez durablement votre pilosité dans une fraîcheur et un confort d'exception.",
       price: "Dès 30 €",
       image: LUXURY_IMAGES.iplEpilation,
       page: 'ipl' as Page,
     },
     {
       title: "Blanchiment Dentaire",
-      tag: "Sourire Miroir",
-      description: "Éliminez instantanément le jaunissement structurel en une unique séance de double exposition LED douce. Gagnez de nombreuses teintes de blancheur en préservant vos gencives.",
+      tag: "Sourire Éclatant",
+      description: "Retrouvez un sourire lumineux en une seule séance grâce à notre protocole de double exposition LED douce, tout en respectant l'émail et les gencives.",
       price: "Dès 60 €",
       image: LUXURY_IMAGES.blanchimentDentaire,
       page: 'blanchiment-dentaire' as Page,
@@ -263,7 +263,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
       {/* 2. STATS BANNER SECTION */}
       <section className="relative z-20 -mt-10 max-w-5xl mx-auto px-4">
-        <div className="bg-white rounded-[28px] border border-[#B88F4D]/15 shadow-xl py-6 px-4 md:px-8 grid grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 text-center divide-y xl:divide-y-0 xl:divide-x divide-[#B88F4D]/10">
+        <div className="bg-white rounded-[28px] border border-[#B88F4D]/15 shadow-xl py-6 px-4 md:px-8 grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 text-center divide-y lg:divide-y-0 lg:divide-x divide-[#B88F4D]/10">
           <div className="pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1">
             <span className="font-serif text-3xl md:text-4xl font-bold text-charcoal tracking-tight block">
               +500
@@ -273,7 +273,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </span>
           </div>
 
-          <div className="pt-3 xl:pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1 min-w-0 px-1">
+          <div className="pt-3 xl:pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1">
             <span className="font-serif text-3xl md:text-4xl font-bold text-[#B88F4D] tracking-tight block flex items-center justify-center gap-1">
               4.9<span className="text-sm text-yellow-500">★</span>
             </span>
@@ -282,8 +282,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </span>
           </div>
 
-          <div className="pt-3 xl:pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1 min-w-0 px-1">
-            <span className="font-serif text-3.5xl md:text-4xl font-bold text-charcoal tracking-tight block">
+          <div className="pt-3 xl:pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1">
+            <span className="font-serif text-3xl md:text-4xl font-bold text-charcoal tracking-tight block">
               100%
             </span>
             <span className="text-[10px] md:text-xs text-secondary-gray uppercase tracking-widest font-semibold block">
@@ -291,8 +291,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
             </span>
           </div>
 
-          <div className="pt-3 xl:pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1 min-w-0 px-1">
-            <span className="font-serif text-3.5xl md:text-4xl font-bold text-[#A3A485] tracking-tight block">
+          <div className="pt-3 xl:pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1">
+            <span className="font-serif text-3xl md:text-4xl font-bold text-[#A3A485] tracking-tight block">
               Planity
             </span>
             <span className="text-[10px] md:text-xs text-secondary-gray uppercase tracking-widest font-semibold block">
@@ -367,12 +367,12 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <span className="font-signature text-4.5xl md:text-6xl text-[#B88F4D] italic ml-1 font-medium block sm:inline">sans compromis</span>
             </h2>
             <div className="w-16 h-[1.5px] bg-[#B88F4D]" />
-            <p className="text-secondary-gray text-xs md:text-sm font-light leading-relaxed max-w-md">
-              L’Atelier by Lola n'est pas un institut de passage. C'est un sanctuaire confidentiel d'esthétique clinique et capillaire conçu pour offrir des résultats immédiats et scientifiquement quantifiables dans le respect absolu de votre bien-être.
+            <p className="text-secondary-gray text-sm md:text-base font-light leading-relaxed max-w-md">
+              L’Atelier by Lola n'est pas un institut de passage. C'est un sanctuaire confidentiel d'esthétique et de soins capillaires, conçu pour offrir des résultats visibles dans le respect absolu de votre bien-être.
             </p>
             <div className="pt-4">
-              <p className="text-[10px] font-mono text-secondary-gray uppercase tracking-wider mb-4">
-                ⚠️ ÉTABLISSEMENT PRIVATISÉ • RÉSERVATION TRÈS RECOMMANDÉE
+              <p className="text-[11px] font-mono text-secondary-gray uppercase tracking-wider mb-4">
+                Établissement privatisé — réservation recommandée
               </p>
               <motion.button
                 onClick={() => {
@@ -392,29 +392,29 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10 sm:pt-12">
             
             {/* Feature 1 */}
-            <div className="bg-white p-8 rounded-[24px] border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] space-y-4 hover:border-[#B88F4D]/35 transition-all duration-500">
+            <div className="bg-white p-8 rounded-2xl border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] space-y-4 hover:border-[#B88F4D]/35 transition-all duration-500">
               <div className="font-mono text-5xl font-light tracking-tighter text-[#B88F4D]/30">01</div>
               <h3 className="font-serif text-lg font-bold text-charcoal tracking-wide">Expertise Certifiée</h3>
-              <p className="text-xs text-secondary-gray leading-relaxed font-light">
-                Lola est facialiste diplômée et praticienne certifiée dans les protocoles de Head Spa russes et japonais originels. Une alliance rare de rigueur scientifique et de gestuelle relaxante millénaire.
+              <p className="text-sm md:text-base text-secondary-gray leading-relaxed font-light">
+                Lola est facialiste diplômée et praticienne certifiée dans les protocoles de Head Spa russes et japonais originels. Une alliance rare de rigueur professionnelle et de gestuelle relaxante millénaire.
               </p>
             </div>
 
-            {/* Feature 2 - Offset downwards on desktop */}
-            <div className="bg-white p-8 rounded-[24px] border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] space-y-4 sm:translate-y-8 hover:border-[#B88F4D]/35 transition-all duration-500">
+            {/* Feature 2 */}
+            <div className="bg-white p-8 rounded-2xl border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] space-y-4 hover:border-[#B88F4D]/35 transition-all duration-500">
               <div className="font-mono text-5xl font-light tracking-tighter text-[#B88F4D]/30">02</div>
               <h3 className="font-serif text-lg font-bold text-charcoal tracking-wide">Produits d'Exception</h3>
-              <p className="text-xs text-secondary-gray leading-relaxed font-light">
-                Sélection stricte d’actifs purs de grade médical et cosmétiques biologiques. Vos cheveux et votre épiderme bénéficient de formulations brevetées préservant la l'équilibre cellulaire profond.
+              <p className="text-sm md:text-base text-secondary-gray leading-relaxed font-light">
+                Sélection stricte d’actifs purs de grade médical et cosmétiques biologiques. Vos cheveux et votre épiderme bénéficient de formulations brevetées préservant l'équilibre cellulaire profond.
               </p>
             </div>
 
 
-            {/* Feature 4 - Offset downwards on desktop */}
-            <div className="bg-white p-8 rounded-[24px] border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] space-y-4 sm:translate-y-8 hover:border-[#B88F4D]/35 transition-all duration-500">
-              <div className="font-mono text-5xl font-light tracking-tighter text-[#B88F4D]/30">04</div>
+            {/* Feature 3 */}
+            <div className="bg-white p-8 rounded-2xl border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] space-y-4 hover:border-[#B88F4D]/35 transition-all duration-500">
+              <div className="font-mono text-5xl font-light tracking-tighter text-[#B88F4D]/30">03</div>
               <h3 className="font-serif text-lg font-bold text-charcoal tracking-wide">Boudoir Privatisé</h3>
-              <p className="text-xs text-secondary-gray leading-relaxed font-light">
+              <p className="text-sm md:text-base text-secondary-gray leading-relaxed font-light">
                 Oubliez les grands salons bruyants. L’institut est entièrement privatisé à chaque séance : literie thermo-ergonomique, pluie sensorielle, dôme ionique, sonorités zen et diffusion d'huiles rares.
               </p>
             </div>
@@ -664,7 +664,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
           <div className="mt-16 text-center bg-white rounded-[24px] p-6 border border-[#B88F4D]/10 max-w-3xl mx-auto shadow-sm">
             <p className="text-xs text-charcoal font-medium">
-              💡 Vous hésitez sur le choix de votre protocole ? Nos diagnostics personnalisés sont entièrement inclus avec chaque soin.
+              Vous hésitez sur le choix de votre protocole ? Nos diagnostics personnalisés sont entièrement inclus avec chaque soin.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
               <button
@@ -753,7 +753,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               {/* Benefits Subsection */}
               <div>
                 <h3 className="font-serif text-lg text-[#B88F4D] tracking-wider mb-4 border-b border-white/10 pb-2">
-                  ✨ Les Vertus Cliniques & Sensorielles
+                  Les Vertus Cliniques & Sensorielles
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex gap-3">
@@ -767,7 +767,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     <CheckCircle className="h-5 w-5 text-[#A3A485] shrink-0 mt-0.5" />
                     <div>
                       <span className="text-xs md:text-sm text-gray-200 font-medium block">Régule le Sébum</span>
-                      <span className="text-[11px] text-gray-400 leading-snug">Élimine définitivement pellicules et démangeaisons.</span>
+                      <span className="text-[11px] text-gray-400 leading-snug">Aide à réduire pellicules et démangeaisons durablement.</span>
                     </div>
                   </div>
                   <div className="flex gap-3">
@@ -790,23 +790,23 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               {/* Full session protocol step roadmap */}
               <div>
                 <h3 className="font-serif text-lg text-[#B88F4D] tracking-wider mb-4 border-b border-white/10 pb-2">
-                  💆‍♂️ Déroulement & Protocole de Séance
+                  Déroulement & Protocole de Séance
                 </h3>
                 <div className="space-y-4">
                   <div className="relative pl-8 border-l border-[#B88F4D]/20">
                     <div className="absolute -left-[6px] top-1 w-3 h-3 rounded-full bg-[#A3A485]" />
-                    <span className="text-xs md:text-sm text-white font-semibold">2. Gommage Détox & Bain d'Huiles</span>
-                    <p className="text-[11px] text-gray-400">Élimination douce des toxines, peaux mortes et résidus chimiques.</p>
+                    <span className="text-sm text-white font-semibold">1. Gommage Détox & Bain d'Huiles</span>
+                    <p className="text-xs text-gray-400">Élimination douce des toxines, peaux mortes et résidus chimiques.</p>
                   </div>
                   <div className="relative pl-8 border-l border-[#B88F4D]/20">
                     <div className="absolute -left-[6px] top-1 w-3 h-3 rounded-full bg-[#B88F4D]" />
-                    <span className="text-xs md:text-sm text-white font-semibold">3. Massage Shiatsu sous le Halo d'eau</span>
-                    <p className="text-[11px] text-gray-400">Massage crânien profond, nuque et trapèzes pour dénouer l'anxiété.</p>
+                    <span className="text-sm text-white font-semibold">2. Massage Shiatsu sous le Halo d'eau</span>
+                    <p className="text-xs text-gray-400">Massage crânien profond, nuque et trapèzes pour dénouer l'anxiété.</p>
                   </div>
                   <div className="relative pl-8">
                     <div className="absolute -left-[6px] top-1 w-3 h-3 rounded-full bg-[#A3A485]" />
-                    <span className="text-xs md:text-sm text-white font-semibold">4. Dôme de Vapeur & Soin Capillaire</span>
-                    <p className="text-[11px] text-gray-400">Séchage et soin enveloppant réparateur Olaplex ou bio appliqué à chaud.</p>
+                    <span className="text-sm text-white font-semibold">3. Dôme de Vapeur & Soin Capillaire</span>
+                    <p className="text-xs text-gray-400">Séchage et soin enveloppant réparateur Olaplex ou bio appliqué à chaud.</p>
                   </div>
                 </div>
               </div>
@@ -853,8 +853,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               ))}
             </div>
             <div className="text-center pt-8 space-y-4">
-              <p className="text-xs text-gray-400 font-light">
-                🕑 Planity ouvre ses réservations 24h/24. <strong className="text-amber-200">Les places s'envolent rapidement</strong> de par le protocole hautement privatisé.
+              <p className="text-sm text-gray-400 font-light">
+                Réservez en ligne 24 h/24, ou appelez-nous pour un conseil personnalisé.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <motion.button
