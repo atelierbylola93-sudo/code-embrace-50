@@ -936,7 +936,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
         </div>
 
         {/* Interactive Recommended Protocol card */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <AnimatePresence mode="wait">
             {comparisons.map((row, idx) => idx === selectedConcern && (
               <motion.div
@@ -945,103 +945,93 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
-                className="bg-white rounded-[32px] border border-[#B88F4D]/15 shadow-xl p-8 sm:p-12 relative overflow-hidden"
+                className="bg-white rounded-[32px] border border-[#B88F4D]/15 shadow-xl p-5 sm:p-6 lg:p-6 relative overflow-hidden"
               >
-                {/* Background decorative watermark */}
-                <div className="absolute right-0 bottom-0 text-[10rem] font-serif font-light text-beige-bg/20 leading-none select-none pointer-events-none translate-x-12 translate-y-8">
-                  0{idx + 1}
-                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+                  {/* 1. Image — 4 cols, full card height on desktop */}
+                  <div className="lg:col-span-4 relative">
+                    <div className="relative w-full h-56 sm:h-72 lg:h-full lg:min-h-[460px] rounded-2xl overflow-hidden">
+                      <img
+                        src={row.image}
+                        alt={row.name}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-                  <div className="lg:col-span-7 space-y-6">
+                  {/* 2. Content — 5 cols */}
+                  <div className="lg:col-span-5 flex flex-col justify-center gap-6 lg:py-2">
                     <div>
                       <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#A3A485]/10 border border-[#A3A485]/30 text-[9px] text-[#A3A485] font-bold uppercase tracking-widest mb-3">
                         <Sparkles className="h-3 w-3" /> Votre recommandation sur-mesure
                       </div>
-                      <h3 className="font-serif text-2.5xl sm:text-3.5xl text-charcoal font-light">
+                      <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-charcoal font-light leading-tight">
                         {row.name}
                       </h3>
-                      <p className="text-xs text-[#B88F4D] uppercase tracking-wider font-semibold font-sans mt-0.5">
+                      <p className="text-xs text-[#B88F4D] uppercase tracking-wider font-semibold font-sans mt-1.5">
                         {row.type}
                       </p>
                     </div>
 
-                    <div className="h-[1px] w-full bg-gray-100" />
+                    <div className="h-[1px] w-full bg-[#B88F4D]/15" />
 
-                    <div className="space-y-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
-                        <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold block mb-1">Cible & État de Peau</span>
-                        <p className="text-xs sm:text-sm text-secondary-gray leading-relaxed font-light">{row.target}</p>
+                        <span className="text-[10px] uppercase tracking-widest text-[#A17E60] font-bold block mb-1.5">Cible & état de peau</span>
+                        <p className="text-sm text-secondary-gray leading-relaxed font-light">{row.target}</p>
                       </div>
                       <div>
-                        <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold block mb-1">Technologie de soin</span>
-                        <p className="text-xs sm:text-sm text-charcoal font-medium">{row.tech}</p>
+                        <span className="text-[10px] uppercase tracking-widest text-[#A17E60] font-bold block mb-1.5">Technologie de soin</span>
+                        <p className="text-sm text-charcoal font-medium leading-relaxed">{row.tech}</p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="lg:col-span-4 lg:col-start-9 bg-[#EFE7D2] p-6 sm:p-8 rounded-[24px] border border-[#B88F4D]/15 shadow-sm flex flex-col gap-5">
-                    {/* Card header */}
-                    <div className="flex items-center justify-between">
-                      <span className="text-[10px] uppercase tracking-[0.2em] text-[#A17E60] font-bold">Récapitulatif</span>
-                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/70 border border-[#B88F4D]/20 text-[10px] text-[#B88F4D] font-bold uppercase tracking-wider">
-                        <Sparkles className="h-3 w-3" /> Sur-mesure
-                      </span>
-                    </div>
+                  {/* 3. Récapitulatif — 3 cols */}
+                  <div className="lg:col-span-3 bg-[#EFE7D2] rounded-2xl p-5 lg:p-6 flex flex-col">
+                    <span className="text-xs uppercase tracking-[0.2em] text-[#A17E60] font-bold block mb-4">
+                      Récapitulatif
+                    </span>
 
-                    {/* Duration — hero metric */}
-                    <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/60 border border-[#B88F4D]/10">
-                      <div className="h-10 w-10 rounded-full bg-[#B88F4D]/10 flex items-center justify-center shrink-0">
-                        <Clock className="h-5 w-5 text-[#B88F4D]" />
+                    <dl className="flex flex-col">
+                      <div className="flex items-baseline justify-between gap-3 py-3 border-b border-[#B88F4D]/15">
+                        <dt className="text-xs uppercase tracking-wider text-[#A17E60]">Durée</dt>
+                        <dd className="text-base text-charcoal font-medium">{row.duration}</dd>
                       </div>
-                      <div>
-                        <span className="text-[10px] uppercase tracking-widest text-[#A17E60] block">Durée</span>
-                        <span className="font-serif text-2xl text-charcoal font-light block leading-none mt-1">{row.duration}</span>
+                      <div className="flex items-baseline justify-between gap-3 py-3 border-b border-[#B88F4D]/15">
+                        <dt className="text-xs uppercase tracking-wider text-[#A17E60]">Tarif</dt>
+                        <dd className="text-base text-charcoal font-medium">{row.price}</dd>
                       </div>
-                    </div>
+                      <div className="flex items-baseline justify-between gap-3 py-3 border-b border-[#B88F4D]/15">
+                        <dt className="text-xs uppercase tracking-wider text-[#A17E60]">Temps d'éviction</dt>
+                        <dd className={`text-base font-medium text-right ${
+                          row.eviction.includes("Aucune") ? 'text-[#A3A485]' : 'text-charcoal'
+                        }`}>
+                          {row.eviction}
+                        </dd>
+                      </div>
+                      <div className="flex items-baseline justify-between gap-3 py-3">
+                        <dt className="text-xs uppercase tracking-wider text-[#A17E60]">Intensité</dt>
+                        <dd className="text-base text-[#B88F4D] font-medium tracking-wider">{row.effets}</dd>
+                      </div>
+                    </dl>
 
-                    {/* Price & intensity */}
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <span className="text-[10px] uppercase tracking-widest text-[#A17E60] font-bold block mb-1">Tarif</span>
-                        <span className="font-serif text-lg text-[#A17E60] font-medium block">{row.price}</span>
-                      </div>
-                      <div>
-                        <span className="text-[10px] uppercase tracking-widest text-[#A17E60] font-bold block mb-1">Intensité</span>
-                        <span className="text-sm text-[#B88F4D] font-serif tracking-wider block">{row.effets}</span>
-                      </div>
-                    </div>
-
-                    {/* Eviction badge */}
-                    <div>
-                      <span className="text-[10px] uppercase tracking-widest text-[#A17E60] font-bold block mb-1.5">Temps d'éviction</span>
-                      <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-bold ${
-                        row.eviction === "Aucune (Éclat direct)" || row.eviction.includes("Aucune")
-                          ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                          : 'bg-amber-50 text-amber-700 border border-amber-200'
-                      }`}>
-                        <CheckCircle className="h-3.5 w-3.5" />
-                        {row.eviction}
-                      </span>
-                    </div>
-
-                    {/* Actions */}
-                    <div className="mt-auto pt-2 space-y-3">
+                    <div className="mt-auto pt-5 space-y-2">
                       <button
                         onClick={() => {
                           window.location.hash = '#/reservation';
                           window.scrollTo({ top: 0, behavior: 'smooth' });
                         }}
-                        className="w-full py-4 bg-[#B88F4D] hover:bg-charcoal text-white rounded-[16px] text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-md flex items-center justify-center gap-2 border border-[#B88F4D]/40"
+                        className="w-full py-3.5 bg-[#B88F4D] hover:bg-charcoal text-white rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-sm whitespace-nowrap"
                       >
-                        <Calendar className="h-4 w-4" />
-                        Réserver votre parenthèse
+                        Réserver
                       </button>
                       <button
                         onClick={() => onNavigate(row.action)}
-                        className="w-full py-2 text-center text-secondary-gray hover:text-charcoal text-[11px] font-medium tracking-wide underline mt-3 block bg-transparent border-0 cursor-pointer"
+                        className="w-full py-1 text-center text-[#A17E60] hover:text-charcoal text-[11px] font-medium tracking-wide underline bg-transparent border-0 cursor-pointer"
                       >
-                        Détails scientifiques
+                        Détails du soin
                       </button>
                     </div>
                   </div>
@@ -1051,6 +1041,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           </AnimatePresence>
         </div>
       </section>
+
 
     </div>
   );
