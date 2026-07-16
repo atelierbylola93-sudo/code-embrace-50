@@ -16,6 +16,7 @@ export interface ServiceItem {
   duration?: string;
   description?: string;
   isPopular?: boolean;
+  priceNote?: string;
 }
 
 export interface ServiceGroup {

@@ -133,8 +133,13 @@ export const COIFFURE_SERVICES: ServiceGroup[] = [
     categoryTitle: "BRUSHING",
     description: "Sublimez vos cheveux grâce à nos coiffages professionnels adaptés à vos envies.",
     items: [
-      { name: "Cheveux courts", price: 15, duration: "30 min", description: "Shampoing massant doux, brushing et finition premium." },
-      { name: "Cheveux longs", price: 20, duration: "45 min", description: "Soin léger Thermo-protecteur, coiffage lissé ou wavy élégant." }
+      {
+        name: "Brushing",
+        price: 20,
+        duration: "30 à 45 min",
+        description: "Shampooing, après-shampooing et coiffage lisse ou wavy élégant.",
+        priceNote: "Tarif ajustable selon la longueur et l’épaisseur des cheveux, sur diagnostic de nos coiffeurs."
+      }
     ]
   },
   {
