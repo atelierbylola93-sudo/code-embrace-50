@@ -89,6 +89,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       effets: "★★★★★",
       duration: "45 min",
       price: "105 €",
+      image: LUXURY_IMAGES.hydraFacial,
       action: "soins-visage" as Page
     },
     {
@@ -100,6 +101,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       effets: "★★★★★ (Profond)",
       duration: "60 min",
       price: "160 €",
+      image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800",
       action: "soins-visage" as Page
     },
     {
@@ -111,6 +113,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       effets: "★★★★☆",
       duration: "45 min",
       price: "60 €",
+      image: "https://images.unsplash.com/photo-1616394584738-fc6e612e2ef8?auto=format&fit=crop&q=80&w=800",
       action: "soins-visage" as Page
     },
     {
@@ -122,6 +125,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
       effets: "★★★★☆",
       duration: "60 min",
       price: "100 €",
+      image: LUXURY_IMAGES.corpsAlgues,
       action: "soins-corps-algues" as Page
     }
   ];
