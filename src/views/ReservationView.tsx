@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   Sparkles,
@@ -17,6 +17,7 @@ import {
   ChevronUp,
   ChevronDown,
 } from 'lucide-react';
+import { getAvailability, getAvailableSlots } from '@/lib/availability.functions';
 
 interface BookingService {
   id: string;
