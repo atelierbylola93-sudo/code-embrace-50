@@ -521,7 +521,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     onClick={() => onNavigate(featuredServices[1].page)}
                     className="w-full py-4 bg-beige-bg hover:bg-charcoal hover:text-white text-charcoal rounded-[16px] text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2"
                   >
-                    Découvrir l'éclat Vortex
+                    Découvrir l'éclat
                   </button>
                 </div>
               </div>
