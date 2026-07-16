@@ -39,7 +39,9 @@ export default function App() {
         'detatouage',
         'blanchiment-dentaire',
         'soins-corps-algues',
-        'reservation'
+        'reservation',
+        'mentions-legales',
+        'confidentialite'
       ];
       
       if (validPages.includes(hash)) {
