@@ -309,9 +309,8 @@ export default function ReservationView() {
     return total;
   };
 
-  const getTotalDurationMin = () => {
-    return selectedServices.reduce((acc, s) => acc + parseDurationToMin(s.duration), 0);
-  };
+  const getTotalDurationMin = () => totalDurationMin;
+
 
   const filteredServices = RESERVATION_SERVICES.filter(service => {
     const q = searchQuery.toLowerCase();
