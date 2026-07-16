@@ -76,11 +76,11 @@ export default function CoiffureView() {
                       </h4>
                       {item.price === undefined ? (
                         <div className="flex flex-col items-start md:items-end font-serif font-bold text-[#B88F4D] shrink-0 leading-tight">
-                          <span className="text-sm md:text-base">À consulter au salon</span>
-                          <span className="text-xs md:text-sm text-[#B88F4D]/80">ou par téléphone</span>
+                          <span className="text-sm">À consulter au salon</span>
+                          <span className="text-xs text-[#B88F4D]/80">ou par téléphone</span>
                         </div>
                       ) : (
-                        <span className="font-serif text-sm md:text-lg font-bold text-[#B88F4D] shrink-0 whitespace-nowrap">
+                        <span className="font-serif text-lg font-bold text-[#B88F4D] shrink-0 whitespace-nowrap">
                           {typeof item.price === 'number' ? `${item.price} €` : item.price}
                           {item.priceNote && (
                             <sup className="ml-0.5 text-[10px] md:text-xs">*</sup>
