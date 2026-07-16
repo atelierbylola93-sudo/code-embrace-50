@@ -381,6 +381,12 @@ export default function ReservationView() {
         console.error('reservation save failed', res.status, msg);
         setBookingError(msg);
         setIsSubmitting(false);
+        if (res.status === 409) {
+          // Conflict: refresh slots and force the user back to step 2
+          setSelectedTimeSlot('');
+          await refreshSlots(selectedDate);
+          setStep(2);
+        }
         return;
       }
     } catch (err) {
