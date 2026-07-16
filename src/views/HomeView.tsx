@@ -250,9 +250,9 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-charcoal/50 pointer-events-none hidden md:flex">
-          <span className="text-[9px] uppercase tracking-[0.25em] font-medium opacity-85">Défiler</span>
+        {/* Scroll indicator — placed above the buttons, clear of the overlapping stats banner */}
+        <div className="relative z-10 mt-6 mb-2 hidden md:flex flex-col items-center gap-1 text-charcoal/60 pointer-events-none">
+          <span className="text-[9px] uppercase tracking-[0.25em] font-medium">Défiler</span>
           <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
