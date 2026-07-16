@@ -72,7 +72,7 @@ export default function BeauteRegardView() {
                   </div>
 
                   {item.duration && (
-                    <span className="inline-block text-[10px] text-secondary-gray bg-[#EFE7D2] px-2.5 py-1 rounded-[12px] font-semibold">
+                    <span className="inline-flex items-center gap-1 text-xs text-[#8A6A38] bg-[#B88F4D]/10 border border-[#B88F4D]/20 px-3 py-1.5 rounded-full font-semibold tracking-wide">
                       ⏱️ {item.duration}
                     </span>
                   )}

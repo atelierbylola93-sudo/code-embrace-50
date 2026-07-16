@@ -66,7 +66,7 @@ export default function DetatouageView() {
                   </span>
 
                   {item.duration && (
-                    <span className="inline-block text-[9px] text-gray-500 font-medium">
+                    <span className="inline-flex items-center gap-1 text-xs text-[#8A6A38] bg-[#B88F4D]/10 border border-[#B88F4D]/20 px-3 py-1.5 rounded-full font-semibold tracking-wide">
                       ⏱️ {item.duration}
                     </span>
                   )}
