@@ -853,8 +853,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               ))}
             </div>
             <div className="text-center pt-8 space-y-4">
-              <p className="text-xs text-gray-400 font-light">
-                🕑 Planity ouvre ses réservations 24h/24. <strong className="text-amber-200">Les places s'envolent rapidement</strong> de par le protocole hautement privatisé.
+              <p className="text-sm text-gray-400 font-light">
+                Réservez en ligne 24 h/24, ou appelez-nous pour un conseil personnalisé.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <motion.button
