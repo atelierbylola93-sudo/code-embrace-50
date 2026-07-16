@@ -74,21 +74,19 @@ export default function CoiffureView() {
                       <h4 className="font-serif text-base md:text-lg font-bold text-charcoal group-hover:text-champagne transition-colors min-w-0">
                         {item.name}
                       </h4>
-                      <span className="font-serif text-sm md:text-lg font-bold text-[#B88F4D] shrink-0 whitespace-nowrap">
-                        {item.price === undefined
-                          ? (
-                            <>
-                              <span className="inline md:hidden">À consulter au salon</span>
-                              <span className="hidden md:inline">À consulter au salon ou par téléphone</span>
-                            </>
-                          )
-                          : typeof item.price === 'number'
-                            ? `${item.price} €`
-                            : item.price}
-                        {item.price !== undefined && item.priceNote && (
-                          <sup className="ml-0.5 text-[10px] md:text-xs">*</sup>
-                        )}
-                      </span>
+                      {item.price === undefined ? (
+                        <div className="flex flex-col items-start md:items-end font-serif font-bold text-[#B88F4D] shrink-0 leading-tight">
+                          <span className="text-sm md:text-base">À consulter au salon</span>
+                          <span className="text-xs md:text-sm text-[#B88F4D]/80">ou par téléphone</span>
+                        </div>
+                      ) : (
+                        <span className="font-serif text-sm md:text-lg font-bold text-[#B88F4D] shrink-0 whitespace-nowrap">
+                          {typeof item.price === 'number' ? `${item.price} €` : item.price}
+                          {item.priceNote && (
+                            <sup className="ml-0.5 text-[10px] md:text-xs">*</sup>
+                          )}
+                        </span>
+                      )}
                     </div>
 
                     {item.duration && (
