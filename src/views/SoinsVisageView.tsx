@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
-import { Calendar, CheckCircle2, Star, Sparkles, Heart } from 'lucide-react';
-import { SOINS_VISAGE_DATA, INSTITUT_INFO, LUXURY_IMAGES } from '../data';
+import { Calendar, CheckCircle2, Sparkles } from 'lucide-react';
+import { SOINS_VISAGE_DATA, LUXURY_IMAGES } from '../data';
 import FaqSection from '../components/FaqSection';
 
 export default function SoinsVisageView() {
