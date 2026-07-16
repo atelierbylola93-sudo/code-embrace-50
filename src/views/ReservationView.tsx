@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   Sparkles,
@@ -17,6 +17,7 @@ import {
   ChevronUp,
   ChevronDown,
 } from 'lucide-react';
+import { getAvailability, getAvailableSlots } from '@/lib/availability.functions';
 
 interface BookingService {
   id: string;
@@ -174,11 +175,11 @@ export default function ReservationView() {
   // Mobile: panier tiroir ouvert/fermé
   const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
 
-  // Génère les 8 prochains jours
+  // Génère les 14 prochains jours
   const datesList = useMemo(() => {
     const dates = [];
     const locale = 'fr-FR';
-    for (let i = 1; i <= 8; i++) {
+    for (let i = 1; i <= 14; i++) {
       const d = new Date();
       d.setDate(d.getDate() + i);
       dates.push({
@@ -191,14 +192,74 @@ export default function ReservationView() {
     return dates;
   }, []);
 
-  const availableSlots = ["09:30", "11:00", "12:30", "14:00", "15:30", "17:00", "18:30"];
+  // Availability map (date iso -> open?) sourced from server
+  const [openDates, setOpenDates] = useState<Record<string, boolean>>({});
+  const [availableSlots, setAvailableSlots] = useState<string[]>([]);
+
+  const totalDurationMin = useMemo(() => {
+    return selectedServices.reduce((acc, s) => acc + parseDurationToMin(s.duration), 0);
+  }, [selectedServices]);
+
+  // Fetch availability for each month spanned by datesList
+  useEffect(() => {
+    const months = Array.from(new Set(datesList.map((d) => d.fullIso.slice(0, 7))));
+    let cancelled = false;
+    (async () => {
+      try {
+        const results = await Promise.all(
+          months.map((month) => getAvailability({ data: { month } })),
+        );
+        if (cancelled) return;
+        const map: Record<string, boolean> = {};
+        results.forEach((r) => {
+          r.days.forEach((d) => {
+            map[d.date] = d.open;
+          });
+        });
+        setOpenDates(map);
+      } catch (err) {
+        console.error('availability fetch failed', err);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [datesList]);
+
+  const refreshSlots = useCallback(
+    async (date: string) => {
+      if (!date) {
+        setAvailableSlots([]);
+        return;
+      }
+      setIsSyncingSlots(true);
+      try {
+        const res = await getAvailableSlots({
+          data: { date, duration_min: totalDurationMin || 60 },
+        });
+        setAvailableSlots(res.slots);
+      } catch (err) {
+        console.error('slots fetch failed', err);
+        setAvailableSlots([]);
+      } finally {
+        setIsSyncingSlots(false);
+      }
+    },
+    [totalDurationMin],
+  );
 
   const handleDateClick = (isoString: string) => {
+    if (openDates[isoString] === false) return;
     setSelectedDate(isoString);
     setSelectedTimeSlot('');
-    setIsSyncingSlots(true);
-    setTimeout(() => setIsSyncingSlots(false), 400);
+    void refreshSlots(isoString);
   };
+
+  // Refresh slots when the selected duration changes for an already picked date
+  useEffect(() => {
+    if (selectedDate) void refreshSlots(selectedDate);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [totalDurationMin]);
 
   const isFormValid =
     clientInfo.name.trim().length > 2 &&
@@ -248,9 +309,8 @@ export default function ReservationView() {
     return total;
   };
 
-  const getTotalDurationMin = () => {
-    return selectedServices.reduce((acc, s) => acc + parseDurationToMin(s.duration), 0);
-  };
+  const getTotalDurationMin = () => totalDurationMin;
+
 
   const filteredServices = RESERVATION_SERVICES.filter(service => {
     const q = searchQuery.toLowerCase();
@@ -321,6 +381,12 @@ export default function ReservationView() {
         console.error('reservation save failed', res.status, msg);
         setBookingError(msg);
         setIsSubmitting(false);
+        if (res.status === 409) {
+          // Conflict: refresh slots and force the user back to step 2
+          setSelectedTimeSlot('');
+          await refreshSlots(selectedDate);
+          setStep(2);
+        }
         return;
       }
     } catch (err) {
@@ -767,19 +833,24 @@ export default function ReservationView() {
         <div className="flex gap-2.5 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-none snap-x">
           {datesList.map((d) => {
             const isSelected = selectedDate === d.fullIso;
+            const isClosed = openDates[d.fullIso] === false;
             return (
               <button
                 key={d.fullIso}
                 onClick={() => handleDateClick(d.fullIso)}
+                disabled={isClosed}
+                aria-label={isClosed ? `${d.dayName} ${d.dayNum} ${d.monthName} — fermé` : undefined}
                 className={`flex flex-col items-center justify-center min-w-[68px] h-[80px] rounded-2xl border transition snap-start ${
                   isSelected
                     ? 'border-charcoal bg-charcoal text-white shadow-md'
+                    : isClosed
+                    ? 'border-slate-100 bg-slate-50 text-gray-300 cursor-not-allowed line-through decoration-1'
                     : 'border-slate-200 bg-white hover:border-[#B88F4D]/40 text-gray-700'
                 }`}
               >
                 <span
                   className={`text-xs uppercase font-semibold ${
-                    isSelected ? 'text-[#B88F4D]' : 'text-gray-500'
+                    isSelected ? 'text-[#B88F4D]' : isClosed ? 'text-gray-300' : 'text-gray-500'
                   }`}
                 >
                   {d.dayName}
@@ -807,6 +878,10 @@ export default function ReservationView() {
             <div className="h-5 w-5 border-2 border-t-transparent border-[#B88F4D] rounded-full animate-spin" />
             <span className="text-sm text-gray-500 italic">Lecture des disponibilités…</span>
           </div>
+        ) : availableSlots.length === 0 ? (
+          <div className="border border-dashed border-[#B88F4D]/30 p-6 rounded-2xl text-center text-sm text-gray-500 bg-[#FCFCFB]">
+            Aucun créneau disponible pour cette date. Merci d’en choisir une autre.
+          </div>
         ) : (
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-2.5">
             {availableSlots.map((slot) => {
@@ -830,6 +905,8 @@ export default function ReservationView() {
       </div>
     </motion.div>
   );
+
+
 
   const renderStep3 = () => (
     <motion.div

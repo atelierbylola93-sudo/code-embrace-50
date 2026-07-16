@@ -14,6 +14,84 @@ export type Database = {
   }
   public: {
     Tables: {
+      blocked_slots: {
+        Row: {
+          created_at: string
+          date: string
+          end_time: string
+          id: string
+          reason: string | null
+          start_time: string
+        }
+        Insert: {
+          created_at?: string
+          date: string
+          end_time: string
+          id?: string
+          reason?: string | null
+          start_time: string
+        }
+        Update: {
+          created_at?: string
+          date?: string
+          end_time?: string
+          id?: string
+          reason?: string | null
+          start_time?: string
+        }
+        Relationships: []
+      }
+      business_hours: {
+        Row: {
+          close_time: string
+          created_at: string
+          id: string
+          is_open: boolean
+          open_time: string
+          updated_at: string
+          weekday: number
+        }
+        Insert: {
+          close_time?: string
+          created_at?: string
+          id?: string
+          is_open?: boolean
+          open_time?: string
+          updated_at?: string
+          weekday: number
+        }
+        Update: {
+          close_time?: string
+          created_at?: string
+          id?: string
+          is_open?: boolean
+          open_time?: string
+          updated_at?: string
+          weekday?: number
+        }
+        Relationships: []
+      }
+      closed_dates: {
+        Row: {
+          created_at: string
+          date: string
+          id: string
+          reason: string | null
+        }
+        Insert: {
+          created_at?: string
+          date: string
+          id?: string
+          reason?: string | null
+        }
+        Update: {
+          created_at?: string
+          date?: string
+          id?: string
+          reason?: string | null
+        }
+        Relationships: []
+      }
       reservations: {
         Row: {
           appointment_date: string
@@ -26,8 +104,11 @@ export type Database = {
           duration_min: number
           id: string
           options: Json
+          payment_method: string | null
+          payment_status: string
           reference: string
           services: Json
+          source: string
           status: string
           total_price: number
           updated_at: string
@@ -43,8 +124,11 @@ export type Database = {
           duration_min?: number
           id?: string
           options?: Json
+          payment_method?: string | null
+          payment_status?: string
           reference: string
           services?: Json
+          source?: string
           status?: string
           total_price?: number
           updated_at?: string
@@ -60,8 +144,11 @@ export type Database = {
           duration_min?: number
           id?: string
           options?: Json
+          payment_method?: string | null
+          payment_status?: string
           reference?: string
           services?: Json
+          source?: string
           status?: string
           total_price?: number
           updated_at?: string
