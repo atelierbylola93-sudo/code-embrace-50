@@ -209,8 +209,8 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               </div>
               <div className="px-1.5 py-3 sm:px-3 sm:py-4 rounded-[20px] bg-white/75 backdrop-blur-md border border-[#B88F4D]/20 text-charcoal transition-all duration-300 hover:bg-white hover:border-[#B88F4D]/60 hover:shadow-md group">
                 <Droplet className="h-3.5 w-3.5 text-[#B88F4D] mx-auto mb-1 duration-300 group-hover:scale-110" />
-                <span className="text-[10px] sm:text-[11px] md:text-xs font-serif uppercase tracking-widest font-semibold text-[#B88F4D] block">HydraFacial</span>
-                <span className="text-[8px] sm:text-[9px] text-secondary-gray tracking-wider block mt-0.5">Vortex Éclat</span>
+                <span className="text-[10px] sm:text-[11px] md:text-xs font-serif uppercase tracking-widest font-semibold text-[#B88F4D] block">Soin du visage</span>
+                <span className="text-[8px] sm:text-[9px] text-secondary-gray tracking-wider block mt-0.5">Éclat</span>
               </div>
               <div className="px-1.5 py-3 sm:px-3 sm:py-4 rounded-[20px] bg-white/75 backdrop-blur-md border border-[#B88F4D]/20 text-charcoal transition-all duration-300 hover:bg-white hover:border-[#B88F4D]/60 hover:shadow-md group">
                 <Sparkles className="h-3.5 w-3.5 text-[#B88F4D] mx-auto mb-1 duration-300 group-hover:scale-110" />
@@ -521,7 +521,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     onClick={() => onNavigate(featuredServices[1].page)}
                     className="w-full py-4 bg-beige-bg hover:bg-charcoal hover:text-white text-charcoal rounded-[16px] text-xs font-bold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2"
                   >
-                    Découvrir l'éclat Vortex
+                    Découvrir l'éclat
                   </button>
                 </div>
               </div>
