@@ -367,12 +367,12 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               <span className="font-signature text-4.5xl md:text-6xl text-[#B88F4D] italic ml-1 font-medium block sm:inline">sans compromis</span>
             </h2>
             <div className="w-16 h-[1.5px] bg-[#B88F4D]" />
-            <p className="text-secondary-gray text-xs md:text-sm font-light leading-relaxed max-w-md">
-              L’Atelier by Lola n'est pas un institut de passage. C'est un sanctuaire confidentiel d'esthétique clinique et capillaire conçu pour offrir des résultats immédiats et scientifiquement quantifiables dans le respect absolu de votre bien-être.
+            <p className="text-secondary-gray text-sm md:text-base font-light leading-relaxed max-w-md">
+              L’Atelier by Lola n'est pas un institut de passage. C'est un sanctuaire confidentiel d'esthétique et de soins capillaires, conçu pour offrir des résultats visibles dans le respect absolu de votre bien-être.
             </p>
             <div className="pt-4">
-              <p className="text-[10px] font-mono text-secondary-gray uppercase tracking-wider mb-4">
-                ⚠️ ÉTABLISSEMENT PRIVATISÉ • RÉSERVATION TRÈS RECOMMANDÉE
+              <p className="text-[11px] font-mono text-secondary-gray uppercase tracking-wider mb-4">
+                Établissement privatisé — réservation recommandée
               </p>
               <motion.button
                 onClick={() => {
