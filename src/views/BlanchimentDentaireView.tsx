@@ -39,6 +39,9 @@ export default function BlanchimentDentaireView() {
         </p>
       </section>
 
+      {/* Interactive Before / After */}
+      <BlanchimentAvantApres />
+
       {/* Pricing and Details Grid */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
         
