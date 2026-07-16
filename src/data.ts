@@ -30,7 +30,7 @@ export interface MenuItem {
 export const NAV_ITEMS: MenuItem[] = [
   { name: 'Accueil', page: 'accueil', description: 'Institut de Beauté Premium au Pré-Saint-Gervais' },
   { name: 'Head Spa', page: 'head-spa', description: 'Le soin thermal japonais du cuir chevelu par excellence' },
-  { name: 'Soins Visage', page: 'soins-visage', description: 'HydraFacial, Microneedling et rituels d\'éclat' },
+  { name: 'Soins Visage', page: 'soins-visage', description: 'Soins signature, éclat et rituels d\'exception' },
   { name: 'Coiffure & Lissages', page: 'coiffure', description: 'Brushing, soins profonds, et techniques exclusives' },
   { name: 'Beauté du Regard', page: 'beaute-regard', description: 'Browlift, rehaussement et restructuration' },
   { name: 'Épilation IPL', page: 'ipl', description: 'Épilation définitive à la lumière pulsée haut de gamme' },
