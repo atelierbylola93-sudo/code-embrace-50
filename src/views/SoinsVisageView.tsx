@@ -155,7 +155,7 @@ export default function SoinsVisageView() {
       <section className="bg-white py-16 border-t border-[#B88F4D]/10">
         <FaqSection
           faqItems={SOINS_VISAGE_DATA.faq}
-          title="FAQ HydraFacial & Soin Visage • Le Pré-Saint-Gervais"
+          title="FAQ Soins du Visage • Le Pré-Saint-Gervais"
           subtitle="Toutes les réponses de notre experte esthétique pour guider l'éclat de votre peau."
         />
       </section>
