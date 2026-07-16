@@ -98,7 +98,7 @@ export const REVIEWS: ReviewItem[] = [
     author: "Sarah B.",
     rating: 5,
     date: "Il y a 1 mois",
-    text: "J'ai testé l'HydraFacial et le Browlift. Le résultat est bluffant, ma peau revit et mes sourcils ont une ligne parfaite. Lola est extrêmement minutieuse et le salon est d'une beauté digne d'un hôtel 5 étoiles.",
+    text: "J'ai testé le soin du visage signature et le Browlift. Le résultat est bluffant, ma peau revit et mes sourcils ont une ligne parfaite. Lola est extrêmement minutieuse et le salon est d'une beauté digne d'un hôtel 5 étoiles.",
     avatar: "SB"
   },
   {
