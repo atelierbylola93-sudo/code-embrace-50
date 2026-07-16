@@ -998,18 +998,18 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                     {/* Price & intensity */}
                     <div className="grid grid-cols-2 gap-4">
                       <div>
-                        <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold block mb-1">Tarif</span>
+                        <span className="text-[10px] uppercase tracking-widest text-[#A17E60] font-bold block mb-1">Tarif</span>
                         <span className="font-serif text-lg text-[#A17E60] font-medium block">{row.price}</span>
                       </div>
                       <div>
-                        <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold block mb-1">Intensité</span>
+                        <span className="text-[10px] uppercase tracking-widest text-[#A17E60] font-bold block mb-1">Intensité</span>
                         <span className="text-sm text-[#B88F4D] font-serif tracking-wider block">{row.effets}</span>
                       </div>
                     </div>
 
                     {/* Eviction badge */}
                     <div>
-                      <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold block mb-1.5">Temps d'éviction</span>
+                      <span className="text-[10px] uppercase tracking-widest text-[#A17E60] font-bold block mb-1.5">Temps d'éviction</span>
                       <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-bold ${
                         row.eviction === "Aucune (Éclat direct)" || row.eviction.includes("Aucune")
                           ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
