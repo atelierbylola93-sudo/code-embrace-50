@@ -359,10 +359,10 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <span>Savoir-Faire &amp; Intimité</span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Typographic Hook */}
-          <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-24">
+          <div className="lg:col-span-5 space-y-6">
             <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-[#B88F4D] font-bold block">
               MAISON SENSORIELLE
             </span>
@@ -375,7 +375,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               L’Atelier by Lola n'est pas un institut de passage. C'est un sanctuaire confidentiel d'esthétique et de soins capillaires, conçu pour offrir des résultats visibles dans le respect absolu de votre bien-être.
             </p>
             <div className="pt-4">
-              <p className="text-[11px] font-mono text-secondary-gray uppercase tracking-wider mb-4">
+              <p className="text-sm text-[#A17E60] uppercase tracking-wide mb-4">
                 Établissement privatisé — réservation recommandée
               </p>
               <motion.button
@@ -383,42 +383,47 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                   window.location.hash = '#/reservation';
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="btn-primary !bg-charcoal hover:!bg-[#B88F4D] !text-white rounded-none tracking-widest text-[10px] uppercase font-mono border-0 py-4 px-8 transition-all duration-300"
+                className="bg-[#B88F4D] hover:bg-charcoal text-white rounded-full text-sm font-semibold uppercase tracking-wider py-4 px-8 transition-all duration-300 flex items-center gap-2 cursor-pointer"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Garantir mon rendez-vous d'exception
+                Réserver
               </motion.button>
             </div>
           </div>
 
-          {/* Right Column: Staggered Asymmetrical Features */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10 sm:pt-12">
+          {/* Right Column: Three-column Feature Grid */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-6 items-stretch">
             
             {/* Feature 1 */}
-            <div className="bg-white p-8 rounded-2xl border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] space-y-4 hover:border-[#B88F4D]/35 transition-all duration-500">
-              <div className="font-mono text-5xl font-light tracking-tighter text-[#B88F4D]/30">01</div>
-              <h3 className="font-serif text-lg font-bold text-charcoal tracking-wide">Expertise Certifiée</h3>
-              <p className="text-sm md:text-base text-secondary-gray leading-relaxed font-light">
+            <div className="bg-white p-6 lg:p-7 rounded-2xl border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] flex flex-col hover:border-[#B88F4D]/35 transition-all duration-500">
+              <div className="space-y-1 mb-3">
+                <div className="font-mono text-4xl lg:text-5xl font-light tracking-tighter text-[#B88F4D]/30">01</div>
+                <h3 className="font-serif text-lg font-bold text-charcoal tracking-wide">Expertise Certifiée</h3>
+              </div>
+              <p className="text-sm text-secondary-gray leading-relaxed font-light">
                 Lola est facialiste diplômée et praticienne certifiée dans les protocoles de Head Spa russes et japonais originels. Une alliance rare de rigueur professionnelle et de gestuelle relaxante millénaire.
               </p>
             </div>
 
             {/* Feature 2 */}
-            <div className="bg-white p-8 rounded-2xl border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] space-y-4 hover:border-[#B88F4D]/35 transition-all duration-500">
-              <div className="font-mono text-5xl font-light tracking-tighter text-[#B88F4D]/30">02</div>
-              <h3 className="font-serif text-lg font-bold text-charcoal tracking-wide">Produits d'Exception</h3>
-              <p className="text-sm md:text-base text-secondary-gray leading-relaxed font-light">
+            <div className="bg-white p-6 lg:p-7 rounded-2xl border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] flex flex-col hover:border-[#B88F4D]/35 transition-all duration-500">
+              <div className="space-y-1 mb-3">
+                <div className="font-mono text-4xl lg:text-5xl font-light tracking-tighter text-[#B88F4D]/30">02</div>
+                <h3 className="font-serif text-lg font-bold text-charcoal tracking-wide">Produits d'Exception</h3>
+              </div>
+              <p className="text-sm text-secondary-gray leading-relaxed font-light">
                 Sélection stricte d’actifs purs de grade médical et cosmétiques biologiques. Vos cheveux et votre épiderme bénéficient de formulations brevetées préservant l'équilibre cellulaire profond.
               </p>
             </div>
 
-
             {/* Feature 3 */}
-            <div className="bg-white p-8 rounded-2xl border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] space-y-4 hover:border-[#B88F4D]/35 transition-all duration-500">
-              <div className="font-mono text-5xl font-light tracking-tighter text-[#B88F4D]/30">03</div>
-              <h3 className="font-serif text-lg font-bold text-charcoal tracking-wide">Boudoir Privatisé</h3>
-              <p className="text-sm md:text-base text-secondary-gray leading-relaxed font-light">
+            <div className="bg-white p-6 lg:p-7 rounded-2xl border border-[#B88F4D]/10 shadow-[0_4px_24px_rgba(0,0,0,0.02)] flex flex-col hover:border-[#B88F4D]/35 transition-all duration-500">
+              <div className="space-y-1 mb-3">
+                <div className="font-mono text-4xl lg:text-5xl font-light tracking-tighter text-[#B88F4D]/30">03</div>
+                <h3 className="font-serif text-lg font-bold text-charcoal tracking-wide">Boudoir Privatisé</h3>
+              </div>
+              <p className="text-sm text-secondary-gray leading-relaxed font-light">
                 Oubliez les grands salons bruyants. L’institut est entièrement privatisé à chaque séance : literie thermo-ergonomique, pluie sensorielle, dôme ionique, sonorités zen et diffusion d'huiles rares.
               </p>
             </div>
