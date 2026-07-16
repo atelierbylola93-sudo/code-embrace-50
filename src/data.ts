@@ -224,7 +224,7 @@ export const HEAD_SPA_DATA = {
   ] as HeadSpaFormula[],
   benefits: [
     "Retarde la chute et revitalise les cheveux mous et fatigués.",
-    "Régule le sébum et élimine définitivement les démangeaisons ou pellicules.",
+    "Régule le sébum et aide à réduire durablement les démangeaisons et pellicules.",
     "Soulage instantanément le stress, l'anxiété et les maux de tête chroniques.",
     "Améliore la qualité du sommeil grâce à une sensation de sérénité durable."
   ],
