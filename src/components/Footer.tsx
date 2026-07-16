@@ -82,8 +82,8 @@ export default function Footer({ onNavigate }: FooterProps) {
                   <a href="#blog-post" onClick={(e) => { e.preventDefault(); handleLinkClick('head-spa'); }} className="hover:text-white transition-colors font-medium">Pourquoi le soin thermal japonais révolutionne le cuir chevelu ?</a>
                 </li>
                 <li className="p-2.5 bg-white/5 rounded-lg border border-white/5 hover:border-[#B88F4D]/20 transition-all duration-300">
-                  <span className="text-[10px] uppercase font-bold text-[#A3A485] block">HydraFacial Glow</span>
-                  <a href="#blog-post" onClick={(e) => { e.preventDefault(); handleLinkClick('soins-visage'); }} className="hover:text-white transition-colors font-medium">Microneedling vs HydraFacial : Quel soin visage choisir au Pré-Saint-Gervais ?</a>
+                  <span className="text-[10px] uppercase font-bold text-[#A3A485] block">Soins du visage</span>
+                  <a href="#blog-post" onClick={(e) => { e.preventDefault(); handleLinkClick('soins-visage'); }} className="hover:text-white transition-colors font-medium">Signature ou régénérant : quel soin du visage choisir au Pré-Saint-Gervais ?</a>
                 </li>
               </ul>
             </div>
