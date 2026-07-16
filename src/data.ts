@@ -1,5 +1,6 @@
 import { ServiceGroup, FaqItem, ReviewItem, Page } from './types';
 import iplEpilationImg from './assets/ipl-epilation.jpg';
+import headspaHeroAsset from './assets/headspa-hero.png.asset.json';
 import blanchimentHeroAsset from './assets/blanchiment-dentaire-hero.png.asset.json';
 import detatouageHeroAsset from './assets/detatouage-hero.png.asset.json';
 
