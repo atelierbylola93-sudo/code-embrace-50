@@ -526,7 +526,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 </div>
               </div>
 
-              {/* Microneedling - Image Right template Style Card */}
+              {/* Soin du visage régénérant - Image Right template Style Card */}
               <div className="bg-white rounded-[32px] overflow-hidden border border-[#B88F4D]/10 shadow-[0_10px_35px_rgba(0,0,0,0.02)] flex flex-col justify-between">
                 <div>
                   <div className="relative h-64 sm:h-72 overflow-hidden">
