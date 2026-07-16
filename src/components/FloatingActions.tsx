@@ -5,6 +5,7 @@ import { INSTITUT_INFO } from '../data';
 
 export default function FloatingActions() {
   const [isReservationView, setIsReservationView] = useState(false);
+  const [isRitualSectionVisible, setIsRitualSectionVisible] = useState(false);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -12,8 +13,6 @@ export default function FloatingActions() {
     };
 
     window.addEventListener('hashchange', handleHashChange);
-
-    // Initial check
     handleHashChange();
 
     return () => {
@@ -21,15 +20,46 @@ export default function FloatingActions() {
     };
   }, []);
 
+  useEffect(() => {
+    let observer: IntersectionObserver | null = null;
+    let rafId: number | null = null;
+
+    const attach = () => {
+      const target = document.getElementById('ritual-advisor-section');
+      if (!target) {
+        rafId = window.requestAnimationFrame(attach);
+        return;
+      }
+      observer = new IntersectionObserver(
+        ([entry]) => setIsRitualSectionVisible(entry.isIntersecting),
+        { threshold: 0, rootMargin: '-10% 0px -10% 0px' }
+      );
+      observer.observe(target);
+    };
+
+    attach();
+
+    return () => {
+      if (rafId) window.cancelAnimationFrame(rafId);
+      observer?.disconnect();
+    };
+  }, []);
+
+  const hideOnDesktop = isRitualSectionVisible;
+
+
   return (
-    <div 
-      id="floating-actions" 
-      className="fixed z-40 flex flex-col items-center gap-2.5"
+    <div
+      id="floating-actions"
+      className={`fixed z-40 flex flex-col items-center gap-2.5 transition-opacity duration-300 ${
+        hideOnDesktop ? 'sm:opacity-0 sm:pointer-events-none' : 'opacity-100'
+      }`}
       style={{
         bottom: 'calc(1.5rem + env(safe-area-inset-bottom, 0px))',
         right: 'calc(1rem + env(safe-area-inset-right, 0px))'
       }}
     >
+
       {/* Floating Instagram Action - desktop/tablet only to avoid covering card prices on mobile */}
       <motion.a
         href={INSTITUT_INFO.instagramUrl}
