@@ -83,7 +83,7 @@ export default function BlanchimentDentaireView() {
 
                   {item.duration && (
                     <span className="inline-flex items-center gap-1 text-sm text-[#8A6A38] bg-[#B88F4D]/10 border border-[#B88F4D]/20 px-3 py-1.5 rounded-full font-semibold tracking-wide">
-                      ⏱️ {item.duration}
+                      {item.duration}
                     </span>
                   )}
 
@@ -133,7 +133,7 @@ export default function BlanchimentDentaireView() {
             </ul>
 
             <div className="p-4 bg-white/5 rounded-lg border border-white/10 text-[11px] text-gray-400 space-y-1">
-              <span className="text-[#A3A485] font-semibold block">☕ Astuce de Lola :</span>
+              <span className="text-[#A3A485] font-semibold block">Astuce de Lola :</span>
               La diète blanche (pâtes, riz, blanc de dinde) est absolument exigée pendant les 48 heures suivant la séance pour sceller l'éclat dentaire.
             </div>
           </div>

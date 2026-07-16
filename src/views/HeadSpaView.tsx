@@ -56,7 +56,7 @@ export default function HeadSpaView() {
           {/* Quick CTA Box */}
           <div className="bg-white border border-[#B88F4D]/20 p-8 rounded-[24px] shadow-sm text-center space-y-6">
             <p className="text-[#B88F4D] text-xs font-semibold tracking-widest uppercase">
-              ✨ Expérience Extrêmement Demandée ✨
+              Expérience Extrêmement Demandée ✨
             </p>
             <p className="text-secondary-gray text-xs leading-relaxed">
               En raison de la haute technicité et des massages Shiatsu prolongés de notre dôme thermal, les places pour le Head Spa sont limitées. Réservation recommandée 72 heures à l'avance.
@@ -126,7 +126,7 @@ export default function HeadSpaView() {
 
                   {formula.duration && (
                     <span className="inline-flex items-center gap-1 text-sm text-[#8A6A38] bg-[#B88F4D]/10 border border-[#B88F4D]/20 px-3 py-1.5 rounded-full font-semibold tracking-wide">
-                      ⏱️ {formula.duration}
+                      {formula.duration}
                     </span>
                   )}
 

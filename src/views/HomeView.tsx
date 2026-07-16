@@ -753,7 +753,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               {/* Benefits Subsection */}
               <div>
                 <h3 className="font-serif text-lg text-[#B88F4D] tracking-wider mb-4 border-b border-white/10 pb-2">
-                  ✨ Les Vertus Cliniques & Sensorielles
+                  Les Vertus Cliniques & Sensorielles
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex gap-3">
