@@ -136,17 +136,18 @@ export default function SoinsVisageView() {
             <p className="text-secondary-gray text-xs leading-relaxed">
               Planifiez votre protocole de soin visage de prestige avec Lola sur Planity au Pré-Saint-Gervais.
             </p>
-            <motion.a
-              href={INSTITUT_INFO.planityUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-center gap-2 rounded-[24px] bg-[#B88F4D] tracking-[0.1em] py-4 text-xs font-semibold uppercase text-white shadow-md hover:bg-[#A17E60] transition-colors"
+            <motion.button
+              onClick={() => {
+                window.location.hash = '#/reservation';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="w-full flex items-center justify-center gap-2 rounded-[24px] bg-[#B88F4D] tracking-[0.1em] py-4 text-xs font-semibold uppercase text-white shadow-md hover:bg-[#A17E60] transition-colors cursor-pointer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
               <Calendar className="h-4 w-4" />
               Réserver mon rendez-vous
-            </motion.a>
+            </motion.button>
           </div>
 
         </div>
