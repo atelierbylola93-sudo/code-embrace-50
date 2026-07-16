@@ -71,7 +71,7 @@ export const BEFORE_AFTER_ITEMS: BeforeAfterItem[] = [
   },
   {
     id: 'ba-hydrafacial',
-    category: 'HydraFacial Signature',
+    category: 'Soin du visage signature',
     title: 'Teint terne vs Glow absolu',
     beforeUrl: 'https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&q=80&w=600', // Dull skin
     afterUrl: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&q=80&w=600', // Radiant makeup-free facial skin glow

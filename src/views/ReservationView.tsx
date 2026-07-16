@@ -48,7 +48,7 @@ const RESERVATION_SERVICES: BookingService[] = [
   },
   {
     id: 'hydrafacial',
-    name: "HydraFacial Signature",
+    name: "Soin du visage signature",
     price: 105,
     duration: "45 min",
     category: "Soins Visage",
