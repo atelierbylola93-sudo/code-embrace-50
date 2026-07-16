@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Calendar, CheckCircle2, Star, Sparkles } from 'lucide-react';
 import { BLANCHIMENT_DENTAIRE_DATA, INSTITUT_INFO, LUXURY_IMAGES } from '../data';
 import FaqSection from '../components/FaqSection';
+import BlanchimentAvantApres from '../components/BlanchimentAvantApres';
 
 export default function BlanchimentDentaireView() {
   return (
@@ -37,6 +38,9 @@ export default function BlanchimentDentaireView() {
           {BLANCHIMENT_DENTAIRE_DATA.description}
         </p>
       </section>
+
+      {/* Interactive Before / After */}
+      <BlanchimentAvantApres />
 
       {/* Pricing and Details Grid */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
