@@ -827,8 +827,8 @@ export default function ReservationView() {
                     </p>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
-                    <span className="font-serif text-sm font-bold" style={{ color: GOLD }}>
-                      {service.price} €
+                    <span className="font-serif text-sm font-bold whitespace-nowrap" style={{ color: GOLD }}>
+                      {service.priceOnQuote ? 'Sur devis' : `${service.price} €`}
                     </span>
                     <button
                       onClick={() => handleToggleService(service)}
