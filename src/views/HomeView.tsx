@@ -297,12 +297,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
           <div className="pt-3 xl:pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1">
             <span className="font-serif text-3xl md:text-4xl font-bold text-[#A3A485] tracking-tight block">
-              Planity
+              24h/24
             </span>
             <span className="text-[10px] md:text-xs text-secondary-gray uppercase tracking-widest font-semibold block">
-              Réservation Instantanée
+              Réservation en ligne
             </span>
           </div>
+
         </div>
       </section>
 
