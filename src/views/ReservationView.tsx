@@ -85,8 +85,9 @@ export default function ReservationView() {
   const [availableSlots, setAvailableSlots] = useState<string[]>([]);
 
   const totalDurationMin = useMemo(() => {
-    return selectedServices.reduce((acc, s) => acc + parseDurationToMin(s.duration), 0);
+    return selectedServices.reduce((acc, s) => acc + s.duration_min, 0);
   }, [selectedServices]);
+
 
   // Fetch availability for each month spanned by datesList
   useEffect(() => {
