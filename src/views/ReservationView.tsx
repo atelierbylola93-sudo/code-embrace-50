@@ -363,7 +363,7 @@ export default function ReservationView() {
                       {service.name}
                     </p>
                     <p className="text-xs text-gray-500 mt-0.5">
-                      {service.category} · {service.duration}
+                      {service.category} · {service.duration_label}
                     </p>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
