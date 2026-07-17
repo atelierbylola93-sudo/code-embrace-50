@@ -571,7 +571,7 @@ export default function ReservationView() {
                         {service.category}
                       </span>
                       <span className="inline-flex items-center gap-1 text-xs text-gray-500">
-                        <Clock className="h-3 w-3" /> {service.duration}
+                        <Clock className="h-3 w-3" /> {service.duration_label}
                       </span>
                     </div>
                     <h4 className="font-serif text-base md:text-lg font-semibold text-charcoal leading-snug">
