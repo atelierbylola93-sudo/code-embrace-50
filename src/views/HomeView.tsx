@@ -314,7 +314,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-5 relative z-10">
             <div className="space-y-1.5 text-center lg:text-left">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#B88F4D]/10 border border-[#B88F4D]/30 text-xs text-amber-300 font-semibold uppercase tracking-wider">
-                <Clock className="h-3.5 w-3.5" /> Agenda temps réel Planity
+                <Clock className="h-3.5 w-3.5" /> Réservation en ligne 24h/24
               </div>
               <h3 className="font-serif text-lg md:text-xl font-medium tracking-wide">
                 Les créneaux de fin de semaine partent très rapidement.
