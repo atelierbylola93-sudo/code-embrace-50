@@ -253,7 +253,7 @@ export default function ReservationView() {
           client_email: clientInfo.email.trim(),
           client_phone: clientInfo.phone.trim(),
           client_note: clientInfo.note?.trim() || null,
-          services: selectedServices.map(s => ({ id: s.id, name: s.name, price: s.price, duration: s.duration })),
+          services: selectedServices.map(s => ({ id: s.id, name: s.name, price: s.price, duration: s.duration_label })),
           options: optionsList,
           appointment_date: selectedDate,
           appointment_time: selectedTimeSlot,
