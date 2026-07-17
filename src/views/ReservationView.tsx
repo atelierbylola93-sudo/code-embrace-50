@@ -1043,9 +1043,14 @@ export default function ReservationView() {
                   </div>
 
                   <div className="flex flex-col items-end gap-2 shrink-0">
-                    <span className="font-serif text-lg md:text-xl font-bold" style={{ color: GOLD }}>
-                      {service.price} €
+                    <span className="font-serif text-lg md:text-xl font-bold whitespace-nowrap" style={{ color: GOLD }}>
+                      {service.priceOnQuote ? 'Sur devis' : `${service.price} €`}
                     </span>
+                    {service.priceNote && (
+                      <span className="text-[10px] text-gray-500 italic text-right max-w-[140px] leading-tight">
+                        {service.priceNote}
+                      </span>
+                    )}
                     <button
                       onClick={() => handleToggleService(service)}
                       aria-label={isSelected ? `Retirer ${service.name}` : `Ajouter ${service.name}`}
