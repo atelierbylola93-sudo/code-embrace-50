@@ -335,7 +335,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 whileTap={{ scale: 0.98 }}
               >
                 <Calendar className="h-4 w-4" />
-                Réserver sur Planity
+                Réserver mon rendez-vous
               </motion.button>
 
               <motion.a
