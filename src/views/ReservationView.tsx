@@ -18,467 +18,14 @@ import {
   ChevronDown,
 } from 'lucide-react';
 import { getAvailability, getAvailableSlots } from '@/lib/availability.functions';
+import { SERVICE_CATALOG, CATALOG_CATEGORIES, type CatalogService } from '@/lib/service-catalog';
 
-interface BookingService {
-  id: string;
-  name: string;
-  price: number;
-  duration: string;
-  category: string;
-  description: string;
-  priceOnQuote?: boolean;
-  priceNote?: string;
-  upsells: {
-    id: string;
-    name: string;
-    price: number;
-    description: string;
-  }[];
-}
+// Alias local pour lisibilité : la réservation consomme le catalogue partagé
+// (source de vérité = src/data.ts → src/lib/service-catalog.ts).
+type BookingService = CatalogService;
 
-const RESERVATION_SERVICES: BookingService[] = [
-  // ============ HEAD SPA ============
-  {
-    id: 'head-spa-decouverte',
-    name: "Head Spa Découverte",
-    price: 85,
-    duration: "40 min",
-    category: "Head Spa",
-    description: "Massage relaxant du cuir chevelu, shampooing, soin profond et aromathérapie.",
-    upsells: [],
-  },
-  {
-    id: 'head-spa-signature',
-    name: "Head Spa Signature",
-    price: 120,
-    duration: "1h 00 min",
-    category: "Head Spa",
-    description: "Nettoyage profond, massage cou/épaules, arche d'eau et dôme de vapeur.",
-    upsells: [
-      { id: 'h-up-brush', name: "Brushing Finition Prestige", price: 20, description: "Séchage structuré avec élixir protecteur." },
-      { id: 'h-up-amp', name: "Ampoule Kératine pure", price: 10, description: "Infusion sous vapeur pour fortifier le cheveu." },
-    ],
-  },
-  {
-    id: 'head-spa-premium',
-    name: "Head Spa Premium",
-    price: 145,
-    duration: "1h 20 min",
-    category: "Head Spa",
-    description: "Rituel entièrement sur-mesure après diagnostic approfondi personnalisé.",
-    upsells: [],
-  },
-
-  // ============ SOINS VISAGE ============
-  {
-    id: 'visage-bio',
-    name: "Soin Visage Bio",
-    price: 60,
-    duration: "45 min",
-    category: "Soins Visage",
-    description: "Nettoyage doux, gommage enzymatique, massage et masque botanique bio.",
-    upsells: [],
-  },
-  {
-    id: 'visage-hydratant-vapeur',
-    name: "Soin Hydratant Purifiant Vapeur",
-    price: 90,
-    duration: "1h 00 min",
-    category: "Soins Visage",
-    description: "Extraction sous vapeur ionisée, purification profonde et modelage éclat.",
-    upsells: [],
-  },
-  {
-    id: 'visage-signature',
-    name: "Soin du visage signature",
-    price: 105,
-    duration: "45 min",
-    category: "Soins Visage",
-    description: "Succion hydro-mécanique, sérums antioxydants et acide hyaluronique.",
-    upsells: [
-      { id: 'v-up-glass', name: "Masque d'Or Pur 24 Carats", price: 20, description: "Glow ultime et effet repulpant immédiat." },
-      { id: 'v-up-led', name: "Photothérapie LED Anti-âge", price: 15, description: "Stimule la néocollagénèse cutanée." },
-    ],
-  },
-  {
-    id: 'visage-regenerant',
-    name: "Soin du visage régénérant",
-    price: 160,
-    duration: "1h 00 min",
-    category: "Soins Visage",
-    description: "Micro-perforations contrôlées, collagène et cocktail vitaminé.",
-    upsells: [],
-  },
-  {
-    id: 'visage-algues',
-    name: "Soin Visage aux Algues Naturel",
-    price: 100,
-    duration: "1h 00 min",
-    category: "Soins Visage",
-    description: "Masque plastifiant reminéralisant aux algues marines pures.",
-    upsells: [],
-  },
-
-  // ============ BRUSHING & COUPE ============
-  {
-    id: 'brushing',
-    name: "Brushing",
-    price: 20,
-    duration: "45 min",
-    category: "Brushing & Coupe",
-    description: "Shampooing, après-shampooing et coiffage lisse ou wavy.",
-    priceNote: "Tarif ajustable selon longueur et épaisseur.",
-    upsells: [],
-  },
-  {
-    id: 'coupe-soin',
-    name: "Coupe + Soin express",
-    price: 20,
-    duration: "45 min",
-    category: "Brushing & Coupe",
-    description: "Conseil visagiste, coupe et soin crème nourrissant instantané.",
-    upsells: [
-      { id: 'coupe-up-brush', name: "Supplément Brushing", price: 20, description: "Coiffage professionnel en supplément." },
-    ],
-  },
-
-  // ============ COLORATION ============
-  {
-    id: 'couleur-racine',
-    name: "Couleur Racine + Brushing",
-    price: 0,
-    priceOnQuote: true,
-    duration: "1h 15 min",
-    category: "Coloration",
-    description: "Retouche racines avec coloration sensorielle protectrice.",
-    priceNote: "Tarif personnalisé selon longueur et masse capillaire.",
-    upsells: [],
-  },
-  {
-    id: 'couleur-tete',
-    name: "Couleur Tête Entière + Brushing",
-    price: 0,
-    priceOnQuote: true,
-    duration: "1h 45 min",
-    category: "Coloration",
-    description: "Application globale pour une brillance miroir uniforme.",
-    priceNote: "Tarif personnalisé selon longueur et masse capillaire.",
-    upsells: [],
-  },
-
-  // ============ TECHNIQUES EXCLUSIVES ============
-  {
-    id: 'meches-patine',
-    name: "Mèches + Patine + Soin Olaplex + Brushing",
-    price: 190,
-    duration: "3h 00 min",
-    category: "Techniques",
-    description: "Éclaircissement à l'argile, patine sur-mesure et reconstruction Olaplex.",
-    upsells: [],
-  },
-  {
-    id: 'ombre-hair',
-    name: "Ombré Hair Divin + Olaplex + Kératine + Brushing",
-    price: 350,
-    duration: "4h 00 min",
-    category: "Techniques",
-    description: "Transition de couleur sur-mesure combinant Olaplex et Kératine.",
-    upsells: [
-      { id: 'c-up-pat', name: "Patine Brillance Miroir", price: 25, description: "Neutralise 100% des reflets jaunâtres." },
-      { id: 'c-up-bot', name: "Soin Botox express", price: 40, description: "Redonne matière et gaine après éclaircissement." },
-    ],
-  },
-  {
-    id: 'contouring',
-    name: "Contouring + Soin Kératine + Brushing",
-    price: 100,
-    duration: "1h 30 min",
-    category: "Techniques",
-    description: "Touches d'éclat encadrant le visage, renforcées à la kératine.",
-    upsells: [],
-  },
-
-  // ============ LISSAGES ============
-  {
-    id: 'lissage-bresilien',
-    name: "Lissage Brésilien",
-    price: 200,
-    duration: "3h 00 min",
-    category: "Lissages",
-    description: "Réduction du volume et réparation profonde, tenue 4 à 6 mois.",
-    upsells: [
-      { id: 'liss-up-kit', name: "Kit d'entretien Pro-Kératine", price: 45, description: "Shampoing et masque pour prolonger le lissage." },
-    ],
-  },
-  {
-    id: 'lissage-tanin',
-    name: "Lissage au Tanin",
-    price: 200,
-    duration: "3h 00 min",
-    category: "Lissages",
-    description: "Lissage organique aux polyphénols de raisin, sans étouffer.",
-    upsells: [],
-  },
-  {
-    id: 'lissage-nano',
-    name: "Lissage Nano Indiens",
-    price: 200,
-    duration: "3h 30 min",
-    category: "Lissages",
-    description: "Huiles indiennes et bionanotechnologies, lissage miroir longue durée.",
-    upsells: [],
-  },
-  {
-    id: 'lissage-biotine',
-    name: "Lissage Spécial Biotine",
-    price: 200,
-    duration: "3h 00 min",
-    category: "Lissages",
-    description: "Vitamine B7 pour activer la pousse et un fini ultra lisse.",
-    upsells: [],
-  },
-  {
-    id: 'botox-biotine',
-    name: "Botox Biotine",
-    price: 150,
-    duration: "2h 00 min",
-    category: "Lissages",
-    description: "Soin rajeunissant anti-frisottis, matière, force et éclat naturel.",
-    upsells: [],
-  },
-  {
-    id: 'proteine-biotine',
-    name: "Protéine Biotine",
-    price: 200,
-    duration: "2h 30 min",
-    category: "Lissages",
-    description: "Traitement fortifiant pour combler les brèches cuticulaires.",
-    upsells: [],
-  },
-  {
-    id: 'crp',
-    name: "Soin Capillaire CRP",
-    price: 220,
-    duration: "2h 15 min",
-    category: "Lissages",
-    description: "Reconstruction moléculaire pour cheveux sensibilisés ou cassants.",
-    upsells: [],
-  },
-
-  // ============ REGARD ============
-  {
-    id: 'sourcils-restruc',
-    name: "Restructuration Sourcils",
-    price: 25,
-    duration: "30 min",
-    category: "Regard",
-    description: "Étude morphologique, épilation de précision et finition symétrique.",
-    upsells: [],
-  },
-  {
-    id: 'browlift',
-    name: "Browlift Signature",
-    price: 65,
-    duration: "45 min",
-    category: "Regard",
-    description: "Discipline, épaissit et rehausse les sourcils pour 6 à 8 semaines.",
-    upsells: [
-      { id: 'r-up-teint', name: "Teinture Hybride haute tenue", price: 15, description: "Accentue la ligne naturelle." },
-      { id: 'r-up-boost', name: "Soin Kératine Boost réparateur", price: 10, description: "Sérum gainant nutrition longue tenue." },
-    ],
-  },
-  {
-    id: 'rehaussement-cils',
-    name: "Rehaussement de Cils",
-    price: 75,
-    duration: "1h 00 min",
-    category: "Regard",
-    description: "Courbe durable des cils, soin kératine et teinture noire.",
-    upsells: [],
-  },
-  {
-    id: 'pack-regard',
-    name: "Pack Regard Sublime",
-    price: 120,
-    duration: "1h 30 min",
-    category: "Regard",
-    description: "Restructuration + Browlift + Rehaussement + teintures assorties.",
-    upsells: [],
-  },
-
-  // ============ IPL ============
-  {
-    id: 'ipl-aisselles',
-    name: "IPL Aisselles",
-    price: 50,
-    duration: "15 min",
-    category: "IPL",
-    description: "Traitement ultra-rapide, peau nette sans ombre.",
-    upsells: [],
-  },
-  {
-    id: 'ipl-maillot-classique',
-    name: "IPL Maillot Classique",
-    price: 50,
-    duration: "25 min",
-    category: "IPL",
-    description: "Définition des contours de maillot standard.",
-    upsells: [],
-  },
-  {
-    id: 'ipl-maillot-integral',
-    name: "IPL Maillot Intégral",
-    price: 50,
-    duration: "35 min",
-    category: "IPL",
-    description: "Élimination complète incluant les zones intérieures délicates.",
-    upsells: [
-      { id: 'i-up-sif', name: "Option zone SIF (Sillon)", price: 20, description: "Ajout de la zone délicate en tarif préférentiel." },
-    ],
-  },
-  {
-    id: 'ipl-demi-bras',
-    name: "IPL Demi-Bras",
-    price: 50,
-    duration: "20 min",
-    category: "IPL",
-    description: "Traitement des poignets jusqu'aux coudes.",
-    upsells: [],
-  },
-  {
-    id: 'ipl-bras',
-    name: "IPL Bras Entiers",
-    price: 100,
-    duration: "35 min",
-    category: "IPL",
-    description: "Épilation complète des bras pour une douceur totale.",
-    upsells: [],
-  },
-  {
-    id: 'ipl-demi-jambes',
-    name: "IPL Demi-Jambes",
-    price: 50,
-    duration: "30 min",
-    category: "IPL",
-    description: "Traitement performant des chevilles aux genoux.",
-    upsells: [],
-  },
-  {
-    id: 'ipl-jambes',
-    name: "IPL Jambes Entières",
-    price: 100,
-    duration: "50 min",
-    category: "IPL",
-    description: "La séance globale, plus jamais de rasoir.",
-    upsells: [],
-  },
-  {
-    id: 'ipl-sif',
-    name: "IPL Sillon Interfessier",
-    price: 30,
-    duration: "15 min",
-    category: "IPL",
-    description: "Retouche ciblée respectueuse de l'intimité.",
-    upsells: [],
-  },
-
-  // ============ DÉTATOUAGE ============
-  {
-    id: 'detat-sourcils',
-    name: "Détatouage Sourcils",
-    price: 90,
-    duration: "45 min",
-    category: "Détatouage",
-    description: "Effacement esthétique des sourcils, fondu naturel restauré.",
-    upsells: [],
-  },
-  {
-    id: 'detat-rousseur',
-    name: "Détatouage Taches de Rousseur",
-    price: 70,
-    duration: "30 min",
-    category: "Détatouage",
-    description: "Atténuation esthétique ciblée d'une pigmentation trop marquée.",
-    upsells: [],
-  },
-  {
-    id: 'detat-levres',
-    name: "Détatouage Contour des Lèvres",
-    price: 120,
-    duration: "50 min",
-    category: "Détatouage",
-    description: "Retrait sélectif des lignes de lèvres irrégulières.",
-    upsells: [],
-  },
-
-  // ============ SOURIRE ============
-  {
-    id: 'dentaire-soft',
-    name: "Blanchiment SOFT WHITE",
-    price: 60,
-    duration: "30 min",
-    category: "Sourire",
-    description: "Coup d'éclat express, idéal pour rafraîchir la teinte.",
-    upsells: [],
-  },
-  {
-    id: 'dentaire-max',
-    name: "Blanchiment MAX WHITE",
-    price: 100,
-    duration: "50 min",
-    category: "Sourire",
-    description: "Protocole complet, 3 à 6 teintes de blancheur en une séance.",
-    upsells: [
-      { id: 'd-up-repair', name: "Soin Protect Émail minéralisant", price: 15, description: "Referme les pores et renforce la barrière." },
-    ],
-  },
-  {
-    id: 'dentaire-extra',
-    name: "Blanchiment EXTRA WHITE",
-    price: 160,
-    duration: "1h 15 min",
-    category: "Sourire",
-    description: "Triple action pour un éclat dentaire maximal.",
-    upsells: [],
-  },
-
-  // ============ CORPS ============
-  {
-    id: 'corps-algues',
-    name: "Soin Corps Complet aux Algues",
-    price: 150,
-    duration: "1h 20 min",
-    category: "Corps",
-    description: "Gommage, enveloppement chaud, douche sensorielle et modelage drainant.",
-    upsells: [
-      { id: 'b-up-leg', name: "Drainage cryo Jambes Légères", price: 25, description: "Active la circulation contre les jambes lourdes." },
-    ],
-  },
-  {
-    id: 'corps-zone',
-    name: "Soin Zone Ciblée aux Algues",
-    price: 90,
-    duration: "45 min",
-    category: "Corps",
-    description: "Cataplasme chaud sur ventre, cuisses ou fesses, action déstockante.",
-    upsells: [],
-  },
-];
-
-const CATEGORIES = [
-  "Tous",
-  "Head Spa",
-  "Soins Visage",
-  "Brushing & Coupe",
-  "Coloration",
-  "Techniques",
-  "Lissages",
-  "Regard",
-  "IPL",
-  "Détatouage",
-  "Sourire",
-  "Corps",
-];
+const RESERVATION_SERVICES: BookingService[] = SERVICE_CATALOG;
+const CATEGORIES = CATALOG_CATEGORIES;
 
 // Design tokens conformes Apple HIG :
 // - min tap target 44px
@@ -489,14 +36,6 @@ const GOLD = '#B88F4D';
 const SAGE = '#A3A485';
 const CREAM = '#EFE7D2';
 
-// Formats durée
-const parseDurationToMin = (dur: string) => {
-  if (dur.includes('h')) {
-    const [h, m] = dur.split('h');
-    return (parseInt(h) || 0) * 60 + (parseInt(m) || 0);
-  }
-  return parseInt(dur) || 0;
-};
 
 const formatDuration = (mins: number) => {
   if (mins <= 0) return '—';
@@ -546,8 +85,9 @@ export default function ReservationView() {
   const [availableSlots, setAvailableSlots] = useState<string[]>([]);
 
   const totalDurationMin = useMemo(() => {
-    return selectedServices.reduce((acc, s) => acc + parseDurationToMin(s.duration), 0);
+    return selectedServices.reduce((acc, s) => acc + s.duration_min, 0);
   }, [selectedServices]);
+
 
   // Fetch availability for each month spanned by datesList
   useEffect(() => {
@@ -713,7 +253,7 @@ export default function ReservationView() {
           client_email: clientInfo.email.trim(),
           client_phone: clientInfo.phone.trim(),
           client_note: clientInfo.note?.trim() || null,
-          services: selectedServices.map(s => ({ id: s.id, name: s.name, price: s.price, duration: s.duration })),
+          services: selectedServices.map(s => ({ id: s.id, name: s.name, price: s.price, duration: s.duration_label })),
           options: optionsList,
           appointment_date: selectedDate,
           appointment_time: selectedTimeSlot,
@@ -823,7 +363,7 @@ export default function ReservationView() {
                       {service.name}
                     </p>
                     <p className="text-xs text-gray-500 mt-0.5">
-                      {service.category} · {service.duration}
+                      {service.category} · {service.duration_label}
                     </p>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
@@ -1031,7 +571,7 @@ export default function ReservationView() {
                         {service.category}
                       </span>
                       <span className="inline-flex items-center gap-1 text-xs text-gray-500">
-                        <Clock className="h-3 w-3" /> {service.duration}
+                        <Clock className="h-3 w-3" /> {service.duration_label}
                       </span>
                     </div>
                     <h4 className="font-serif text-base md:text-lg font-semibold text-charcoal leading-snug">

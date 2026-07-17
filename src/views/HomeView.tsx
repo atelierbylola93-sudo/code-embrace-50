@@ -297,12 +297,13 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
 
           <div className="pt-3 xl:pt-0 flex flex-col justify-center space-y-1 min-w-0 px-1">
             <span className="font-serif text-3xl md:text-4xl font-bold text-[#A3A485] tracking-tight block">
-              Planity
+              24h/24
             </span>
             <span className="text-[10px] md:text-xs text-secondary-gray uppercase tracking-widest font-semibold block">
-              Réservation Instantanée
+              Réservation en ligne
             </span>
           </div>
+
         </div>
       </section>
 
@@ -313,7 +314,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-5 relative z-10">
             <div className="space-y-1.5 text-center lg:text-left">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#B88F4D]/10 border border-[#B88F4D]/30 text-xs text-amber-300 font-semibold uppercase tracking-wider">
-                <Clock className="h-3.5 w-3.5" /> Agenda temps réel Planity
+                <Clock className="h-3.5 w-3.5" /> Réservation en ligne 24h/24
               </div>
               <h3 className="font-serif text-lg md:text-xl font-medium tracking-wide">
                 Les créneaux de fin de semaine partent très rapidement.
@@ -334,7 +335,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
                 whileTap={{ scale: 0.98 }}
               >
                 <Calendar className="h-4 w-4" />
-                Réserver sur Planity
+                Réserver mon rendez-vous
               </motion.button>
 
               <motion.a
@@ -746,7 +747,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               {/* Quick stats on the treatment */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 bg-white/5 border border-white/10 rounded-[20px] text-center">
-                  <span className="text-[#B88F4D] text-xl font-serif font-bold block">45 min</span>
+                  <span className="text-[#B88F4D] text-xl font-serif font-bold block">1h00</span>
                   <span className="text-[10px] uppercase text-gray-400 tracking-wider">Durée pure</span>
                 </div>
                 <div className="p-4 bg-white/5 border border-white/10 rounded-[20px] text-center">
