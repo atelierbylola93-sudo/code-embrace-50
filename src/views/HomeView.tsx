@@ -746,7 +746,7 @@ export default function HomeView({ onNavigate }: HomeViewProps) {
               {/* Quick stats on the treatment */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-4 bg-white/5 border border-white/10 rounded-[20px] text-center">
-                  <span className="text-[#B88F4D] text-xl font-serif font-bold block">45 min</span>
+                  <span className="text-[#B88F4D] text-xl font-serif font-bold block">1h00</span>
                   <span className="text-[10px] uppercase text-gray-400 tracking-wider">Durée pure</span>
                 </div>
                 <div className="p-4 bg-white/5 border border-white/10 rounded-[20px] text-center">
