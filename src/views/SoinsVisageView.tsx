@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Calendar, CheckCircle2, Sparkles } from 'lucide-react';
 import { SOINS_VISAGE_DATA, LUXURY_IMAGES } from '../data';
 import FaqSection from '../components/FaqSection';
+import LocalSeoSection from '../components/LocalSeoSection';
 
 export default function SoinsVisageView() {
   return (
