@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Calendar, CheckCircle2, Star, ShieldCheck, Sparkles, Clock } from 'lucide-react';
+import { Calendar, CheckCircle2, Star, ShieldCheck, Clock, Leaf, AlertTriangle, Info } from 'lucide-react';
 import { HEAD_SPA_DATA } from '../data';
 import FaqSection from '../components/FaqSection';
 import LocalSeoSection from '../components/LocalSeoSection';
@@ -196,6 +196,87 @@ export default function HeadSpaView() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Bons réflexes & Contre-indications */}
+      <section className="max-w-7xl mx-auto px-4 md:px-8 pb-16 md:pb-24">
+        <div className="text-center space-y-3 max-w-2xl mx-auto mb-10">
+          <span className="text-xs uppercase tracking-[0.2em] text-[#B88F4D] font-bold">Votre séance en toute sérénité</span>
+          <h2 className="font-serif text-2xl md:text-4xl text-charcoal font-medium">
+            Bons réflexes & Contre-indications
+          </h2>
+          <p className="text-secondary-gray text-sm md:text-base leading-relaxed">
+            Quelques conseils simples pour préparer votre rituel Head Spa et identifier les rares situations où il vaut mieux reporter la séance.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Bons réflexes */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-[#EFE7D2]/50 border border-[#A3A485]/25 rounded-[24px] p-6 md:p-8 space-y-5"
+          >
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-10 rounded-full bg-[#A3A485]/15 flex items-center justify-center">
+                <Leaf className="h-5 w-5 text-[#A3A485]" />
+              </div>
+              <h3 className="font-serif text-xl md:text-2xl text-charcoal font-medium">Bons réflexes</h3>
+            </div>
+
+            <ul className="space-y-4">
+              {[
+                'Cheveux au naturel : Évitez de saturer vos cheveux de laques, gels, huiles ou sprays dans les 12 à 24 heures précédant le soin pour ne pas bloquer l\'action des produits.',
+                'Ne pas se laver les cheveux juste avant : Venez de préférence avec des cheveux non lavés depuis un ou deux jours pour éviter une surstimulation du cuir chevelu.',
+                'Éviter les excitants : Limitez le café ou les boissons énergisantes pour favoriser la détente nerveuse.',
+                'Informer le praticien : Signalez vos allergies, votre sensibilité cutanée, vos problèmes de migraines ou si vos cheveux ont subi des traitements chimiques récents.',
+              ].map((item, idx) => (
+                <li key={`bon-${idx}`} className="flex items-start gap-3 text-sm text-charcoal/80">
+                  <CheckCircle2 className="h-5 w-5 text-[#A3A485] shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Contre-indications */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="bg-white border border-[#A17E60]/20 rounded-[24px] p-6 md:p-8 space-y-5"
+          >
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-10 rounded-full bg-[#A17E60]/10 flex items-center justify-center">
+                <AlertTriangle className="h-5 w-5 text-[#A17E60]" />
+              </div>
+              <h3 className="font-serif text-xl md:text-2xl text-charcoal font-medium">Contre-indications</h3>
+            </div>
+            <p className="text-secondary-gray text-sm">
+              Quand reporter la séance :
+            </p>
+
+            <ul className="space-y-4">
+              {[
+                'Affections du cuir chevelu : Plaies ouvertes, irritations sévères, croûtes récentes, mycoses, poux ou lentes.',
+                'État inflammatoire ou infectieux : Fièvre, forte fatigue liée à une infection en cours.',
+                'Grossesse : Les huiles essentielles sont à écarter par précaution, et un avis médical est requis en cas de grossesse à risque.',
+              ].map((item, idx) => (
+                <li key={`contre-${idx}`} className="flex items-start gap-3 text-sm text-charcoal/80">
+                  <Info className="h-5 w-5 text-[#A17E60] shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-2 p-4 bg-[#EFE7D2]/60 rounded-xl border border-[#B88F4D]/15 text-sm text-charcoal/80">
+              <span className="font-semibold text-[#B88F4D]">Conseil personnalisé — </span>
+              Si vous le souhaitez, dites-moi si vous avez une condition médicale particulière ou un type de cuir chevelu spécifique (gras, sec, sensible) pour que je vous donne des conseils plus personnalisés.
+            </div>
+          </motion.div>
         </div>
       </section>
 
