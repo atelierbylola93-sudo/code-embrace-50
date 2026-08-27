@@ -199,6 +199,14 @@ export default function HeadSpaView() {
         </div>
       </section>
 
+      {/* SEO Local — Accès, adresse & horaires */}
+      <LocalSeoSection
+        serviceName="Head Spa Japonais au Pré-Saint-Gervais"
+        serviceDescription="Rituel de soin capillaire japonais premium : diagnostic du cuir chevelu, massage crânien thérapeutique et soins purifiants au cœur du Pré-Saint-Gervais, proche Pantin, Les Lilas et Paris 19e."
+        url="https://code-embrace-50.lovable.app/#/head-spa"
+        accent="#B88F4D"
+      />
+
       {/* SEO Dedicated Accordion FAQs */}
       <section className="bg-white py-16 border-t border-[#B88F4D]/10">
         <FaqSection
