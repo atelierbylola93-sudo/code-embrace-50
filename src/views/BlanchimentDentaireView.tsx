@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Calendar, CheckCircle2, Star, Sparkles } from 'lucide-react';
+import { Calendar, CheckCircle2, Star, Sparkles, AlertTriangle, Info, Ban, Stethoscope } from 'lucide-react';
 import { BLANCHIMENT_DENTAIRE_DATA, INSTITUT_INFO, LUXURY_IMAGES } from '../data';
 import FaqSection from '../components/FaqSection';
 import BlanchimentAvantApres from '../components/BlanchimentAvantApres';
@@ -159,6 +159,79 @@ export default function BlanchimentDentaireView() {
 
         </div>
 
+      </section>
+
+      {/* Contre-indications */}
+      <section className="bg-[#EFE7D2]/40 py-16 md:py-24 border-y border-[#B88F4D]/10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-10">
+          <div className="text-center space-y-3 max-w-2xl mx-auto">
+            <span className="text-xs uppercase tracking-[0.2em] text-[#B88F4D] font-bold">Sécurité & Précautions</span>
+            <h2 className="font-serif text-2xl md:text-4xl text-charcoal font-medium">Contre-indications</h2>
+            <p className="text-secondary-gray text-sm md:text-base leading-relaxed">
+              Le blanchiment dentaire est un soin esthétique encadré. Certaines situations médicales ou bucco-dentaires nécessitent de reporter ou d'écarter le traitement.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Générales */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white border border-[#A17E60]/20 rounded-[24px] p-6 md:p-8 space-y-5"
+            >
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-full bg-[#A17E60]/10 flex items-center justify-center">
+                  <Ban className="h-5 w-5 text-[#A17E60]" />
+                </div>
+                <h3 className="font-serif text-xl md:text-2xl text-charcoal font-medium">Contre-indications générales</h3>
+              </div>
+
+              <ul className="space-y-4">
+                {[
+                  'Grossesse et allaitement : Le traitement est interdit par précaution, car l\'effet du peroxyde d\'hydrogène n\'est pas évalué sur ces publics.',
+                  'Allergies : Une allergie connue au peroxyde d\'hydrogène ou aux agents utilisés dans le gel exclut le traitement.',
+                  'Pathologies spécifiques : Les personnes souffrant de maladies parodontales non contrôlées ou de certaines affections rares comme la porphyrie ne doivent pas se blanchir les dents.',
+                ].map((item, idx) => (
+                  <li key={`contre-gen-${idx}`} className="flex items-start gap-3 text-sm text-charcoal/80">
+                    <AlertTriangle className="h-5 w-5 text-[#A17E60] shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Bucco-dentaires */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white border border-[#9FA392]/25 rounded-[24px] p-6 md:p-8 space-y-5"
+            >
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-full bg-[#9FA392]/15 flex items-center justify-center">
+                  <Stethoscope className="h-5 w-5 text-[#9FA392]" />
+                </div>
+                <h3 className="font-serif text-xl md:text-2xl text-charcoal font-medium">Problèmes dentaires et bucco-dentaires</h3>
+              </div>
+
+              <ul className="space-y-4">
+                {[
+                  'Caries et infections : Le produit actif peut pénétrer dans la pulpe et causer de fortes douleurs si la dent est cariée ou fissurée.',
+                  'Hypersensibilité : Des dents déjà très sensibles ou des gencives irritées risquent d\'aggraver leur inconfort face aux agents oxydants.',
+                  'Présence de restaurations : Les couronnes, bridges, facettes ou obturations (composites) ne changent pas de couleur, ce qui peut créer un résultat inesthétique et hétérogène.',
+                  'Mauvaise hygiène bucco-dentaire : Un brossage insuffisant ou la présence excessive de tartre empêchent la réalisation du soin tant que la bouche n\'est pas soignée.',
+                ].map((item, idx) => (
+                  <li key={`contre-dent-${idx}`} className="flex items-start gap-3 text-sm text-charcoal/80">
+                    <Info className="h-5 w-5 text-[#9FA392] shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* Accordion FAQs */}
