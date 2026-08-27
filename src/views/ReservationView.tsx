@@ -436,10 +436,11 @@ export default function ReservationView() {
                 Durée · {formatDuration(getTotalDurationMin())}
               </p>
             </div>
-            <p className="font-serif text-2xl font-bold" style={{ color: GOLD }}>
-              {getSubtotal()} €
+            <p className="font-serif text-2xl font-bold text-right" style={{ color: GOLD }}>
+              {formatTotal()}
             </p>
           </div>
+
 
           {!compact && step !== 1 && (
             <button
