@@ -1239,8 +1239,9 @@ export default function ReservationView() {
                     className="font-serif text-base font-bold leading-none"
                     style={{ color: GOLD }}
                   >
-                    {getSubtotal()} €
+                    {formatTotal()}
                   </span>
+
                 </div>
                 <ChevronUp className="h-4 w-4 text-gray-500 shrink-0" />
               </button>
