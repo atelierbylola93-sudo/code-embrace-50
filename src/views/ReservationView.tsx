@@ -198,6 +198,15 @@ export default function ReservationView() {
     return total;
   };
 
+  const hasQuoteService = () => selectedServices.some(s => s.priceOnQuote);
+
+  const formatTotal = () => {
+    const sub = getSubtotal();
+    if (!hasQuoteService()) return `${sub} €`;
+    return sub > 0 ? `${sub} € + sur devis` : 'Sur devis';
+  };
+
+
   const getTotalDurationMin = () => totalDurationMin;
 
 
