@@ -322,7 +322,7 @@ export default function ReservationView() {
     const endTime = computeEndHHMM(booking.time, booking.durationMin);
     const startAndEnd = `${cleanedDate}T${cleanedTime}00/${cleanedDate}T${endTime}00`;
     const details = encodeURIComponent(
-      `Rendez-vous à L'Atelier by Lola.\n\nPrestation(s) : ${booking.serviceName}\nOptions : ${booking.options.join(', ') || 'Aucune'}\nDurée : ${booking.duration}\nTotal : ${booking.price} €`
+      `Rendez-vous à L'Atelier by Lola.\n\nPrestation(s) : ${booking.serviceName}\nOptions : ${booking.options.join(', ') || 'Aucune'}\nDurée : ${booking.duration}\nTotal : ${booking.priceLabel ?? booking.price + ' €'}`
     );
     const location = encodeURIComponent("L'Atelier by Lola, Le Pré-Saint-Gervais");
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startAndEnd}&details=${details}&location=${location}`;
@@ -342,7 +342,7 @@ export default function ReservationView() {
       `DTSTART:${cleanedDate}T${cleanedTime}00`,
       `DTEND:${cleanedDate}T${endTime}00`,
       `SUMMARY:L'Atelier by Lola - ${booking.serviceName}`,
-      `DESCRIPTION:Prestations: ${booking.serviceName}\\nOptions: ${booking.options.join(', ')}\\nTotal: ${booking.price}EUR`,
+      `DESCRIPTION:Prestations: ${booking.serviceName}\\nOptions: ${booking.options.join(', ')}\\nTotal: ${booking.priceLabel ?? booking.price + ' EUR'}`,
       `LOCATION:L'Atelier by Lola\\, Le Pré-Saint-Gervais`,
       'END:VEVENT',
       'END:VCALENDAR',
@@ -992,7 +992,7 @@ export default function ReservationView() {
                 Total
               </p>
               <p className="font-serif text-xl font-bold text-charcoal">
-                {bookingConfirmedDetails.price} €
+                {bookingConfirmedDetails.priceLabel ?? `${bookingConfirmedDetails.price} €`}
               </p>
             </div>
           </div>
