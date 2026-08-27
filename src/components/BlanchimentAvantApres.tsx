@@ -76,24 +76,23 @@ export default function BlanchimentAvantApres() {
 
         {/* APRÈS (clipped overlay) */}
         <div
-          className="absolute inset-0 h-full overflow-hidden pointer-events-none"
-          style={{ width: `${pos}%` }}
+          className="absolute inset-0 h-full w-full overflow-hidden pointer-events-none"
+          style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
         >
-          <div
-            className="absolute inset-0 h-full"
-            style={{ width: containerRef.current?.getBoundingClientRect().width || '100%' }}
-          >
-            <img
-              src={apresAsset.url}
-              alt="Après blanchiment dentaire — L'Atelier Lola"
-              draggable={false}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </div>
-          <div className="absolute top-4 right-4 z-10 bg-[#B88F4D] text-white text-[10px] md:text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full shadow">
-            Après
-          </div>
+          <img
+            src={apresAsset.url}
+            alt="Après blanchiment dentaire — L'Atelier Lola"
+            draggable={false}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
         </div>
+        <div
+          className="absolute top-4 right-4 z-10 bg-[#B88F4D] text-white text-[10px] md:text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full shadow pointer-events-none"
+          style={{ opacity: pos > 15 ? 1 : 0.35 }}
+        >
+          Après
+        </div>
+
 
         {/* Handle */}
         <div
