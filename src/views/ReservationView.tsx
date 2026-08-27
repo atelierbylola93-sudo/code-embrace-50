@@ -198,6 +198,15 @@ export default function ReservationView() {
     return total;
   };
 
+  const hasQuoteService = () => selectedServices.some(s => s.priceOnQuote);
+
+  const formatTotal = () => {
+    const sub = getSubtotal();
+    if (!hasQuoteService()) return `${sub} €`;
+    return sub > 0 ? `${sub} € + sur devis` : 'Sur devis';
+  };
+
+
   const getTotalDurationMin = () => totalDurationMin;
 
 
@@ -231,10 +240,13 @@ export default function ReservationView() {
       .map(u => u.name);
     const durationMin = getTotalDurationMin();
     const totalPrice = getSubtotal();
+    const priceLabel = formatTotal();
     const finalBooking = {
       id: reference,
       serviceName: selectedServices.map(s => s.name).join(' + '),
       price: totalPrice,
+      priceLabel,
+
       date: selectedDate,
       time: selectedTimeSlot,
       duration: formatDuration(durationMin),
@@ -310,7 +322,7 @@ export default function ReservationView() {
     const endTime = computeEndHHMM(booking.time, booking.durationMin);
     const startAndEnd = `${cleanedDate}T${cleanedTime}00/${cleanedDate}T${endTime}00`;
     const details = encodeURIComponent(
-      `Rendez-vous à L'Atelier by Lola.\n\nPrestation(s) : ${booking.serviceName}\nOptions : ${booking.options.join(', ') || 'Aucune'}\nDurée : ${booking.duration}\nTotal : ${booking.price} €`
+      `Rendez-vous à L'Atelier by Lola.\n\nPrestation(s) : ${booking.serviceName}\nOptions : ${booking.options.join(', ') || 'Aucune'}\nDurée : ${booking.duration}\nTotal : ${booking.priceLabel ?? booking.price + ' €'}`
     );
     const location = encodeURIComponent("L'Atelier by Lola, Le Pré-Saint-Gervais");
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startAndEnd}&details=${details}&location=${location}`;
@@ -330,7 +342,7 @@ export default function ReservationView() {
       `DTSTART:${cleanedDate}T${cleanedTime}00`,
       `DTEND:${cleanedDate}T${endTime}00`,
       `SUMMARY:L'Atelier by Lola - ${booking.serviceName}`,
-      `DESCRIPTION:Prestations: ${booking.serviceName}\\nOptions: ${booking.options.join(', ')}\\nTotal: ${booking.price}EUR`,
+      `DESCRIPTION:Prestations: ${booking.serviceName}\\nOptions: ${booking.options.join(', ')}\\nTotal: ${booking.priceLabel ?? booking.price + ' EUR'}`,
       `LOCATION:L'Atelier by Lola\\, Le Pré-Saint-Gervais`,
       'END:VEVENT',
       'END:VCALENDAR',
@@ -427,10 +439,11 @@ export default function ReservationView() {
                 Durée · {formatDuration(getTotalDurationMin())}
               </p>
             </div>
-            <p className="font-serif text-2xl font-bold" style={{ color: GOLD }}>
-              {getSubtotal()} €
+            <p className="font-serif text-2xl font-bold text-right" style={{ color: GOLD }}>
+              {formatTotal()}
             </p>
           </div>
+
 
           {!compact && step !== 1 && (
             <button
@@ -979,7 +992,7 @@ export default function ReservationView() {
                 Total
               </p>
               <p className="font-serif text-xl font-bold text-charcoal">
-                {bookingConfirmedDetails.price} €
+                {bookingConfirmedDetails.priceLabel ?? `${bookingConfirmedDetails.price} €`}
               </p>
             </div>
           </div>
@@ -1229,8 +1242,9 @@ export default function ReservationView() {
                     className="font-serif text-base font-bold leading-none"
                     style={{ color: GOLD }}
                   >
-                    {getSubtotal()} €
+                    {formatTotal()}
                   </span>
+
                 </div>
                 <ChevronUp className="h-4 w-4 text-gray-500 shrink-0" />
               </button>

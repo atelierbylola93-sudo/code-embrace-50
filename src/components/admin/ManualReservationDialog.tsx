@@ -187,7 +187,7 @@ export function ManualReservationDialog({ open, onOpenChange, prefill, onCreated
                         <span className="block text-sm font-medium text-[#2A241C] truncate">{s.name}</span>
                         <span className="block text-xs text-[#6E6455]">{formatCatalogDuration(s.duration_min)} • {s.category}</span>
                       </span>
-                      <span className="text-sm font-semibold text-[#B88F4D]">{s.price} €</span>
+                      <span className="text-sm font-semibold text-[#B88F4D]">{s.priceOnQuote ? 'Sur devis' : `${s.price} €`}</span>
                     </button>
                   </li>
                 );
@@ -198,7 +198,7 @@ export function ManualReservationDialog({ open, onOpenChange, prefill, onCreated
                 <div className="text-xs text-[#6E6455]">
                   {selected.length} prestation{selected.length > 1 ? 's' : ''} • {formatCatalogDuration(duration_min)}
                 </div>
-                <div className="text-base font-semibold text-[#B88F4D]">{total_price} €</div>
+                <div className="text-base font-semibold text-[#B88F4D]">{selected.some((x) => x.priceOnQuote) ? (total_price > 0 ? `${total_price} € + sur devis` : 'Sur devis') : `${total_price} €`}</div>
               </div>
             )}
           </div>
