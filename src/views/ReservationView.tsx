@@ -240,10 +240,13 @@ export default function ReservationView() {
       .map(u => u.name);
     const durationMin = getTotalDurationMin();
     const totalPrice = getSubtotal();
+    const priceLabel = formatTotal();
     const finalBooking = {
       id: reference,
       serviceName: selectedServices.map(s => s.name).join(' + '),
       price: totalPrice,
+      priceLabel,
+
       date: selectedDate,
       time: selectedTimeSlot,
       duration: formatDuration(durationMin),
