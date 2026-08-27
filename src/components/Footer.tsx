@@ -79,11 +79,11 @@ export default function Footer({ onNavigate }: FooterProps) {
               <ul className="space-y-2.5 text-xs text-gray-400">
                 <li className="p-2.5 bg-white/5 rounded-lg border border-white/5 hover:border-[#B88F4D]/20 transition-all duration-300">
                   <span className="text-[10px] uppercase font-bold text-[#B88F4D] block">Head Spa Japonais</span>
-                  <a href="#blog-post" onClick={(e) => { e.preventDefault(); handleLinkClick('head-spa'); }} className="hover:text-white transition-colors font-medium">Pourquoi le soin thermal japonais révolutionne le cuir chevelu ?</a>
+                  <a href="#blog-post" onClick={(e) => { e.preventDefault(); handleLinkClick('head-spa'); }} className="hover:text-white transition-colors font-medium">Découvrir le Head Spa</a>
                 </li>
                 <li className="p-2.5 bg-white/5 rounded-lg border border-white/5 hover:border-[#B88F4D]/20 transition-all duration-300">
                   <span className="text-[10px] uppercase font-bold text-[#A3A485] block">Soins du visage</span>
-                  <a href="#blog-post" onClick={(e) => { e.preventDefault(); handleLinkClick('soins-visage'); }} className="hover:text-white transition-colors font-medium">Signature ou régénérant : quel soin du visage choisir au Pré-Saint-Gervais ?</a>
+                  <a href="#blog-post" onClick={(e) => { e.preventDefault(); handleLinkClick('soins-visage'); }} className="hover:text-white transition-colors font-medium">Découvrir nos soins visage</a>
                 </li>
               </ul>
             </div>
